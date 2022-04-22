@@ -1,8 +1,8 @@
 #ifndef __TYPES_HPP
 #define __TYPES_HPP
 
+class Date;
 class Room;
-class Guest;
 class Reservation;
 class Hotel;
 
