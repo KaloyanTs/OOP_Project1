@@ -10,16 +10,16 @@ class Room
     unsigned bedCount;
     bool free;
 
-    bool accomodateHere();
-    bool freeRoom();
-
 public:
     Room(unsigned n, unsigned bC, bool f = true) : number(n), bedCount(bC), free(f) {}
 
     unsigned getNumber() const { return number; }
     unsigned getBedCount() const { return bedCount; }
     bool isFree() const { return free; }
-    friend Reservation::Reservation(const char *, Room *, Date, Date, const char *);
+
+    bool accomodateHere();
+    bool freeRoom();
+    //friend Reservation::Reservation(const char *, Room *, Date, Date, const char *);
 };
 
 std::ostream &operator<<(std::ostream &os, const Room &R);
