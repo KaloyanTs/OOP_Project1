@@ -19,8 +19,16 @@ Reservation::Reservation(const char *name, Room *r, Date f, Date t, const char *
     assert(room && name && note);
     strcpy(guestName, name);
     strcpy(note, n);
+
     // todo class must be defined inside the hotel class
     //  active = date>=from && date<to;
+
+    // todo check other reservations for simultaneousity
+
+    // if ok
+    // if active then
+    // if accomodate there -> perfect
+    // else something went wrong (on checking availability)
 }
 
 void Reservation::clear()
