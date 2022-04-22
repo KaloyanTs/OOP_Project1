@@ -2,20 +2,24 @@
 #define __ROOM_HPP
 #include <iostream>
 #include "Types.hpp"
-#include "Guest.hpp"
+#include "Reservation.hpp"
 
 class Room
 {
     unsigned number;
     unsigned bedCount;
-    const Guest *guest;
+    bool free;
+
+    bool accomodateHere();
+    bool freeRoom();
 
 public:
-    Room(unsigned n, unsigned bC, const Guest &g) : number(n), bedCount(bC), guest(&g) {}
+    Room(unsigned n, unsigned bC, bool f = true) : number(n), bedCount(bC), free(f) {}
+
     unsigned getNumber() const { return number; }
     unsigned getBedCount() const { return bedCount; }
-    bool accomodateHere(const Guest &);
-    bool freeRoom();
+    bool isFree() const { return free; }
+    friend Reservation::Reservation(const char *, Room *, Date, Date, const char *);
 };
 
 std::ostream &operator<<(std::ostream &os, const Room &R);
