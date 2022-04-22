@@ -4,11 +4,12 @@
 
 class Date
 {
-    short day, month, year;
+    unsigned short day, month, year;
     bool isVaid() const;
+    bool isLeap(unsigned y)const;
 
 public:
-    Date(short d = 1, short m = 1, short y = 1900) : day(d), month(m), year(y) {}
+    Date(unsigned short d = 1, unsigned short m = 1, unsigned short y = 1900) : day(d), month(m), year(y) {}
     bool operator<(Date other) const;
     bool operator<=(Date other) const;
     bool operator>(Date other) const;

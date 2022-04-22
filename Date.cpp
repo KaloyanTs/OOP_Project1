@@ -71,3 +71,20 @@ std::istream &operator>>(std::istream &is, Date &d)
     }
     return is;
 }
+bool Date::isVaid() const
+{
+    if (day > 31)
+        return false;
+    if (month == 2)
+        return day < 29 + isLeap(year);
+    if (month == 4 ||
+        month == 6 ||
+        month == 9 ||
+        month == 11)
+        return day <= 30;
+    return true;
+}
+
+bool Date::isLeap(unsigned y) const {
+    return y%400==0 || y%100 && y%4==0;    
+}
