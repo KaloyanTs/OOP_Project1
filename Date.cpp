@@ -71,9 +71,24 @@ std::istream &operator>>(std::istream &is, Date &d)
     }
     return is;
 }
+
+std::ostream &operator<<(std::ostream &os, const Date &d)
+{
+    os.width(2);
+    os.fill('0');
+    os << d.day << '/';
+    os.width(2);
+    os.fill('0');
+    os << d.month << '/';
+    os.width(4);
+    os.fill('0');
+    os << d.year;
+    return os;
+}
+
 bool Date::isVaid() const
 {
-    if (day > 31)
+    if (day > 31 || month > 12)
         return false;
     if (month == 2)
         return day < 29 + isLeap(year);
@@ -85,6 +100,30 @@ bool Date::isVaid() const
     return true;
 }
 
-bool Date::isLeap(unsigned y) const {
-    return y%400==0 || y%100 && y%4==0;    
+bool Date::isLeap(unsigned y) const
+{
+    return y % 400 == 0 || y % 100 && y % 4 == 0;
+}
+
+Date &Date::operator++()
+{
+    ++day;
+    if (!isVaid())
+    {
+        day = 1;
+        ++month;
+        if (!isVaid())
+        {
+            month = 1;
+            ++year;
+        }
+    }
+    return *this;
+}
+
+Date Date::getToday()
+{
+    std::time_t t = std::time(NULL);
+    std::tm *now = std::localtime(&t);
+    return Date(now->tm_mday, now->tm_mon + 1, now->tm_year + 1900);
 }
