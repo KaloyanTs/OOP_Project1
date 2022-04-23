@@ -3,23 +3,34 @@
 #include <iostream>
 #include "Types.hpp"
 #include "Reservation.hpp"
+const size_t INIT_CAPACITY = 2;
 
 class Room
 {
     unsigned number;
     unsigned bedCount;
-    const Reservation *currentReservation;
+    Reservation **reservations;
+    size_t resCount, resCapacity;
+
+    void expand();
+    void shrink();
 
 public:
-    Room(unsigned n, unsigned bC) : number(n), bedCount(bC), currentReservation(nullptr) {}
+    Room(unsigned n, unsigned bC);
+    Room(const Room &) = delete;
+    Room &operator=(const Room &) = delete;
+    ~Room();
 
     unsigned getNumber() const { return number; }
     unsigned getBedCount() const { return bedCount; }
-    bool isFree() const { return !currentReservation; }
+    bool isFreeNow() const;
 
     bool accomodateHere(const Reservation &res);
     bool freeRoom();
-    // friend Reservation::Reservation(const char *, Room *, Date, Date, const char *);
+
+    void newDate(Date);
+
+    bool isFreeOnDate(Date) const;
 };
 
 std::ostream &operator<<(std::ostream &os, const Room &R);
