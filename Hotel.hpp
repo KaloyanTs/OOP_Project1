@@ -10,19 +10,18 @@ class Hotel
     char *name;
     static Date now;
     bool init;
-    class t
-    {
-        int a;
-    };
-    t b;
+    HotelBuilding building;
 
     static Date getToday();
 
 public:
+    Hotel(const char *hotelDataFile);
+
     Date today() const { return now; }
     const char *getName() const { return name; }
 
-    static void nextDay();
+    void nextDay();
+    Hotel &showAvailableRooms(std::ostream &, Date);
 };
 
 #endif

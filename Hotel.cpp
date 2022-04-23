@@ -4,5 +4,12 @@ Date Hotel::now = Date::getToday();
 
 void Hotel::nextDay()
 {
-    ++now;
+    building.newDate(++now);
+}
+
+Hotel &Hotel::showAvailableRooms(std::ostream &os, Date d)
+{
+    os << "Available rooms for " << d << " are:\n";
+    building.showAvailableRooms(os, d);
+    return *this;
 }
