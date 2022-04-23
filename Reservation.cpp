@@ -5,29 +5,17 @@ Reservation::~Reservation()
     clear();
 }
 
-Reservation::Reservation(const Hotel &h, const char *name, Room *r, Date f, Date t, const char *n)
+Reservation::Reservation(const char *name, Date f, Date t, const char *n)
     : guestName(new char[strlen(name) + 1]),
       note(new char[strlen(n) + 1]),
-      room(r),
-      from(f), to(t),
-      active(false)
+      from(f), to(t)
 {
     assert(room && name && note);
     strcpy(guestName, name);
     strcpy(note, n);
 
-    past = h.today() < from;
-    active = !past && h.today() < to;
-    if (active)
-        r->accomodateHere(*this);
-    if (!past)
-        record(h);
+    state = UNKNOWN;
     // todo check other reservations for simultaneousity
-
-    // if ok
-    // if active then
-    // if accomodate there -> perfect
-    // else something went wrong (on checking availability)
 }
 
 void Reservation::clear()
@@ -51,4 +39,23 @@ void Reservation::record(const Hotel &H)
     // todo use String ofs << guestName << ' ' << note << '\n';
 
     ofs.close();
+}
+
+void Reservation::onDate(Date d)
+{
+    if (d < from)
+        state = FUTURE;
+    else if (d >= to)
+        state = PAST;
+    else
+        state = ACTIVE;
+}
+
+ReservationState Reservation::stateOnDate(Date d) const
+{
+    if (d < from)
+        return FUTURE;
+    if (d >= to)
+        return PAST;
+    return ACTIVE;
 }
