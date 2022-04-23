@@ -1,16 +1,16 @@
 #include "HotelBuilding.hpp"
 
-HotelBuilding::HotelBuilding(const char *roomsTextFile)
+HotelBuilding::HotelBuilding(std::ifstream &ifs)
 {
-    std::ifstream ifs(roomsTextFile, std::ios::in);
+    // if (!ifs.is_open())
+    // {
+    //     std::cerr << "Something went wrong on reading Room data from \"" << roomsTextFile << "\".\n";
+    //     rooms = nullptr;
+    //     size = 0;
+    //     return;
+    // }
     unsigned number, bedCount;
-    if (!ifs.is_open())
-    {
-        std::cerr << "Something went wrong on reading Room data from \"" << roomsTextFile << "\".\n";
-        rooms = nullptr;
-        size = 0;
-        return;
-    }
+
     ifs >> size;
     rooms = new Room *[size];
     for (unsigned i = 0; i < size; ++i)
@@ -35,4 +35,17 @@ Room *HotelBuilding::operator[](unsigned roomNumber) const
     if (i == size)
         return nullptr;
     return rooms[i];
+}
+
+void HotelBuilding::newDate(Date newD)
+{
+    for (unsigned i = 0; i < size; ++i)
+        rooms[i]->newDate(newD);
+}
+
+void HotelBuilding::showAvailableRooms(std::ostream &os, Date d) const
+{
+    for (unsigned i = 0; i < size; ++i)
+        if (rooms[i]->isFreeOnDate(d))
+            os << *rooms[i] << '\n';
 }

@@ -11,7 +11,7 @@ class HotelBuilding
     size_t size;
 
 public:
-    HotelBuilding(const char *roomsTextFile); // todo String
+    HotelBuilding(std::ifstream &ifs); // todo String
     HotelBuilding(const HotelBuilding &other) = delete;
     HotelBuilding &operator=(HotelBuilding &other) = delete;
     ~HotelBuilding();
@@ -19,6 +19,10 @@ public:
     size_t getRoomCount() const { return size; }
 
     Room *operator[](unsigned roomNumber) const;
+
+    void newDate(Date d);
+
+    void showAvailableRooms(std::ostream &os, Date d) const;
 
     friend class RoomAnalyzer;
 };
