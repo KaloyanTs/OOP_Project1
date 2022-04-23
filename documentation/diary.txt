@@ -21,11 +21,13 @@ idea:
     vector of rooms
     method requestRoom(const Reservation &res,room )
 
+    //todo
     RoomAnalyzer
     <<<static suggest(const HotelBuilding &hB, unsigned beds, Date from, Date to)>>>
     given reserver's info (beds, period->availability) and //to calculate some score for each room
     shows top 5 most suitable rooms
     returns pointer to chosen room
+    must be friend to HotelBuilding to sort rooms by score
 
     Date
     supporting class
