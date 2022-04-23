@@ -5,16 +5,16 @@ std::ostream &operator<<(std::ostream &os, const Room &R)
     return os << R.getNumber() << '\t' << R.getBedCount();
 }
 
-bool Room::accomodateHere()
+bool Room::accomodateHere(const Reservation &res)
 {
-    if (!free)
+    if (!isFree())
         return false;
-    return !(free = false);
+    return currentReservation = &res;
 }
 
 bool Room::freeRoom()
 {
-    if (free)
+    if (isFree())
         return false;
-    return !(free = true);
+    return !(currentReservation = nullptr);
 }
