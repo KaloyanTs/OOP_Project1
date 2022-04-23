@@ -127,3 +127,8 @@ Date Date::getToday()
     std::tm *now = std::localtime(&t);
     return Date(now->tm_mday, now->tm_mon + 1, now->tm_year + 1900);
 }
+
+int Date::operator-(Date other) const
+{
+    // todo return 0;
+}

@@ -17,6 +17,7 @@ public:
     bool operator>=(Date other) const;
     bool operator==(Date other) const;
     const char *operator()(char *buf) const;
+    int operator-(Date other) const;
     Date &operator++();
 
     static Date getToday();
