@@ -1,25 +1,27 @@
 idea:
     Hotel
-    has list of active or future reservations (!past)
-    has list of available rooms
+    has list of available rooms (HotelBuilding)
+    keeps currentDate (now)
+    method newDay (tomorrow)
     constructor takes filePath and loads available rooms
+    method to show availability on a date
+
 
     history of reservarions kept in "<name>.history"
 
     Reservation
     guestName
     period FROM/TO -> determines activity of reservation
-    // ctor/dtor to be friends of room   ??
-
-
 
     Room
     number and bedCount
+    array of sorted reservations for this room
     can be free or taken (!free)
 
     HotelBuilding
     vector of rooms
     method requestRoom(const Reservation &res,room )
+    ??? is it necessary
 
     //todo
     RoomAnalyzer
