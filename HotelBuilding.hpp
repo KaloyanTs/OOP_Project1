@@ -2,7 +2,7 @@
 #define __HOTELBUILDING_HPP
 #include "Types.hpp"
 #include "Room.hpp"
-#include "RoomAnalyzer.hpp"
+//#include "RoomAnalyzer.hpp"
 #include <fstream>
 
 class HotelBuilding
