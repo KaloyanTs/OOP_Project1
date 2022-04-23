@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Types.hpp"
 #include "Reservation.hpp"
+#include "Hotel.hpp"
 
 /**
  * @brief const varieble keeping minimal size of the reservations list
@@ -34,15 +35,28 @@ class Room
     size_t resCount, resCapacity;
 
     /**
-     * @brief expand the reservations list
+     * @brief list of past reservations assigned to the Room
      *
      */
-    void expand();
+    Reservation **pastReservations;
+    /**
+     * @brief size and capacity of the past reservations list
+     *
+     */
+    size_t pastCount, pastCapacity;
+
+    /**
+     * @brief expand a reservations list
+     *
+     */
+    void expand(Reservation **&);
     /**
      * @brief shrink the reservations list
      *
      */
     void shrink();
+
+    unsigned daysTakenInPeriod(Date from, Date to) const;
 
 public:
     /**
@@ -78,7 +92,8 @@ public:
      * @return true sucesfully freed room
      * @return false room is already free
      */
-    bool freeRoom();
+    bool freeRoom(Reservation *&currentRes);
+    void changeLeaving(Reservation *, Date newDate); // todo must be private
 
     /**
      * @brief apply new Date to state of all reservations and respectively of the room availability
@@ -93,6 +108,8 @@ public:
      * @return false the room is taken
      */
     bool isFreeOnDate(Date) const;
+
+    void showReservationsInPeriod(std::ostream &os, Date from, Date to) const;
 };
 
 /**
