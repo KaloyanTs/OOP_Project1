@@ -1,0 +1,33 @@
+idea:
+    Hotel
+    has list of active or future reservations (!past)
+    has list of available rooms
+    constructor takes filePath and loads available rooms
+
+    history of reservarions kept in "<name>.history"
+
+    Reservation
+    guestName
+    period FROM/TO -> determines activity of reservation
+    // ctor/dtor to be friends of room   ??
+
+
+
+    Room
+    number and bedCount
+    can be free or taken (!free)
+
+    HotelBuilding
+    vector of rooms
+    method requestRoom(const Reservation &res,room )
+
+    RoomAnalyzer
+    <<<static suggest(const HotelBuilding &hB, unsigned beds, Date from, Date to)>>>
+    given reserver's info (beds, period->availability) and //to calculate some score for each room
+    shows top 5 most suitable rooms
+    returns pointer to chosen room
+
+    Date
+    supporting class
+    default format is DD/MM/YYYY
+    method returning today's date
