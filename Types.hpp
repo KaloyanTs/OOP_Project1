@@ -3,6 +3,7 @@
 
 class Date;
 class Room;
+class HotelBuilding;
 class Reservation;
 class Hotel;
 
