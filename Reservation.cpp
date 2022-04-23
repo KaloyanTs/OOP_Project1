@@ -5,12 +5,13 @@ Reservation::~Reservation()
     clear();
 }
 
-Reservation::Reservation(const char *name, Date f, Date t, const char *n)
+Reservation::Reservation(const char *name, Date f, Date t, const char *n, bool s)
     : guestName(new char[strlen(name) + 1]),
       note(new char[strlen(n) + 1]),
-      from(f), to(t)
+      from(f), to(t),
+      service(s)
 {
-    assert(room && name && note);
+    assert(name && note);
     strcpy(guestName, name);
     strcpy(note, n);
 
@@ -35,7 +36,7 @@ void Reservation::record(const Hotel &H)
         std::cerr << "Something went wrong on recording Reservation.\n";
         return;
     }
-    ofs << from << '-' << to << ' ' << room->getNumber() << ' ';
+    // fix ofs << from << '-' << to << ' ' << room->getNumber() << ' ';
     // todo use String ofs << guestName << ' ' << note << '\n';
 
     ofs.close();
@@ -58,4 +59,12 @@ ReservationState Reservation::stateOnDate(Date d) const
     if (d >= to)
         return PAST;
     return ACTIVE;
+}
+
+bool Reservation::LeavingInAdvance(Date newTo)
+{
+    if (newTo >= to || newTo < from)
+        return false;
+    to = newTo;
+    return true;
 }
