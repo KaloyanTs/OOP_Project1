@@ -23,7 +23,7 @@ bool Room::freeRoom(Reservation *&curRes)
     if (!curRes->isServiced())
     {
         if (pastCount == pastCapacity)
-            expand(pastReservations);
+            expand(pastReservations, pastCount, pastCapacity);
         pastReservations[pastCount++] = curRes;
     }
     else
@@ -32,7 +32,7 @@ bool Room::freeRoom(Reservation *&curRes)
     for (unsigned i = 0; i < resCount - 1; ++i)
         reservations[i] = reservations[i + 1];
     if (2 * resCount <= resCapacity && resCapacity > INIT_CAPACITY)
-        shrink();
+        shrink(reservations, resCount, resCapacity);
     return true;
 }
 
@@ -45,21 +45,23 @@ Room::Room(unsigned n, unsigned bC)
 {
 }
 
-void Room::shrink()
+void Room::shrink(Reservation **&arr, size_t &size, size_t &cap)
 {
-    resCapacity = resCount;
-    Reservation **newArr = new Reservation *[resCapacity];
-    for (unsigned i = 0; i < resCount; ++i)
-        newArr[i] = reservations[i];
-    delete[] reservations;
-    reservations = newArr;
+    if (!size)
+        return;
+    cap = size;
+    Reservation **newArr = new Reservation *[cap];
+    for (unsigned i = 0; i < size; ++i)
+        newArr[i] = arr[i];
+    delete[] arr;
+    arr = newArr;
 }
 
-void Room::expand(Reservation **&arr)
+void Room::expand(Reservation **&arr, size_t &size, size_t &cap)
 {
-    resCapacity = 2 * resCapacity;
-    Reservation **newArr = new Reservation *[resCapacity];
-    for (unsigned i = 0; i < resCount; ++i)
+    cap = 2 * cap;
+    Reservation **newArr = new Reservation *[cap];
+    for (unsigned i = 0; i < size; ++i)
         newArr[i] = arr[i];
     delete[] arr;
     arr = newArr;
@@ -79,7 +81,7 @@ void Room::newDate(Date newD)
     if (reservations[0]->isPast())
     {
         if (pastCount == pastCapacity)
-            expand(pastReservations);
+            expand(pastReservations, pastCount, pastCapacity);
         freeRoom(pastReservations[pastCount++]);
     }
 }
@@ -131,4 +133,31 @@ void Room::showReservationsInPeriod(std::ostream &os, Date from, Date to) const
     if (!count)
         return;
     os << "Room #" << number << " between " << from << " and " << to << ": " << count << " nights.\n";
+}
+
+bool Room::newReservation(std::string name, std::string note, Date from, Date to, bool service)
+{
+    unsigned i = 0;
+    while (i < resCount && reservations[i]->stateOnDate(from) == PAST)
+        ++i;
+    if (i < resCount &&
+        !(reservations[i]->stateOnDate(from) == FUTURE &&
+          reservations[i]->stateOnDate(to) == FUTURE))
+        return false;
+
+    if (resCapacity == resCount)
+        expand(reservations, resCount, resCapacity);
+
+    reservations[resCount++] = new Reservation(name, from, to, note, service);
+    return true;
+}
+
+bool Room::addReservation(std::string name, std::string note, Date from, Date to)
+{
+    return newReservation(name, note, from, to, false);
+}
+
+bool Room::closeForService(std::string note, Date from, Date to)
+{
+    return newReservation(std::string("-"), note, from, to, true);
 }

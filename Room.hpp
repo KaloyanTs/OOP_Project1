@@ -1,6 +1,7 @@
 #ifndef __ROOM_HPP
 #define __ROOM_HPP
 #include <iostream>
+#include <string>
 #include "Types.hpp"
 #include "Reservation.hpp"
 #include "Hotel.hpp"
@@ -49,14 +50,16 @@ class Room
      * @brief expand a reservations list
      *
      */
-    void expand(Reservation **&);
+    void expand(Reservation **&arr, size_t &size, size_t &capacity);
     /**
-     * @brief shrink the reservations list
+     * @brief shrink a reservations list
      *
      */
-    void shrink();
+    void shrink(Reservation **&arr, size_t &size, size_t &capacity);
 
     unsigned daysTakenInPeriod(Date from, Date to) const;
+
+    bool newReservation(std::string name, std::string note, Date from, Date to, bool service);
 
 public:
     /**
@@ -110,6 +113,10 @@ public:
     bool isFreeOnDate(Date) const;
 
     void showReservationsInPeriod(std::ostream &os, Date from, Date to) const;
+
+    bool addReservation(std::string name, std::string note, Date from, Date to);
+
+    bool closeForService(std::string note, Date from, Date to);
 };
 
 /**
