@@ -36,9 +36,8 @@ bool Hotel::reserveRoom(unsigned number, Date from, Date to, std::string name, s
     return false;
 }
 
-Hotel::Hotel(const char *hotelDataFile)
+Hotel::Hotel(std::string hotelDataFile)
 {
-
     std::ifstream ifs(hotelDataFile, std::ios::in);
     size_t length;
     ifs >> length;
