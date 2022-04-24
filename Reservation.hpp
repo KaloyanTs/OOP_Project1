@@ -7,6 +7,7 @@
 #include <cstring>
 #include <cassert>
 #include <fstream>
+#include <string>
 
 enum ReservationState
 {
@@ -18,22 +19,15 @@ enum ReservationState
 
 class Reservation
 {
-    char *guestName, *note;
+    std::string guestName, note;
     Date from, to;
     ReservationState state;
     bool service;
 
-    void clear();
-
-    void record(const Hotel &);
-
 public:
-    Reservation(const char *name, Date f, Date t, const char *n = "None.\n", bool s = false);
+    Reservation(std::string name, Date f, Date t, std::string n = "None.\n", bool s = false);
     Reservation(const Reservation &) = delete;
     Reservation &operator=(const Reservation &) = delete;
-    // todo use String Reservation(const Reservation &other);
-    // todo use String Reservation &operator=(const Reservation &other);
-    ~Reservation();
 
     bool isActive() const { return state == ACTIVE; }
     bool isPast() const { return state == PAST; }
