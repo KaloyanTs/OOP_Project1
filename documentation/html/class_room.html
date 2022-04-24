@@ -95,9 +95,12 @@ unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>getBedCount</b> (
 <tr class="memitem:a95cc43635356f64c587eb83a6c124cc8"><td class="memItemLeft" align="right" valign="top"><a id="a95cc43635356f64c587eb83a6c124cc8" name="a95cc43635356f64c587eb83a6c124cc8"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isFreeNow</b> () const</td></tr>
 <tr class="separator:a95cc43635356f64c587eb83a6c124cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af653be68fca4d4eaa0421042a9998756"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_room.html#af653be68fca4d4eaa0421042a9998756">freeRoom</a> ()</td></tr>
-<tr class="memdesc:af653be68fca4d4eaa0421042a9998756"><td class="mdescLeft">&#160;</td><td class="mdescRight">try to free this room  <a href="class_room.html#af653be68fca4d4eaa0421042a9998756">More...</a><br /></td></tr>
-<tr class="separator:af653be68fca4d4eaa0421042a9998756"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac577ef1f89ef87ea45b5429b0a2728c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_room.html#ac577ef1f89ef87ea45b5429b0a2728c2">freeRoom</a> (<a class="el" href="class_reservation.html">Reservation</a> *&amp;currentRes)</td></tr>
+<tr class="memdesc:ac577ef1f89ef87ea45b5429b0a2728c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">try to free this room  <a href="class_room.html#ac577ef1f89ef87ea45b5429b0a2728c2">More...</a><br /></td></tr>
+<tr class="separator:ac577ef1f89ef87ea45b5429b0a2728c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bbe2b7ef0c4e4801e7df8aa22b73fb6"><td class="memItemLeft" align="right" valign="top"><a id="a3bbe2b7ef0c4e4801e7df8aa22b73fb6" name="a3bbe2b7ef0c4e4801e7df8aa22b73fb6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>changeLeaving</b> (<a class="el" href="class_reservation.html">Reservation</a> *, <a class="el" href="class_date.html">Date</a> <a class="el" href="class_room.html#a61087b9ff006697919562e12b1af49c1">newDate</a>)</td></tr>
+<tr class="separator:a3bbe2b7ef0c4e4801e7df8aa22b73fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61087b9ff006697919562e12b1af49c1"><td class="memItemLeft" align="right" valign="top"><a id="a61087b9ff006697919562e12b1af49c1" name="a61087b9ff006697919562e12b1af49c1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>newDate</b> (<a class="el" href="class_date.html">Date</a>)</td></tr>
 <tr class="memdesc:a61087b9ff006697919562e12b1af49c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">apply new <a class="el" href="class_date.html">Date</a> to state of all reservations and respectively of the room availability <br /></td></tr>
@@ -105,6 +108,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>newDate</b> (<a class
 <tr class="memitem:af7124ab1cb85e2d9d67c926aca7928ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_room.html#af7124ab1cb85e2d9d67c926aca7928ab">isFreeOnDate</a> (<a class="el" href="class_date.html">Date</a>) const</td></tr>
 <tr class="memdesc:af7124ab1cb85e2d9d67c926aca7928ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">see if this room is free in certain date  <a href="class_room.html#af7124ab1cb85e2d9d67c926aca7928ab">More...</a><br /></td></tr>
 <tr class="separator:af7124ab1cb85e2d9d67c926aca7928ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7b3b3ecd5a7346ffc552960f6dd0539"><td class="memItemLeft" align="right" valign="top"><a id="ab7b3b3ecd5a7346ffc552960f6dd0539" name="ab7b3b3ecd5a7346ffc552960f6dd0539"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>showReservationsInPeriod</b> (std::ostream &amp;os, <a class="el" href="class_date.html">Date</a> from, <a class="el" href="class_date.html">Date</a> to) const</td></tr>
+<tr class="separator:ab7b3b3ecd5a7346ffc552960f6dd0539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a068bb29d493c24d29dbce4e5ce1bf792"><td class="memItemLeft" align="right" valign="top"><a id="a068bb29d493c24d29dbce4e5ce1bf792" name="a068bb29d493c24d29dbce4e5ce1bf792"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>addReservation</b> (std::string name, std::string note, <a class="el" href="class_date.html">Date</a> from, <a class="el" href="class_date.html">Date</a> to)</td></tr>
+<tr class="separator:a068bb29d493c24d29dbce4e5ce1bf792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae710042dc64a9b0205431a01b2da07db"><td class="memItemLeft" align="right" valign="top"><a id="ae710042dc64a9b0205431a01b2da07db" name="ae710042dc64a9b0205431a01b2da07db"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>closeForService</b> (std::string note, <a class="el" href="class_date.html">Date</a> from, <a class="el" href="class_date.html">Date</a> to)</td></tr>
+<tr class="separator:ae710042dc64a9b0205431a01b2da07db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab64b84ed33b32bf6a37a4280efde4d96" name="ab64b84ed33b32bf6a37a4280efde4d96"></a>
@@ -145,8 +157,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>newDate</b> (<a class
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af653be68fca4d4eaa0421042a9998756" name="af653be68fca4d4eaa0421042a9998756"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af653be68fca4d4eaa0421042a9998756">&#9670;&nbsp;</a></span>freeRoom()</h2>
+<a id="ac577ef1f89ef87ea45b5429b0a2728c2" name="ac577ef1f89ef87ea45b5429b0a2728c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac577ef1f89ef87ea45b5429b0a2728c2">&#9670;&nbsp;</a></span>freeRoom()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,7 +166,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>newDate</b> (<a class
         <tr>
           <td class="memname">bool Room::freeRoom </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_reservation.html">Reservation</a> *&amp;&#160;</td>
+          <td class="paramname"><em>currentRes</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

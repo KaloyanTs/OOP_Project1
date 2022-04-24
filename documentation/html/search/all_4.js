@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['newdate_0',['newDate',['../class_room.html#a61087b9ff006697919562e12b1af49c1',1,'Room']]]
+  ['isfreeondate_0',['isFreeOnDate',['../class_room.html#af7124ab1cb85e2d9d67c926aca7928ab',1,'Room']]]
 ];
