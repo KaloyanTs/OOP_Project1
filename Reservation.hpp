@@ -38,6 +38,9 @@ public:
     bool isActive() const { return state == ACTIVE; }
     bool isPast() const { return state == PAST; }
     bool isServiced() const { return service; }
+    Date getFrom() const { return from; }
+    Date getTo() const { return to; }
+    unsigned getNights() const { return to - from; }
 
     void onDate(Date d);
 
