@@ -2,6 +2,7 @@
 #define __DATE_HPP
 #include <iostream>
 #include <ctime>
+const unsigned daysFromBeginning[] = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
 
 class Date
 {

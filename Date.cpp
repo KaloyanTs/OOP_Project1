@@ -130,5 +130,14 @@ Date Date::getToday()
 
 int Date::operator-(Date other) const
 {
-    // todo return 0;
+    short smallerYear = (year < other.year ? year : other.year);
+    unsigned thisDays = day +
+                        daysFromBeginning[month - 1] +
+                        365 * (year - smallerYear - 1) +
+                        (year - 1) / 4 - (year - 1) / 100 + (year - 1) / 400;
+    unsigned otherDays = other.day +
+                         daysFromBeginning[other.month - 1] +
+                         365 * (other.year - smallerYear - 1) +
+                         (other.year - 1) / 4 - (other.year - 1) / 100 + (other.year - 1) / 400;
+    return thisDays - otherDays;
 }
