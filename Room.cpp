@@ -103,10 +103,32 @@ Room::~Room()
 
 unsigned Room::daysTakenInPeriod(Date from, Date to) const
 {
-    unsigned count = 0;
-    if (to > Hotel::today())
-        to = Hotel::today();
-        
-    // todo for(unsigned i=0;i<pastCount;++i)
-    // todo calculations
+    unsigned count = 0, firstRes, lastRes;
+    firstRes = 0;
+    while (firstRes < pastCount && pastReservations[firstRes]->stateOnDate(from) == PAST)
+        ++firstRes;
+
+    if (firstRes < pastCount)
+    {
+        if (pastReservations[firstRes]->stateOnDate(from) == ACTIVE)
+            count += from - pastReservations[firstRes]->getFrom();
+        lastRes = firstRes + 1;
+        while (lastRes < pastCount && pastReservations[lastRes]->stateOnDate(to) != FUTURE)
+        {
+            ++lastRes;
+            count += pastReservations[lastRes]->getNights();
+        }
+        if (lastRes < pastCount && pastReservations[lastRes]->stateOnDate(to) == ACTIVE)
+            count -= pastReservations[lastRes]->getTo() - to;
+    }
+
+    return count;
+}
+
+void Room::showReservationsInPeriod(std::ostream &os, Date from, Date to) const
+{
+    unsigned count = daysTakenInPeriod(from, to);
+    if (!count)
+        return;
+    os << "Room #" << number << " between " << from << " and " << to << ": " << count << " nights.\n";
 }

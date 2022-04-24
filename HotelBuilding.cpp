@@ -49,3 +49,25 @@ void HotelBuilding::showAvailableRooms(std::ostream &os, Date d) const
         if (rooms[i]->isFreeOnDate(d))
             os << *rooms[i] << '\n';
 }
+
+void HotelBuilding::createReport(Date from, Date to) const
+{
+    if (from > Hotel::today())
+        return;
+    if (to > Hotel::today())
+        to = Hotel::today();
+    char buf[22];
+    strcpy(buf, "report-");
+    from(buf + 7);
+    strcat(buf, ".txt");
+    std::ofstream ofs(buf, std::ios::out);
+    if (!ofs.is_open())
+        return;
+    ofs << "Report for the usage of the rooms between " << from << " and " << to << ":\n";
+    for (unsigned i = 0; i < size; ++i)
+    {
+        ofs << '\t';
+        rooms[i]->showReservationsInPeriod(ofs, from, to);
+    }
+    ofs.close();
+}

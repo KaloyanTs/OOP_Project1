@@ -23,6 +23,7 @@ public:
 
     void nextDay();
     Hotel &showAvailableRooms(std::ostream &, Date);
+    Hotel &getReport(Date from, Date to);
 };
 
 #endif

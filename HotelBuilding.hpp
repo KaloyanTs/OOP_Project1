@@ -24,6 +24,8 @@ public:
 
     void showAvailableRooms(std::ostream &os, Date d) const;
 
+    void createReport(Date from, Date to)const;
+
     friend class RoomAnalyzer;
 };
 
