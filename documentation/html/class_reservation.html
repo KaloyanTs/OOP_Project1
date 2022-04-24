@@ -71,27 +71,42 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3563c4278a2e956d6c8cfed294e0999c"><td class="memItemLeft" align="right" valign="top"><a id="a3563c4278a2e956d6c8cfed294e0999c" name="a3563c4278a2e956d6c8cfed294e0999c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Reservation</b> (const char *name, <a class="el" href="class_date.html">Date</a> f, <a class="el" href="class_date.html">Date</a> t, const char *n=&quot;None.\n&quot;)</td></tr>
-<tr class="separator:a3563c4278a2e956d6c8cfed294e0999c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55f4d378b5774ac8ed31b03188468a73"><td class="memItemLeft" align="right" valign="top"><a id="a55f4d378b5774ac8ed31b03188468a73" name="a55f4d378b5774ac8ed31b03188468a73"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Reservation</b> (const <a class="el" href="class_reservation.html">Reservation</a> &amp;res)=delete</td></tr>
-<tr class="separator:a55f4d378b5774ac8ed31b03188468a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62c8c9286014d97e99103623f28ee00f"><td class="memItemLeft" align="right" valign="top"><a id="a62c8c9286014d97e99103623f28ee00f" name="a62c8c9286014d97e99103623f28ee00f"></a>
-<a class="el" href="class_reservation.html">Reservation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_reservation.html">Reservation</a> &amp;other)=delete</td></tr>
-<tr class="separator:a62c8c9286014d97e99103623f28ee00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b3c66cd31511d8fbcfb1c6a3beb4c6b"><td class="memItemLeft" align="right" valign="top"><a id="a8b3c66cd31511d8fbcfb1c6a3beb4c6b" name="a8b3c66cd31511d8fbcfb1c6a3beb4c6b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Reservation</b> (std::string name, <a class="el" href="class_date.html">Date</a> f, <a class="el" href="class_date.html">Date</a> t, std::string n=&quot;None.\n&quot;, bool s=false)</td></tr>
+<tr class="separator:a8b3c66cd31511d8fbcfb1c6a3beb4c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5cb1df61535df3e87397e22e70450de"><td class="memItemLeft" align="right" valign="top"><a id="ad5cb1df61535df3e87397e22e70450de" name="ad5cb1df61535df3e87397e22e70450de"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Reservation</b> (const <a class="el" href="class_reservation.html">Reservation</a> &amp;)=delete</td></tr>
+<tr class="separator:ad5cb1df61535df3e87397e22e70450de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51bbcf837255b6ce02e32ee384904a76"><td class="memItemLeft" align="right" valign="top"><a id="a51bbcf837255b6ce02e32ee384904a76" name="a51bbcf837255b6ce02e32ee384904a76"></a>
+<a class="el" href="class_reservation.html">Reservation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_reservation.html">Reservation</a> &amp;)=delete</td></tr>
+<tr class="separator:a51bbcf837255b6ce02e32ee384904a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad058e62dd09a1bc29c0be56c1c7f25cc"><td class="memItemLeft" align="right" valign="top"><a id="ad058e62dd09a1bc29c0be56c1c7f25cc" name="ad058e62dd09a1bc29c0be56c1c7f25cc"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isActive</b> () const</td></tr>
 <tr class="separator:ad058e62dd09a1bc29c0be56c1c7f25cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66002cd2cd0bc5c033fb3f50c21b5f30"><td class="memItemLeft" align="right" valign="top"><a id="a66002cd2cd0bc5c033fb3f50c21b5f30" name="a66002cd2cd0bc5c033fb3f50c21b5f30"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPast</b> () const</td></tr>
 <tr class="separator:a66002cd2cd0bc5c033fb3f50c21b5f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33a56f239609b603a6b95348d19d41ee"><td class="memItemLeft" align="right" valign="top"><a id="a33a56f239609b603a6b95348d19d41ee" name="a33a56f239609b603a6b95348d19d41ee"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isServiced</b> () const</td></tr>
+<tr class="separator:a33a56f239609b603a6b95348d19d41ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a229d88ec063e1aa55926ee148768f8c6"><td class="memItemLeft" align="right" valign="top"><a id="a229d88ec063e1aa55926ee148768f8c6" name="a229d88ec063e1aa55926ee148768f8c6"></a>
+<a class="el" href="class_date.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getFrom</b> () const</td></tr>
+<tr class="separator:a229d88ec063e1aa55926ee148768f8c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cf50c5405ca16f2cd49bd5cbd75b39f"><td class="memItemLeft" align="right" valign="top"><a id="a0cf50c5405ca16f2cd49bd5cbd75b39f" name="a0cf50c5405ca16f2cd49bd5cbd75b39f"></a>
+<a class="el" href="class_date.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getTo</b> () const</td></tr>
+<tr class="separator:a0cf50c5405ca16f2cd49bd5cbd75b39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9972d1080a65082bbfc809026a3f566"><td class="memItemLeft" align="right" valign="top"><a id="ad9972d1080a65082bbfc809026a3f566" name="ad9972d1080a65082bbfc809026a3f566"></a>
+unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>getNights</b> () const</td></tr>
+<tr class="separator:ad9972d1080a65082bbfc809026a3f566"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d4f51265258703841bd7dfa84a8d019"><td class="memItemLeft" align="right" valign="top"><a id="a1d4f51265258703841bd7dfa84a8d019" name="a1d4f51265258703841bd7dfa84a8d019"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>onDate</b> (<a class="el" href="class_date.html">Date</a> d)</td></tr>
 <tr class="separator:a1d4f51265258703841bd7dfa84a8d019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a29ac04a5d44627fcc72cbb2c64ca44"><td class="memItemLeft" align="right" valign="top"><a id="a2a29ac04a5d44627fcc72cbb2c64ca44" name="a2a29ac04a5d44627fcc72cbb2c64ca44"></a>
-ReservationState&#160;</td><td class="memItemRight" valign="bottom"><b>stateOnDate</b> (<a class="el" href="class_date.html">Date</a> d) const</td></tr>
-<tr class="separator:a2a29ac04a5d44627fcc72cbb2c64ca44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc365d7f06207428c27053df2bb6cbc"><td class="memItemLeft" align="right" valign="top"><a id="a5bc365d7f06207428c27053df2bb6cbc" name="a5bc365d7f06207428c27053df2bb6cbc"></a>
+ReservationState&#160;</td><td class="memItemRight" valign="bottom"><b>stateOnDate</b> (<a class="el" href="class_date.html">Date</a>) const</td></tr>
+<tr class="separator:a5bc365d7f06207428c27053df2bb6cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50cec33af6558c737a1b4d39051074e7"><td class="memItemLeft" align="right" valign="top"><a id="a50cec33af6558c737a1b4d39051074e7" name="a50cec33af6558c737a1b4d39051074e7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>LeavingInAdvance</b> (<a class="el" href="class_date.html">Date</a>)</td></tr>
+<tr class="separator:a50cec33af6558c737a1b4d39051074e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_reservation_8hpp_source.html">Reservation.hpp</a></li>
