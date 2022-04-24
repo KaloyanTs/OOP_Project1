@@ -5,18 +5,25 @@ idea:
     method newDay (tomorrow)
     constructor takes filePath and loads available rooms
     method to show availability on a date
+    method to create Report for the reservations for a period of time
+
+    // bool init to say whether you can work with the object
+    proper existence guaranteed via deleted constructors
 
 
     history of reservarions kept in "<name>.history"
 
     Reservation
     guestName
+    note
+    can be reserved for service (closed)
     period FROM/TO -> determines activity of reservation
 
     Room
     number and bedCount
     array of sorted reservations for this room
-    can be free or taken (!free)
+    array of past reservarions for this room
+    can be free or taken
 
     HotelBuilding
     vector of rooms
@@ -35,3 +42,4 @@ idea:
     supporting class
     default format is DD/MM/YYYY
     method returning today's date
+    can find days between two dates
