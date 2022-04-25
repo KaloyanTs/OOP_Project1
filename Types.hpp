@@ -5,6 +5,7 @@ class Date;
 class Room;
 class HotelBuilding;
 class Reservation;
+class RoomAnalyzer;
 class Hotel;
 
 #endif
