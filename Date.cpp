@@ -141,3 +141,13 @@ int Date::operator-(Date other) const
                          (other.year - 1) / 4 - (other.year - 1) / 100 + (other.year - 1) / 400;
     return thisDays - otherDays;
 }
+
+std::istream &operator>>(std::istream &is, DatePeriod &dP)
+{
+    if (&is == &std::cin)
+        std::cout << "From: ";
+    is >> dP.from;
+    if (&is == &std::cin)
+        std::cout << "To: ";
+    return is >> dP.to;
+}

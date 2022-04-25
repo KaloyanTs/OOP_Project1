@@ -119,4 +119,12 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const Date &d);
 };
 
+struct DatePeriod
+{
+    Date from, to;
+    unsigned length() const { return to - from; }
+};
+
+std::istream &operator>>(std::istream &is, DatePeriod &dP);
+
 #endif
