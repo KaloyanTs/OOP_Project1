@@ -1,9 +1,9 @@
 #include "Reservation.hpp"
 
-Reservation::Reservation(std::string name, Date f, Date t, std::string n, bool s)
+Reservation::Reservation(std::string name, DatePeriod p, std::string n, bool s)
     : guestName(name),
       note(n),
-      from(f), to(t),
+      period(p),
       service(s),
       state(UNKNOWN)
 {
@@ -11,9 +11,9 @@ Reservation::Reservation(std::string name, Date f, Date t, std::string n, bool s
 
 void Reservation::onDate(Date d)
 {
-    if (d < from)
+    if (d < period.from)
         state = FUTURE;
-    else if (d >= to)
+    else if (d >= period.to)
         state = PAST;
     else
         state = ACTIVE;
@@ -21,17 +21,17 @@ void Reservation::onDate(Date d)
 
 ReservationState Reservation::stateOnDate(Date d) const
 {
-    if (d < from)
+    if (d < period.from)
         return FUTURE;
-    if (d >= to)
+    if (d >= period.to)
         return PAST;
     return ACTIVE;
 }
 
 bool Reservation::LeavingInAdvance(Date newTo)
 {
-    if (newTo >= to || newTo < from)
+    if (newTo >= period.to || newTo < period.from)
         return false;
-    to = newTo;
+    period.to = newTo;
     return true;
 }

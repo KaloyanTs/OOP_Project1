@@ -20,21 +20,21 @@ enum ReservationState
 class Reservation
 {
     std::string guestName, note;
-    Date from, to;
+    DatePeriod period;
     ReservationState state;
     bool service;
 
 public:
-    Reservation(std::string name, Date f, Date t, std::string n = "None.\n", bool s = false);
+    Reservation(std::string name, DatePeriod p, std::string n = "None.\n", bool s = false);
     Reservation(const Reservation &) = delete;
     Reservation &operator=(const Reservation &) = delete;
 
     bool isActive() const { return state == ACTIVE; }
     bool isPast() const { return state == PAST; }
     bool isServiced() const { return service; }
-    Date getFrom() const { return from; }
-    Date getTo() const { return to; }
-    unsigned getNights() const { return to - from; }
+    Date getFrom() const { return period.from; }
+    Date getTo() const { return period.to; }
+    unsigned getNights() const { return period.length(); }
 
     void onDate(Date d);
 

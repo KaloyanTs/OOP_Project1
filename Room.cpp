@@ -2,7 +2,12 @@
 
 std::ostream &operator<<(std::ostream &os, const Room &R)
 {
-    return os << R.getNumber() << '\t' << R.getBedCount();
+    if (&os == &std::cout)
+        os << "Number: ";
+    os << R.getNumber() << '\t';
+    if (&os == &std::cout)
+        os << "Beds: ";
+    return os << R.getBedCount();
 }
 
 // bool Room::accomodateHere(const Reservation &res)
@@ -101,63 +106,71 @@ Room::~Room()
     for (unsigned i = 0; i < resCount; ++i)
         delete reservations[i];
     delete[] reservations;
+    for (unsigned i = 0; i < pastCount; ++i)
+        delete pastReservations[i];
+    delete[] pastReservations;
 }
 
-unsigned Room::daysTakenInPeriod(Date from, Date to) const
+unsigned Room::daysTakenInPeriod(DatePeriod period) const
 {
     unsigned count = 0, firstRes, lastRes;
     firstRes = 0;
-    while (firstRes < pastCount && pastReservations[firstRes]->stateOnDate(from) == PAST)
+    while (firstRes < pastCount && pastReservations[firstRes]->stateOnDate(period.from) == PAST)
         ++firstRes;
 
     if (firstRes < pastCount)
     {
-        if (pastReservations[firstRes]->stateOnDate(from) == ACTIVE)
-            count += from - pastReservations[firstRes]->getFrom();
+        if (pastReservations[firstRes]->stateOnDate(period.from) == ACTIVE)
+            count += period.from - pastReservations[firstRes]->getFrom();
         lastRes = firstRes + 1;
-        while (lastRes < pastCount && pastReservations[lastRes]->stateOnDate(to) != FUTURE)
+        while (lastRes < pastCount && pastReservations[lastRes]->stateOnDate(period.to) != FUTURE)
         {
             ++lastRes;
             count += pastReservations[lastRes]->getNights();
         }
-        if (lastRes < pastCount && pastReservations[lastRes]->stateOnDate(to) == ACTIVE)
-            count -= pastReservations[lastRes]->getTo() - to;
+        if (lastRes < pastCount && pastReservations[lastRes]->stateOnDate(period.to) == ACTIVE)
+            count -= pastReservations[lastRes]->getTo() - period.to;
     }
 
     return count;
 }
 
-void Room::showReservationsInPeriod(std::ostream &os, Date from, Date to) const
+void Room::showReservationsInPeriod(std::ostream &os, DatePeriod period) const
 {
-    unsigned count = daysTakenInPeriod(from, to);
+    unsigned count = daysTakenInPeriod(period);
     if (!count)
         return;
-    os << "Room #" << number << " between " << from << " and " << to << ": " << count << " nights.\n";
+    os << "Room #" << number << " between " << period.from << " and " << period.to << ": " << count << " nights.\n";
 }
 
-bool Room::newReservation(std::string name, std::string note, Date from, Date to, bool service)
+bool Room::newReservation(std::string name, std::string note, DatePeriod period, bool service)
 {
-    unsigned i = 0;
-    while (i < resCount && reservations[i]->stateOnDate(from) == PAST)
-        ++i;
-    if (i < resCount &&
-        !(reservations[i]->stateOnDate(from) == FUTURE &&
-          reservations[i]->stateOnDate(to) == FUTURE))
+    if (!isFreeInPeriod(period))
         return false;
 
     if (resCapacity == resCount)
         expand(reservations, resCount, resCapacity);
 
-    reservations[resCount++] = new Reservation(name, from, to, note, service);
+    reservations[resCount++] = new Reservation(name, period, note, service);
     return true;
 }
 
-bool Room::addReservation(std::string name, std::string note, Date from, Date to)
+bool Room::addReservation(std::string name, std::string note, DatePeriod period)
 {
-    return newReservation(name, note, from, to, false);
+    return newReservation(name, note, period, false);
 }
 
-bool Room::closeForService(std::string note, Date from, Date to)
+bool Room::closeForService(std::string note, DatePeriod period)
 {
-    return newReservation(std::string("-"), note, from, to, true);
+    return newReservation(std::string("-"), note, period, true);
+}
+
+bool Room::isFreeInPeriod(DatePeriod period) const
+{
+    unsigned i = 0;
+    while (i < resCount && reservations[i]->stateOnDate(period.from) == PAST)
+        ++i;
+    return !(i < resCount &&
+             !(reservations[i]->stateOnDate(period.from) == FUTURE &&
+               reservations[i]->stateOnDate(period.to) == FUTURE));
 }

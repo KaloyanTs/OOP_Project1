@@ -2,7 +2,7 @@
 #define __HOTELBUILDING_HPP
 #include "Types.hpp"
 #include "Room.hpp"
-//#include "RoomAnalyzer.hpp"
+#include "RoomAnalyzer.hpp"
 #include <fstream>
 
 class HotelBuilding
@@ -24,7 +24,9 @@ public:
 
     void showAvailableRooms(std::ostream &os, Date d) const;
 
-    void createReport(Date from, Date to)const;
+    void createReport(DatePeriod period) const;
+
+    void suggestRoom(unsigned beds, DatePeriod period);
 
     friend class RoomAnalyzer;
 };

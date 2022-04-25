@@ -57,9 +57,9 @@ class Room
      */
     void shrink(Reservation **&arr, size_t &size, size_t &capacity);
 
-    unsigned daysTakenInPeriod(Date from, Date to) const;
+    unsigned daysTakenInPeriod(DatePeriod period) const;
 
-    bool newReservation(std::string name, std::string note, Date from, Date to, bool service);
+    bool newReservation(std::string name, std::string note, DatePeriod period, bool service);
 
 public:
     /**
@@ -112,11 +112,13 @@ public:
      */
     bool isFreeOnDate(Date) const;
 
-    void showReservationsInPeriod(std::ostream &os, Date from, Date to) const;
+    bool isFreeInPeriod(DatePeriod period) const;
 
-    bool addReservation(std::string name, std::string note, Date from, Date to);
+    void showReservationsInPeriod(std::ostream &os, DatePeriod period) const;
 
-    bool closeForService(std::string note, Date from, Date to);
+    bool addReservation(std::string name, std::string note, DatePeriod period);
+
+    bool closeForService(std::string note, DatePeriod period);
 };
 
 /**

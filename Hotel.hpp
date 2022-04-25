@@ -85,7 +85,7 @@ public:
      * @return true successfull reservation
      * @return false failed reservation (not made)
      */
-    bool reserveRoom(unsigned number, Date from, Date to, std::string name = "-", std::string note = "None\n");
+    bool reserveRoom(unsigned number, DatePeriod period, std::string name = "-", std::string note = "None\n");
 
     /**
      * @brief output to stream all available rooms for a particular Date
@@ -106,24 +106,23 @@ public:
     /**
      * @brief Creates report for the usage of this Hotel's rooms in the period from-to. Report written in file named "report-YYYY-MM-DD.txt" where YYYY-MM-DD is the beginning of the period
      *
-     * @param from beginning of period
-     * @param to end of period
+     * @param period desired period of time
      * @return Hotel& this Hotel
      */
-    Hotel &getReport(Date from, Date to);
-    unsigned searchRoom(unsigned minBeds) const;
+    Hotel &getReport(DatePeriod period);
+
+    void searchRoom(unsigned minBeds, DatePeriod period) const;
 
     /**
      * @brief plans maintenance for particular Room and period leaving note for the service
      *
      * @param number Room's ID
-     * @param from beginning of period
-     * @param to end of periof
+     * @param period desired period of time
      * @param note any notes to the service
      * @return true service planned successfully
      * @return false service planning failed (room not found or is reserved for the period)
      */
-    bool serviceRoom(unsigned number, Date from, Date to, std::string note);
+    bool serviceRoom(unsigned number, DatePeriod period, std::string note);
 };
 
 #endif

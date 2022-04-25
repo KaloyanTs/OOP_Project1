@@ -2,15 +2,7 @@
 
 HotelBuilding::HotelBuilding(std::ifstream &ifs)
 {
-    // if (!ifs.is_open())
-    // {
-    //     std::cerr << "Something went wrong on reading Room data from \"" << roomsTextFile << "\".\n";
-    //     rooms = nullptr;
-    //     size = 0;
-    //     return;
-    // }
     unsigned number, bedCount;
-
     ifs >> size;
     rooms = new Room *[size];
     for (unsigned i = 0; i < size; ++i)
@@ -50,24 +42,29 @@ void HotelBuilding::showAvailableRooms(std::ostream &os, Date d) const
             os << *rooms[i] << '\n';
 }
 
-void HotelBuilding::createReport(Date from, Date to) const
+void HotelBuilding::createReport(DatePeriod period) const
 {
-    if (from > Hotel::today())
+    if (period.from > Hotel::today())
         return;
-    if (to > Hotel::today())
-        to = Hotel::today();
+    if (period.to > Hotel::today())
+        period.to = Hotel::today();
     char buf[22];
     strcpy(buf, "report-");
-    from(buf + 7);
+    period.from(buf + 7);
     strcat(buf, ".txt");
     std::ofstream ofs(buf, std::ios::out);
     if (!ofs.is_open())
         return;
-    ofs << "Report for the usage of the rooms between " << from << " and " << to << ":\n";
+    ofs << "Report for the usage of the rooms between " << period.from << " and " << period.to << ":\n";
     for (unsigned i = 0; i < size; ++i)
     {
         ofs << '\t';
-        rooms[i]->showReservationsInPeriod(ofs, from, to);
+        rooms[i]->showReservationsInPeriod(ofs, period);
     }
     ofs.close();
+}
+
+void HotelBuilding::suggestRoom(unsigned beds, DatePeriod period)
+{
+    RoomAnalyzer::suggest(*this, beds, period);
 }

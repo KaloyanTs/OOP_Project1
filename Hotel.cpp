@@ -14,20 +14,20 @@ Hotel &Hotel::showAvailableRooms(std::ostream &os, Date d)
     return *this;
 }
 
-Hotel &Hotel::getReport(Date from, Date to)
+Hotel &Hotel::getReport(DatePeriod period)
 {
-    building->createReport(from, to);
+    building->createReport(period);
     return *this;
 }
 
-bool Hotel::reserveRoom(unsigned number, Date from, Date to, std::string name, std::string s)
+bool Hotel::reserveRoom(unsigned number, DatePeriod period, std::string name, std::string s)
 {
     if (!((*building)[number]))
     {
         std::cerr << "No such Room.\n";
         return false;
     }
-    if ((*building)[number]->addReservation(name, s, from, to))
+    if ((*building)[number]->addReservation(name, s, period))
     {
         std::clog << "Reservation successfully made!\n";
         return true;
@@ -39,6 +39,7 @@ bool Hotel::reserveRoom(unsigned number, Date from, Date to, std::string name, s
 Hotel::Hotel(std::string hotelDataFile)
 {
     std::ifstream ifs(hotelDataFile, std::ios::in);
+    assert(ifs.is_open());
     size_t length;
     ifs >> length;
     ifs.get();
@@ -62,14 +63,14 @@ Hotel::~Hotel()
     delete building;
 }
 
-bool Hotel::serviceRoom(unsigned number, Date from, Date to, std::string note)
+bool Hotel::serviceRoom(unsigned number, DatePeriod period, std::string note)
 {
     if (!((*building)[number]))
     {
         std::cerr << "No such Room.\n";
         return false;
     }
-    if ((*building)[number]->closeForService(note, from, to))
+    if ((*building)[number]->closeForService(note, period))
     {
         std::clog << "Service successfully planned!\n";
         return true;
@@ -93,4 +94,9 @@ bool Hotel::freeRoom(unsigned number)
     }
     std::cerr << "Room is free already!\n";
     return true;
+}
+
+void Hotel::searchRoom(unsigned minBeds, DatePeriod period) const
+{
+    building->suggestRoom(minBeds, period);
 }
