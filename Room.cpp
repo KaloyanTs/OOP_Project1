@@ -93,12 +93,12 @@ void Room::newDate(Date newD)
 
 bool Room::isFreeOnDate(Date d) const
 {
-    if (!resCount || reservations[0]->stateOnDate(d))
+    if (!resCount)
         return true;
     unsigned i = 0;
-    while (i < resCount && reservations[i]->stateOnDate(d) == FUTURE)
+    while (i < resCount && reservations[i]->stateOnDate(d) == PAST)
         ++i;
-    return i == resCount || reservations[i]->stateOnDate(d) == PAST;
+    return i == resCount || reservations[i]->stateOnDate(d) == FUTURE;
 }
 
 Room::~Room()
@@ -151,8 +151,10 @@ bool Room::newReservation(std::string name, std::string note, DatePeriod period,
     if (resCapacity == resCount)
         expand(reservations, resCount, resCapacity);
 
-    reservations[resCount++] = new Reservation(name, period, note, service);
+    reservations[resCount] = new Reservation(name, period, note, service);
     reservations[resCount++]->onDate(Hotel::today());
+
+    // todo sort newly created Reservation
     return true;
 }
 
