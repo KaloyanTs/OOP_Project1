@@ -7,10 +7,10 @@ const size_t DISPLAY = 5;
 
 class RoomAnalyzer
 {
-    static void sortRooms(HotelBuilding &hB, float *score);
+    static void sortRooms(HotelBuilding &hB, unsigned *score, size_t size);
 
 public:
-    static Room *suggest(HotelBuilding &hB, unsigned beds, Date from, Date to);
+    static void suggest(HotelBuilding &hB, unsigned beds, DatePeriod period);
 };
 
 #endif
