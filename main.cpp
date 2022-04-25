@@ -21,6 +21,8 @@ int main()
 {
     Hotel H("h.history");
     std::cout << "<<< " << H.getName() << " SYSTEM >>>\n";
+    // fix H.reserveRoom(102,{Date(10,6,2023),Date(5,8,2023)});
+    H.showAvailableRooms(std::cout, Date(12, 6, 2023));
     do
     {
         std::cout << "Today is " << Hotel::today() << ".\n";
