@@ -152,6 +152,7 @@ bool Room::newReservation(std::string name, std::string note, DatePeriod period,
         expand(reservations, resCount, resCapacity);
 
     reservations[resCount++] = new Reservation(name, period, note, service);
+    reservations[resCount++]->onDate(Hotel::today());
     return true;
 }
 
