@@ -153,8 +153,17 @@ bool Room::newReservation(std::string name, std::string note, DatePeriod period,
 
     reservations[resCount] = new Reservation(name, period, note, service);
     reservations[resCount++]->onDate(Hotel::today());
-
-    // todo sort newly created Reservation
+    if (resCount < 2)
+        return true;
+    unsigned i = resCount - 1;
+    Reservation *tmp{nullptr};
+    while (i && reservations[i - 1]->getFrom() >= reservations[i]->getTo())
+    {
+        tmp = reservations[i - 1];
+        reservations[i - 1] = reservations[i];
+        reservations[i] = tmp;
+        --i;
+    }
     return true;
 }
 
