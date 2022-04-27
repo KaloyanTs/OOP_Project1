@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Hotel: Hotel.hpp Source File</title>
+<title>My Project: Hotel.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Hotel
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -99,31 +99,33 @@ $(function() {
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_hotel.html#a7b23fa694af4aa49b4f958ce2ba84609">nextDay</a>();</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_hotel.html#a47495d287f003be171356ff3a0f31498">reserveRoom</a>(<span class="keywordtype">unsigned</span> number, <a class="code hl_class" href="class_date.html">Date</a> from, <a class="code hl_class" href="class_date.html">Date</a> to, std::string name = <span class="stringliteral">&quot;-&quot;</span>, std::string note = <span class="stringliteral">&quot;None\n&quot;</span>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_hotel.html#a7c2aaa151d666133e7397e6e289be260">reserveRoom</a>(<span class="keywordtype">unsigned</span> number, <a class="code hl_struct" href="struct_date_period.html">DatePeriod</a> period, std::string name = <span class="stringliteral">&quot;-&quot;</span>, std::string note = <span class="stringliteral">&quot;None\n&quot;</span>);</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_class" href="class_hotel.html">Hotel</a> &amp;<a class="code hl_function" href="class_hotel.html#ab97f370156fb0c717f5c5c3c261316d0">showAvailableRooms</a>(std::ostream &amp;, <a class="code hl_class" href="class_date.html">Date</a>);</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_hotel.html#ae1d0f94d6094cf3c8b431fa6bdca8db0">freeRoom</a>(<span class="keywordtype">unsigned</span> number);</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <a class="code hl_class" href="class_hotel.html">Hotel</a> &amp;<a class="code hl_function" href="class_hotel.html#a49e84d7a89b477da90f38c9bc2c74913">getReport</a>(<a class="code hl_class" href="class_date.html">Date</a> from, <a class="code hl_class" href="class_date.html">Date</a> to);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">unsigned</span> searchRoom(<span class="keywordtype">unsigned</span> minBeds) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_class" href="class_hotel.html">Hotel</a> &amp;<a class="code hl_function" href="class_hotel.html#a1b79dc7a6eec4b960370e6412257215a">getReport</a>(<a class="code hl_struct" href="struct_date_period.html">DatePeriod</a> period);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">void</span> searchRoom(<span class="keywordtype">unsigned</span> minBeds, <a class="code hl_struct" href="struct_date_period.html">DatePeriod</a> period) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_hotel.html#ae0f3f74c3e4103c02417f4f794811c0e">serviceRoom</a>(<span class="keywordtype">unsigned</span> number, <a class="code hl_class" href="class_date.html">Date</a> from, <a class="code hl_class" href="class_date.html">Date</a> to, std::string note);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>};</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_hotel.html#ab439445bb73fa43df12cb50ac4edbd71">serviceRoom</a>(<span class="keywordtype">unsigned</span> number, <a class="code hl_struct" href="struct_date_period.html">DatePeriod</a> period, std::string note);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>};</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdef"><b>Definition:</b> Date.hpp:13</div></div>
 <div class="ttc" id="aclass_hotel_building_html"><div class="ttname"><a href="class_hotel_building.html">HotelBuilding</a></div><div class="ttdef"><b>Definition:</b> HotelBuilding.hpp:9</div></div>
 <div class="ttc" id="aclass_hotel_html"><div class="ttname"><a href="class_hotel.html">Hotel</a></div><div class="ttdef"><b>Definition:</b> Hotel.hpp:20</div></div>
+<div class="ttc" id="aclass_hotel_html_a1b79dc7a6eec4b960370e6412257215a"><div class="ttname"><a href="class_hotel.html#a1b79dc7a6eec4b960370e6412257215a">Hotel::getReport</a></div><div class="ttdeci">Hotel &amp; getReport(DatePeriod period)</div><div class="ttdoc">Creates report for the usage of this Hotel's rooms in the period from-to. Report written in file name...</div><div class="ttdef"><b>Definition:</b> Hotel.cpp:17</div></div>
 <div class="ttc" id="aclass_hotel_html_a3c2ad72b87346ee6d07250f5e3b61b9c"><div class="ttname"><a href="class_hotel.html#a3c2ad72b87346ee6d07250f5e3b61b9c">Hotel::today</a></div><div class="ttdeci">static Date today()</div><div class="ttdoc">get today's Date according to all Hotels</div><div class="ttdef"><b>Definition:</b> Hotel.hpp:62</div></div>
-<div class="ttc" id="aclass_hotel_html_a47495d287f003be171356ff3a0f31498"><div class="ttname"><a href="class_hotel.html#a47495d287f003be171356ff3a0f31498">Hotel::reserveRoom</a></div><div class="ttdeci">bool reserveRoom(unsigned number, Date from, Date to, std::string name=&quot;-&quot;, std::string note=&quot;None\n&quot;)</div><div class="ttdoc">makes a new Reservation for particular Room and period with options for name of guest and notes to th...</div><div class="ttdef"><b>Definition:</b> Hotel.cpp:23</div></div>
-<div class="ttc" id="aclass_hotel_html_a49e84d7a89b477da90f38c9bc2c74913"><div class="ttname"><a href="class_hotel.html#a49e84d7a89b477da90f38c9bc2c74913">Hotel::getReport</a></div><div class="ttdeci">Hotel &amp; getReport(Date from, Date to)</div><div class="ttdoc">Creates report for the usage of this Hotel's rooms in the period from-to. Report written in file name...</div><div class="ttdef"><b>Definition:</b> Hotel.cpp:17</div></div>
 <div class="ttc" id="aclass_hotel_html_a7b23fa694af4aa49b4f958ce2ba84609"><div class="ttname"><a href="class_hotel.html#a7b23fa694af4aa49b4f958ce2ba84609">Hotel::nextDay</a></div><div class="ttdeci">void nextDay()</div><div class="ttdoc">advance to the nextDay</div><div class="ttdef"><b>Definition:</b> Hotel.cpp:5</div></div>
+<div class="ttc" id="aclass_hotel_html_a7c2aaa151d666133e7397e6e289be260"><div class="ttname"><a href="class_hotel.html#a7c2aaa151d666133e7397e6e289be260">Hotel::reserveRoom</a></div><div class="ttdeci">bool reserveRoom(unsigned number, DatePeriod period, std::string name=&quot;-&quot;, std::string note=&quot;None\n&quot;)</div><div class="ttdoc">makes a new Reservation for particular Room and period with options for name of guest and notes to th...</div><div class="ttdef"><b>Definition:</b> Hotel.cpp:23</div></div>
 <div class="ttc" id="aclass_hotel_html_a9b432ad97003afdac3957ddb0e5234b8"><div class="ttname"><a href="class_hotel.html#a9b432ad97003afdac3957ddb0e5234b8">Hotel::getName</a></div><div class="ttdeci">std::string getName() const</div><div class="ttdoc">get the name of this Hotel</div><div class="ttdef"><b>Definition:</b> Hotel.hpp:69</div></div>
+<div class="ttc" id="aclass_hotel_html_ab439445bb73fa43df12cb50ac4edbd71"><div class="ttname"><a href="class_hotel.html#ab439445bb73fa43df12cb50ac4edbd71">Hotel::serviceRoom</a></div><div class="ttdeci">bool serviceRoom(unsigned number, DatePeriod period, std::string note)</div><div class="ttdoc">plans maintenance for particular Room and period leaving note for the service</div><div class="ttdef"><b>Definition:</b> Hotel.cpp:66</div></div>
 <div class="ttc" id="aclass_hotel_html_ab97f370156fb0c717f5c5c3c261316d0"><div class="ttname"><a href="class_hotel.html#ab97f370156fb0c717f5c5c3c261316d0">Hotel::showAvailableRooms</a></div><div class="ttdeci">Hotel &amp; showAvailableRooms(std::ostream &amp;, Date)</div><div class="ttdoc">output to stream all available rooms for a particular Date</div><div class="ttdef"><b>Definition:</b> Hotel.cpp:10</div></div>
-<div class="ttc" id="aclass_hotel_html_ae0f3f74c3e4103c02417f4f794811c0e"><div class="ttname"><a href="class_hotel.html#ae0f3f74c3e4103c02417f4f794811c0e">Hotel::serviceRoom</a></div><div class="ttdeci">bool serviceRoom(unsigned number, Date from, Date to, std::string note)</div><div class="ttdoc">plans maintenance for particular Room and period leaving note for the service</div><div class="ttdef"><b>Definition:</b> Hotel.cpp:65</div></div>
-<div class="ttc" id="aclass_hotel_html_ae1d0f94d6094cf3c8b431fa6bdca8db0"><div class="ttname"><a href="class_hotel.html#ae1d0f94d6094cf3c8b431fa6bdca8db0">Hotel::freeRoom</a></div><div class="ttdeci">bool freeRoom(unsigned number)</div><div class="ttdoc">tries to free Room with particular ID</div><div class="ttdef"><b>Definition:</b> Hotel.cpp:81</div></div>
-<div class="ttc" id="aclass_hotel_html_ae4c9782535c021bc10c028339dc29310"><div class="ttname"><a href="class_hotel.html#ae4c9782535c021bc10c028339dc29310">Hotel::~Hotel</a></div><div class="ttdeci">~Hotel()</div><div class="ttdoc">Destroy the Hotel object.</div><div class="ttdef"><b>Definition:</b> Hotel.cpp:60</div></div>
+<div class="ttc" id="aclass_hotel_html_ae1d0f94d6094cf3c8b431fa6bdca8db0"><div class="ttname"><a href="class_hotel.html#ae1d0f94d6094cf3c8b431fa6bdca8db0">Hotel::freeRoom</a></div><div class="ttdeci">bool freeRoom(unsigned number)</div><div class="ttdoc">tries to free Room with particular ID</div><div class="ttdef"><b>Definition:</b> Hotel.cpp:82</div></div>
+<div class="ttc" id="aclass_hotel_html_ae4c9782535c021bc10c028339dc29310"><div class="ttname"><a href="class_hotel.html#ae4c9782535c021bc10c028339dc29310">Hotel::~Hotel</a></div><div class="ttdeci">~Hotel()</div><div class="ttdoc">Destroy the Hotel object.</div><div class="ttdef"><b>Definition:</b> Hotel.cpp:61</div></div>
+<div class="ttc" id="astruct_date_period_html"><div class="ttname"><a href="struct_date_period.html">DatePeriod</a></div><div class="ttdef"><b>Definition:</b> Date.hpp:123</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

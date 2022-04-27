@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Hotel: Room Class Reference</title>
+<title>My Project: Room Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Hotel
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -108,15 +108,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>newDate</b> (<a class
 <tr class="memitem:af7124ab1cb85e2d9d67c926aca7928ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_room.html#af7124ab1cb85e2d9d67c926aca7928ab">isFreeOnDate</a> (<a class="el" href="class_date.html">Date</a>) const</td></tr>
 <tr class="memdesc:af7124ab1cb85e2d9d67c926aca7928ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">see if this room is free in certain date  <a href="class_room.html#af7124ab1cb85e2d9d67c926aca7928ab">More...</a><br /></td></tr>
 <tr class="separator:af7124ab1cb85e2d9d67c926aca7928ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7b3b3ecd5a7346ffc552960f6dd0539"><td class="memItemLeft" align="right" valign="top"><a id="ab7b3b3ecd5a7346ffc552960f6dd0539" name="ab7b3b3ecd5a7346ffc552960f6dd0539"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>showReservationsInPeriod</b> (std::ostream &amp;os, <a class="el" href="class_date.html">Date</a> from, <a class="el" href="class_date.html">Date</a> to) const</td></tr>
-<tr class="separator:ab7b3b3ecd5a7346ffc552960f6dd0539"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a068bb29d493c24d29dbce4e5ce1bf792"><td class="memItemLeft" align="right" valign="top"><a id="a068bb29d493c24d29dbce4e5ce1bf792" name="a068bb29d493c24d29dbce4e5ce1bf792"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>addReservation</b> (std::string name, std::string note, <a class="el" href="class_date.html">Date</a> from, <a class="el" href="class_date.html">Date</a> to)</td></tr>
-<tr class="separator:a068bb29d493c24d29dbce4e5ce1bf792"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae710042dc64a9b0205431a01b2da07db"><td class="memItemLeft" align="right" valign="top"><a id="ae710042dc64a9b0205431a01b2da07db" name="ae710042dc64a9b0205431a01b2da07db"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>closeForService</b> (std::string note, <a class="el" href="class_date.html">Date</a> from, <a class="el" href="class_date.html">Date</a> to)</td></tr>
-<tr class="separator:ae710042dc64a9b0205431a01b2da07db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aa05c39158c5ff5463e092ff818a9e1"><td class="memItemLeft" align="right" valign="top"><a id="a8aa05c39158c5ff5463e092ff818a9e1" name="a8aa05c39158c5ff5463e092ff818a9e1"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isFreeInPeriod</b> (<a class="el" href="struct_date_period.html">DatePeriod</a> period) const</td></tr>
+<tr class="separator:a8aa05c39158c5ff5463e092ff818a9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94d3a172a872973fc98b21169b02ebd"><td class="memItemLeft" align="right" valign="top"><a id="aa94d3a172a872973fc98b21169b02ebd" name="aa94d3a172a872973fc98b21169b02ebd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>showReservationsInPeriod</b> (std::ostream &amp;os, <a class="el" href="struct_date_period.html">DatePeriod</a> period) const</td></tr>
+<tr class="separator:aa94d3a172a872973fc98b21169b02ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9405b6ae1ac5d184faa952acd768a52b"><td class="memItemLeft" align="right" valign="top"><a id="a9405b6ae1ac5d184faa952acd768a52b" name="a9405b6ae1ac5d184faa952acd768a52b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>addReservation</b> (std::string name, std::string note, <a class="el" href="struct_date_period.html">DatePeriod</a> period)</td></tr>
+<tr class="separator:a9405b6ae1ac5d184faa952acd768a52b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80549b1bf02d7e3d533453aa55c341df"><td class="memItemLeft" align="right" valign="top"><a id="a80549b1bf02d7e3d533453aa55c341df" name="a80549b1bf02d7e3d533453aa55c341df"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>closeForService</b> (std::string note, <a class="el" href="struct_date_period.html">DatePeriod</a> period)</td></tr>
+<tr class="separator:a80549b1bf02d7e3d533453aa55c341df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab64b84ed33b32bf6a37a4280efde4d96" name="ab64b84ed33b32bf6a37a4280efde4d96"></a>

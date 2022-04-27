@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Hotel: Reservation Class Reference</title>
+<title>My Project: Reservation Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Hotel
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -71,43 +71,340 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8b3c66cd31511d8fbcfb1c6a3beb4c6b"><td class="memItemLeft" align="right" valign="top"><a id="a8b3c66cd31511d8fbcfb1c6a3beb4c6b" name="a8b3c66cd31511d8fbcfb1c6a3beb4c6b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Reservation</b> (std::string name, <a class="el" href="class_date.html">Date</a> f, <a class="el" href="class_date.html">Date</a> t, std::string n=&quot;None.\n&quot;, bool s=false)</td></tr>
-<tr class="separator:a8b3c66cd31511d8fbcfb1c6a3beb4c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b3661cc69d5a8bbccf69c5a9750266c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reservation.html#a4b3661cc69d5a8bbccf69c5a9750266c">Reservation</a> (std::string name, <a class="el" href="struct_date_period.html">DatePeriod</a> p, std::string n=&quot;None.\n&quot;, bool s=false)</td></tr>
+<tr class="memdesc:a4b3661cc69d5a8bbccf69c5a9750266c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_reservation.html">Reservation</a> object.  <a href="class_reservation.html#a4b3661cc69d5a8bbccf69c5a9750266c">More...</a><br /></td></tr>
+<tr class="separator:a4b3661cc69d5a8bbccf69c5a9750266c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5cb1df61535df3e87397e22e70450de"><td class="memItemLeft" align="right" valign="top"><a id="ad5cb1df61535df3e87397e22e70450de" name="ad5cb1df61535df3e87397e22e70450de"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Reservation</b> (const <a class="el" href="class_reservation.html">Reservation</a> &amp;)=delete</td></tr>
 <tr class="separator:ad5cb1df61535df3e87397e22e70450de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51bbcf837255b6ce02e32ee384904a76"><td class="memItemLeft" align="right" valign="top"><a id="a51bbcf837255b6ce02e32ee384904a76" name="a51bbcf837255b6ce02e32ee384904a76"></a>
 <a class="el" href="class_reservation.html">Reservation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_reservation.html">Reservation</a> &amp;)=delete</td></tr>
 <tr class="separator:a51bbcf837255b6ce02e32ee384904a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad058e62dd09a1bc29c0be56c1c7f25cc"><td class="memItemLeft" align="right" valign="top"><a id="ad058e62dd09a1bc29c0be56c1c7f25cc" name="ad058e62dd09a1bc29c0be56c1c7f25cc"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isActive</b> () const</td></tr>
+<tr class="memitem:ad058e62dd09a1bc29c0be56c1c7f25cc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reservation.html#ad058e62dd09a1bc29c0be56c1c7f25cc">isActive</a> () const</td></tr>
+<tr class="memdesc:ad058e62dd09a1bc29c0be56c1c7f25cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">see if this <a class="el" href="class_reservation.html">Reservation</a> is active (today is part of the period)  <a href="class_reservation.html#ad058e62dd09a1bc29c0be56c1c7f25cc">More...</a><br /></td></tr>
 <tr class="separator:ad058e62dd09a1bc29c0be56c1c7f25cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66002cd2cd0bc5c033fb3f50c21b5f30"><td class="memItemLeft" align="right" valign="top"><a id="a66002cd2cd0bc5c033fb3f50c21b5f30" name="a66002cd2cd0bc5c033fb3f50c21b5f30"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPast</b> () const</td></tr>
+<tr class="memitem:a66002cd2cd0bc5c033fb3f50c21b5f30"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reservation.html#a66002cd2cd0bc5c033fb3f50c21b5f30">isPast</a> () const</td></tr>
+<tr class="memdesc:a66002cd2cd0bc5c033fb3f50c21b5f30"><td class="mdescLeft">&#160;</td><td class="mdescRight">see if this <a class="el" href="class_reservation.html">Reservation</a> is past (today is after end of period)  <a href="class_reservation.html#a66002cd2cd0bc5c033fb3f50c21b5f30">More...</a><br /></td></tr>
 <tr class="separator:a66002cd2cd0bc5c033fb3f50c21b5f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33a56f239609b603a6b95348d19d41ee"><td class="memItemLeft" align="right" valign="top"><a id="a33a56f239609b603a6b95348d19d41ee" name="a33a56f239609b603a6b95348d19d41ee"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isServiced</b> () const</td></tr>
+<tr class="memitem:a33a56f239609b603a6b95348d19d41ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reservation.html#a33a56f239609b603a6b95348d19d41ee">isServiced</a> () const</td></tr>
+<tr class="memdesc:a33a56f239609b603a6b95348d19d41ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">see if this <a class="el" href="class_reservation.html">Reservation</a> is a maintenance  <a href="class_reservation.html#a33a56f239609b603a6b95348d19d41ee">More...</a><br /></td></tr>
 <tr class="separator:a33a56f239609b603a6b95348d19d41ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a229d88ec063e1aa55926ee148768f8c6"><td class="memItemLeft" align="right" valign="top"><a id="a229d88ec063e1aa55926ee148768f8c6" name="a229d88ec063e1aa55926ee148768f8c6"></a>
-<a class="el" href="class_date.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getFrom</b> () const</td></tr>
+<tr class="memitem:a229d88ec063e1aa55926ee148768f8c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_date.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reservation.html#a229d88ec063e1aa55926ee148768f8c6">getFrom</a> () const</td></tr>
+<tr class="memdesc:a229d88ec063e1aa55926ee148768f8c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">get beginning <a class="el" href="class_date.html">Date</a> of this <a class="el" href="class_reservation.html">Reservation</a>  <a href="class_reservation.html#a229d88ec063e1aa55926ee148768f8c6">More...</a><br /></td></tr>
 <tr class="separator:a229d88ec063e1aa55926ee148768f8c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cf50c5405ca16f2cd49bd5cbd75b39f"><td class="memItemLeft" align="right" valign="top"><a id="a0cf50c5405ca16f2cd49bd5cbd75b39f" name="a0cf50c5405ca16f2cd49bd5cbd75b39f"></a>
-<a class="el" href="class_date.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getTo</b> () const</td></tr>
+<tr class="memitem:a0cf50c5405ca16f2cd49bd5cbd75b39f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_date.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reservation.html#a0cf50c5405ca16f2cd49bd5cbd75b39f">getTo</a> () const</td></tr>
+<tr class="memdesc:a0cf50c5405ca16f2cd49bd5cbd75b39f"><td class="mdescLeft">&#160;</td><td class="mdescRight">get end <a class="el" href="class_date.html">Date</a> of this <a class="el" href="class_reservation.html">Reservation</a>  <a href="class_reservation.html#a0cf50c5405ca16f2cd49bd5cbd75b39f">More...</a><br /></td></tr>
 <tr class="separator:a0cf50c5405ca16f2cd49bd5cbd75b39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9972d1080a65082bbfc809026a3f566"><td class="memItemLeft" align="right" valign="top"><a id="ad9972d1080a65082bbfc809026a3f566" name="ad9972d1080a65082bbfc809026a3f566"></a>
-unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>getNights</b> () const</td></tr>
+<tr class="memitem:ad9972d1080a65082bbfc809026a3f566"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reservation.html#ad9972d1080a65082bbfc809026a3f566">getNights</a> () const</td></tr>
+<tr class="memdesc:ad9972d1080a65082bbfc809026a3f566"><td class="mdescLeft">&#160;</td><td class="mdescRight">get count of nights of this <a class="el" href="class_reservation.html">Reservation</a>  <a href="class_reservation.html#ad9972d1080a65082bbfc809026a3f566">More...</a><br /></td></tr>
 <tr class="separator:ad9972d1080a65082bbfc809026a3f566"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d4f51265258703841bd7dfa84a8d019"><td class="memItemLeft" align="right" valign="top"><a id="a1d4f51265258703841bd7dfa84a8d019" name="a1d4f51265258703841bd7dfa84a8d019"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onDate</b> (<a class="el" href="class_date.html">Date</a> d)</td></tr>
+<tr class="memitem:a1d4f51265258703841bd7dfa84a8d019"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reservation.html#a1d4f51265258703841bd7dfa84a8d019">onDate</a> (<a class="el" href="class_date.html">Date</a> d)</td></tr>
+<tr class="memdesc:a1d4f51265258703841bd7dfa84a8d019"><td class="mdescLeft">&#160;</td><td class="mdescRight">update the state of the reservation based on new today's <a class="el" href="class_date.html">Date</a> (d)  <a href="class_reservation.html#a1d4f51265258703841bd7dfa84a8d019">More...</a><br /></td></tr>
 <tr class="separator:a1d4f51265258703841bd7dfa84a8d019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bc365d7f06207428c27053df2bb6cbc"><td class="memItemLeft" align="right" valign="top"><a id="a5bc365d7f06207428c27053df2bb6cbc" name="a5bc365d7f06207428c27053df2bb6cbc"></a>
-ReservationState&#160;</td><td class="memItemRight" valign="bottom"><b>stateOnDate</b> (<a class="el" href="class_date.html">Date</a>) const</td></tr>
+<tr class="memitem:a5bc365d7f06207428c27053df2bb6cbc"><td class="memItemLeft" align="right" valign="top">ReservationState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reservation.html#a5bc365d7f06207428c27053df2bb6cbc">stateOnDate</a> (<a class="el" href="class_date.html">Date</a>) const</td></tr>
+<tr class="memdesc:a5bc365d7f06207428c27053df2bb6cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">see what would the state of this <a class="el" href="class_reservation.html">Reservation</a> be on particular <a class="el" href="class_date.html">Date</a>  <a href="class_reservation.html#a5bc365d7f06207428c27053df2bb6cbc">More...</a><br /></td></tr>
 <tr class="separator:a5bc365d7f06207428c27053df2bb6cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50cec33af6558c737a1b4d39051074e7"><td class="memItemLeft" align="right" valign="top"><a id="a50cec33af6558c737a1b4d39051074e7" name="a50cec33af6558c737a1b4d39051074e7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>LeavingInAdvance</b> (<a class="el" href="class_date.html">Date</a>)</td></tr>
+<tr class="memitem:a50cec33af6558c737a1b4d39051074e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reservation.html#a50cec33af6558c737a1b4d39051074e7">LeavingInAdvance</a> (<a class="el" href="class_date.html">Date</a>)</td></tr>
+<tr class="memdesc:a50cec33af6558c737a1b4d39051074e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">try to change end of period for earlier end of this <a class="el" href="class_reservation.html">Reservation</a>  <a href="class_reservation.html#a50cec33af6558c737a1b4d39051074e7">More...</a><br /></td></tr>
 <tr class="separator:a50cec33af6558c737a1b4d39051074e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a4b3661cc69d5a8bbccf69c5a9750266c" name="a4b3661cc69d5a8bbccf69c5a9750266c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b3661cc69d5a8bbccf69c5a9750266c">&#9670;&nbsp;</a></span>Reservation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Reservation::Reservation </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_date_period.html">DatePeriod</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>n</em> = <code>&quot;None.\n&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>s</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="class_reservation.html">Reservation</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>of the reserver </td></tr>
+    <tr><td class="paramname">p</td><td></td></tr>
+    <tr><td class="paramname">n</td><td>note left for the reservation </td></tr>
+    <tr><td class="paramname">s</td><td>whether it is reservation or maintenance </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a229d88ec063e1aa55926ee148768f8c6" name="a229d88ec063e1aa55926ee148768f8c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a229d88ec063e1aa55926ee148768f8c6">&#9670;&nbsp;</a></span>getFrom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_date.html">Date</a> Reservation::getFrom </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get beginning <a class="el" href="class_date.html">Date</a> of this <a class="el" href="class_reservation.html">Reservation</a> </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_date.html">Date</a> beginning of the <a class="el" href="class_reservation.html">Reservation</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad9972d1080a65082bbfc809026a3f566" name="ad9972d1080a65082bbfc809026a3f566"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9972d1080a65082bbfc809026a3f566">&#9670;&nbsp;</a></span>getNights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned Reservation::getNights </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get count of nights of this <a class="el" href="class_reservation.html">Reservation</a> </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned count of nights of this <a class="el" href="class_reservation.html">Reservation</a> </dd></dl>
+
+</div>
+</div>
+<a id="a0cf50c5405ca16f2cd49bd5cbd75b39f" name="a0cf50c5405ca16f2cd49bd5cbd75b39f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cf50c5405ca16f2cd49bd5cbd75b39f">&#9670;&nbsp;</a></span>getTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_date.html">Date</a> Reservation::getTo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get end <a class="el" href="class_date.html">Date</a> of this <a class="el" href="class_reservation.html">Reservation</a> </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_date.html">Date</a> end of the <a class="el" href="class_reservation.html">Reservation</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad058e62dd09a1bc29c0be56c1c7f25cc" name="ad058e62dd09a1bc29c0be56c1c7f25cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad058e62dd09a1bc29c0be56c1c7f25cc">&#9670;&nbsp;</a></span>isActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Reservation::isActive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>see if this <a class="el" href="class_reservation.html">Reservation</a> is active (today is part of the period) </p>
+<dl class="section return"><dt>Returns</dt><dd>true <a class="el" href="class_reservation.html">Reservation</a> is active </dd>
+<dd>
+false <a class="el" href="class_reservation.html">Reservation</a> is not active (past or future) </dd></dl>
+
+</div>
+</div>
+<a id="a66002cd2cd0bc5c033fb3f50c21b5f30" name="a66002cd2cd0bc5c033fb3f50c21b5f30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66002cd2cd0bc5c033fb3f50c21b5f30">&#9670;&nbsp;</a></span>isPast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Reservation::isPast </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>see if this <a class="el" href="class_reservation.html">Reservation</a> is past (today is after end of period) </p>
+<dl class="section return"><dt>Returns</dt><dd>true <a class="el" href="class_reservation.html">Reservation</a> is past </dd>
+<dd>
+false <a class="el" href="class_reservation.html">Reservation</a> is not past (active or future) </dd></dl>
+
+</div>
+</div>
+<a id="a33a56f239609b603a6b95348d19d41ee" name="a33a56f239609b603a6b95348d19d41ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33a56f239609b603a6b95348d19d41ee">&#9670;&nbsp;</a></span>isServiced()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Reservation::isServiced </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>see if this <a class="el" href="class_reservation.html">Reservation</a> is a maintenance </p>
+<dl class="section return"><dt>Returns</dt><dd>true this <a class="el" href="class_reservation.html">Reservation</a> is a maintenace </dd>
+<dd>
+false this <a class="el" href="class_reservation.html">Reservation</a> is for a guest </dd></dl>
+
+</div>
+</div>
+<a id="a50cec33af6558c737a1b4d39051074e7" name="a50cec33af6558c737a1b4d39051074e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50cec33af6558c737a1b4d39051074e7">&#9670;&nbsp;</a></span>LeavingInAdvance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Reservation::LeavingInAdvance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_date.html">Date</a>&#160;</td>
+          <td class="paramname"><em>newTo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>try to change end of period for earlier end of this <a class="el" href="class_reservation.html">Reservation</a> </p>
+<dl class="section return"><dt>Returns</dt><dd>true end date modified for leaving in advance </dd>
+<dd>
+false new leaving <a class="el" href="class_date.html">Date</a> not appropriate for earlier leaving </dd></dl>
+
+</div>
+</div>
+<a id="a1d4f51265258703841bd7dfa84a8d019" name="a1d4f51265258703841bd7dfa84a8d019"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d4f51265258703841bd7dfa84a8d019">&#9670;&nbsp;</a></span>onDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Reservation::onDate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_date.html">Date</a>&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>update the state of the reservation based on new today's <a class="el" href="class_date.html">Date</a> (d) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td>new today's <a class="el" href="class_date.html">Date</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5bc365d7f06207428c27053df2bb6cbc" name="a5bc365d7f06207428c27053df2bb6cbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bc365d7f06207428c27053df2bb6cbc">&#9670;&nbsp;</a></span>stateOnDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReservationState Reservation::stateOnDate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_date.html">Date</a>&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see what would the state of this <a class="el" href="class_reservation.html">Reservation</a> be on particular <a class="el" href="class_date.html">Date</a> </p>
+<dl class="section return"><dt>Returns</dt><dd>ReservationState state on desired <a class="el" href="class_date.html">Date</a> </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_reservation_8hpp_source.html">Reservation.hpp</a></li>
 <li>Reservation.cpp</li>
