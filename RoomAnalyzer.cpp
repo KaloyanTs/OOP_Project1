@@ -19,10 +19,10 @@ void RoomAnalyzer::suggest(HotelBuilding &hB, unsigned beds, DatePeriod period)
     std::cout << "Most suitable rooms are:\n";
     for (unsigned i = 0; i < roomCount && i < DISPLAY; ++i)
     {
-        std::cout << '\t' << i + 1 << ".\t" << *hB.rooms[i] << ": ";
-        if (score[i] < 2)
+        std::cout << '\t' << i + 1 << ".\t" << *hB.rooms[i] << " -> ";
+        if ((int)score[i] < 0)
             std::cout << "NOT ";
-        std::cout << "available from " << period.from << " to " << period.to;
+        std::cout << "available from " << period.from << " to " << period.to << '\n';
     }
 
     delete[] score;
@@ -33,7 +33,7 @@ void RoomAnalyzer::sortRooms(HotelBuilding &hB, unsigned *score, size_t size)
     unsigned iMax = 0;
     for (unsigned i = 0; i < size - 1; ++i)
     {
-        iMax = 0;
+        iMax = i;
         for (unsigned j = i + 1; j < size; ++j)
             if (score[j] < score[iMax] ||
                 score[j] == score[iMax] &&
@@ -42,7 +42,7 @@ void RoomAnalyzer::sortRooms(HotelBuilding &hB, unsigned *score, size_t size)
         Room *tmp = hB.rooms[i];
         hB.rooms[i] = hB.rooms[iMax];
         hB.rooms[iMax] = tmp;
-        float ftmp = score[i];
+        unsigned ftmp = score[i];
         score[i] = score[iMax];
         score[iMax] = ftmp;
     }
