@@ -64,7 +64,7 @@ std::istream &operator>>(std::istream &is, Date &d)
     if (&is == &std::cin)
         std::cout << "Enter a date in format DD/MM/YYYY: ";
     is >> d.day >> c >> d.month >> c >> d.year;
-    if (!is.good() || !d.isVaid())
+    if (is.fail() || !d.isVaid())
     {
         std::cerr << "Bad data entered!\n";
         d = Date();
