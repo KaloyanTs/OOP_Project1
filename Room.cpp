@@ -41,6 +41,24 @@ bool Room::freeRoom(Reservation *&curRes)
     return true;
 }
 
+void Room::moveToPast()
+{
+    if (!reservations[0]->isServiced())
+    {
+        if (pastCount == pastCapacity)
+            expand(pastReservations, pastCount, pastCapacity);
+        pastReservations[pastCount++] = reservations[0];
+    }
+    else
+        delete reservations[0];
+
+    for (unsigned i = 0; i < resCount - 1; ++i)
+        reservations[i] = reservations[i + 1];
+    --resCount;
+    if (2 * resCount <= resCapacity && resCapacity > INIT_CAPACITY)
+        shrink(reservations, resCount, resCapacity);
+}
+
 Room::Room(unsigned n, unsigned bC)
     : number(n), bedCount(bC),
       reservations(new Reservation *[INIT_CAPACITY]),
@@ -84,11 +102,7 @@ void Room::newDate(Date newD)
     for (unsigned i = 0; i < resCount; ++i)
         reservations[i]->onDate(newD);
     if (reservations[0]->isPast())
-    {
-        if (pastCount == pastCapacity)
-            expand(pastReservations, pastCount, pastCapacity);
-        freeRoom(pastReservations[pastCount++]);
-    }
+        moveToPast();
 }
 
 bool Room::isFreeOnDate(Date d) const
@@ -121,8 +135,14 @@ unsigned Room::daysTakenInPeriod(DatePeriod period) const
     if (firstRes < pastCount)
     {
         if (pastReservations[firstRes]->stateOnDate(period.from) == ACTIVE)
-            count += period.from - pastReservations[firstRes]->getFrom();
-        lastRes = firstRes + 1;
+            count += pastReservations[firstRes]->getTo() - period.from;
+        lastRes = firstRes;
+        if (pastReservations[lastRes]->stateOnDate(period.to) == ACTIVE)
+        {
+            count -= pastReservations[lastRes]->getTo() - period.to;
+            return count;
+        }
+        ++lastRes;
         while (lastRes < pastCount && pastReservations[lastRes]->stateOnDate(period.to) != FUTURE)
         {
             ++lastRes;
@@ -135,12 +155,13 @@ unsigned Room::daysTakenInPeriod(DatePeriod period) const
     return count;
 }
 
-void Room::showReservationsInPeriod(std::ostream &os, DatePeriod period) const
+bool Room::showReservationsInPeriod(std::ostream &os, DatePeriod period) const
 {
     unsigned count = daysTakenInPeriod(period);
     if (!count)
-        return;
+        return false;
     os << "Room #" << number << " between " << period.from << " and " << period.to << ": " << count << " nights.\n";
+    return true;
 }
 
 bool Room::newReservation(std::string name, std::string note, DatePeriod period, bool service)
