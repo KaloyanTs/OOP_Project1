@@ -49,18 +49,17 @@ void HotelBuilding::createReport(DatePeriod period) const
     if (period.to > Hotel::today())
         period.to = Hotel::today();
     char buf[22];
+    // todo in folder reports
     strcpy(buf, "report-");
     period.from(buf + 7);
     strcat(buf, ".txt");
     std::ofstream ofs(buf, std::ios::out);
     if (!ofs.is_open())
         return;
-    ofs << "Report for the usage of the rooms between " << period.from << " and " << period.to << ":\n";
+    ofs << "Report for the usage of the rooms between " << period.from << " and " << period.to << ":\n\t";
     for (unsigned i = 0; i < size; ++i)
-    {
-        ofs << '\t';
-        rooms[i]->showReservationsInPeriod(ofs, period);
-    }
+        if (rooms[i]->showReservationsInPeriod(ofs, period))
+            ofs << '\t';
     ofs.close();
 }
 
