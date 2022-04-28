@@ -24,9 +24,11 @@ public:
 
     void showAvailableRooms(std::ostream &os, Date d) const;
 
-    void createReport(DatePeriod period) const;
+    void createReport(DatePeriod &period) const;
 
-    void suggestRoom(unsigned beds, DatePeriod period);
+    void suggestRoom(unsigned beds, const DatePeriod &period);
+
+    void showRoomsStatesToday(Date today) const;
 
     friend class RoomAnalyzer;
 };

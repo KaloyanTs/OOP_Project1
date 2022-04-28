@@ -42,7 +42,7 @@ void HotelBuilding::showAvailableRooms(std::ostream &os, Date d) const
             os << *rooms[i] << '\n';
 }
 
-void HotelBuilding::createReport(DatePeriod period) const
+void HotelBuilding::createReport(DatePeriod &period) const
 {
     if (period.from > Hotel::today())
         return;
@@ -63,7 +63,13 @@ void HotelBuilding::createReport(DatePeriod period) const
     ofs.close();
 }
 
-void HotelBuilding::suggestRoom(unsigned beds, DatePeriod period)
+void HotelBuilding::suggestRoom(unsigned beds, const DatePeriod &period)
 {
     RoomAnalyzer::suggest(*this, beds, period);
+}
+
+void HotelBuilding::showRoomsStatesToday(Date today) const
+{
+    for (unsigned i = 0; i < size; ++i)
+        rooms[i]->showActivity();
 }

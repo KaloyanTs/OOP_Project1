@@ -14,13 +14,13 @@ Hotel &Hotel::showAvailableRooms(std::ostream &os, Date d)
     return *this;
 }
 
-Hotel &Hotel::getReport(DatePeriod period)
+Hotel &Hotel::getReport(DatePeriod &period)
 {
     building->createReport(period);
     return *this;
 }
 
-bool Hotel::reserveRoom(unsigned number, DatePeriod period, std::string name, std::string s)
+bool Hotel::reserveRoom(unsigned number, const DatePeriod &period, std::string name, std::string s)
 {
     if (!((*building)[number]))
     {
@@ -63,7 +63,7 @@ Hotel::~Hotel()
     delete building;
 }
 
-bool Hotel::serviceRoom(unsigned number, DatePeriod period, std::string note)
+bool Hotel::serviceRoom(unsigned number, const DatePeriod &period, std::string note)
 {
     if (!((*building)[number]))
     {
@@ -96,7 +96,13 @@ bool Hotel::freeRoom(unsigned number)
     return true;
 }
 
-void Hotel::searchRoom(unsigned minBeds, DatePeriod period) const
+void Hotel::searchRoom(unsigned minBeds, const DatePeriod &period) const
 {
     building->suggestRoom(minBeds, period);
+}
+
+Hotel &Hotel::showToday()
+{
+    building->showRoomsStatesToday(now);
+    return *this;
 }

@@ -36,6 +36,7 @@ bool Room::freeRoom(Reservation *&curRes)
 
     for (unsigned i = 0; i < resCount - 1; ++i)
         reservations[i] = reservations[i + 1];
+    --resCount;
     if (2 * resCount <= resCapacity && resCapacity > INIT_CAPACITY)
         shrink(reservations, resCount, resCapacity);
     return true;
@@ -125,7 +126,7 @@ Room::~Room()
     delete[] pastReservations;
 }
 
-unsigned Room::daysTakenInPeriod(DatePeriod period) const
+unsigned Room::daysTakenInPeriod(const DatePeriod &period) const
 {
     unsigned count = 0, firstRes, lastRes;
     firstRes = 0;
@@ -155,7 +156,7 @@ unsigned Room::daysTakenInPeriod(DatePeriod period) const
     return count;
 }
 
-bool Room::showReservationsInPeriod(std::ostream &os, DatePeriod period) const
+bool Room::showReservationsInPeriod(std::ostream &os, const DatePeriod &period) const
 {
     unsigned count = daysTakenInPeriod(period);
     if (!count)
@@ -164,7 +165,7 @@ bool Room::showReservationsInPeriod(std::ostream &os, DatePeriod period) const
     return true;
 }
 
-bool Room::newReservation(std::string name, std::string note, DatePeriod period, bool service)
+bool Room::newReservation(std::string name, std::string note, const DatePeriod &period, bool service)
 {
     if (!isFreeInPeriod(period))
         return false;
@@ -188,17 +189,17 @@ bool Room::newReservation(std::string name, std::string note, DatePeriod period,
     return true;
 }
 
-bool Room::addReservation(std::string name, std::string note, DatePeriod period)
+bool Room::addReservation(std::string name, std::string note, const DatePeriod &period)
 {
     return newReservation(name, note, period, false);
 }
 
-bool Room::closeForService(std::string note, DatePeriod period)
+bool Room::closeForService(std::string note, const DatePeriod &period)
 {
     return newReservation(std::string("-"), note, period, true);
 }
 
-bool Room::isFreeInPeriod(DatePeriod period) const
+bool Room::isFreeInPeriod(const DatePeriod &period) const
 {
     unsigned i = 0;
     while (i < resCount && reservations[i]->stateOnDate(period.from) == PAST)
@@ -206,4 +207,35 @@ bool Room::isFreeInPeriod(DatePeriod period) const
     return !(i < resCount &&
              !(reservations[i]->stateOnDate(period.from) == FUTURE &&
                reservations[i]->stateOnDate(period.to) == FUTURE));
+}
+
+void Room::showActivity() const
+{
+    std::clog << number << ":\t";
+    if (!resCount)
+    {
+        if (!pastCount)
+        {
+            std::clog << "No reservations.\n";
+            return;
+        }
+        std::clog << "Last reservation was from "
+                  << pastReservations[pastCount - 1]->getFrom()
+                  << " to " << pastReservations[pastCount - 1] << ".\n";
+        return;
+    }
+    if (reservations[0]->isActive())
+    {
+        if (reservations[0]->isServiced())
+            std::clog << "Closed for " << reservations[0]->getNote();
+        else
+            std::clog << "Reserved";
+        std::clog << " until " << reservations[0]->getTo() << ".\n";
+        return;
+    }
+    std::clog << "Next " << (reservations[0]->isServiced() ? "maintenance" : "reservation")
+              << " is from "
+              << reservations[0]->getFrom()
+              << " to "
+              << reservations[0]->getTo() << ".\n";
 }

@@ -85,7 +85,7 @@ public:
      * @return true successfull reservation
      * @return false failed reservation (not made)
      */
-    bool reserveRoom(unsigned number, DatePeriod period, std::string name = "-", std::string note = "None\n");
+    bool reserveRoom(unsigned number, const DatePeriod &period, std::string name = "-", std::string note = "None\n");
 
     /**
      * @brief output to stream all available rooms for a particular Date
@@ -109,9 +109,9 @@ public:
      * @param period desired period of time
      * @return Hotel& this Hotel
      */
-    Hotel &getReport(DatePeriod period);
+    Hotel &getReport(DatePeriod &period);
 
-    void searchRoom(unsigned minBeds, DatePeriod period) const;
+    void searchRoom(unsigned minBeds, const DatePeriod &period) const;
 
     /**
      * @brief plans maintenance for particular Room and period leaving note for the service
@@ -122,7 +122,9 @@ public:
      * @return true service planned successfully
      * @return false service planning failed (room not found or is reserved for the period)
      */
-    bool serviceRoom(unsigned number, DatePeriod period, std::string note);
+    bool serviceRoom(unsigned number, const DatePeriod &period, std::string note);
+
+    Hotel &showToday();
 };
 
 #endif
