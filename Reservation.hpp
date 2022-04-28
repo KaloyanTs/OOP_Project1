@@ -58,7 +58,7 @@ public:
      * @param n note left for the reservation
      * @param s whether it is reservation or maintenance
      */
-    Reservation(std::string name, DatePeriod p, std::string n = "None.\n", bool s = false);
+    Reservation(std::string name, const DatePeriod &p, std::string n = "None.\n", bool s = false);
     Reservation(const Reservation &) = delete;
     Reservation &operator=(const Reservation &) = delete;
 
@@ -106,6 +106,8 @@ public:
      * @return unsigned count of nights of this Reservation
      */
     unsigned getNights() const { return period.length(); }
+
+    std::string getNote() const { return note; }
 
     /**
      * @brief update the state of the reservation based on new today's Date (d)
