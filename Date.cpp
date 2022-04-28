@@ -46,27 +46,33 @@ bool Date::operator>=(Date other) const
 const char *Date::operator()(char *buf) const
 {
     short y = year;
-    for (unsigned i = 3; i >= 0; --i, y /= 10)
-        buf[i] = y % 10 + '0';
+    for (unsigned i = 0; i < 4; ++i, y /= 10)
+        buf[4 - 1 - i] = y % 10 + '0';
     buf[4] = '-';
-    buf[5] = month % 10 + '0';
-    buf[6] = month / 10 + '0';
+    buf[5] = month / 10 + '0';
+    buf[6] = month % 10 + '0';
     buf[7] = '-';
-    buf[8] = day % 10 + '0';
-    buf[9] = day / 10 + '0';
+    buf[8] = day / 10 + '0';
+    buf[9] = day % 10 + '0';
     buf[10] = '\0';
     return buf;
 }
 
 std::istream &operator>>(std::istream &is, Date &d)
 {
-    char c;
-    if (&is == &std::cin)
-        std::cout << "Enter a date in format DD/MM/YYYY: ";
-    is >> d.day >> c >> d.month >> c >> d.year;
-    if (is.fail() || !d.isVaid())
+    char c1, c2;
+    try
     {
-        std::cerr << "Bad data entered!\n";
+        is >> d.day >> c1 >> d.month >> c2;
+        if (c1 != '/' || c2 != '/')
+            throw "Bad delimiter!\n";
+        std::cin >> d.year;
+        if (is.fail() || !d.isVaid())
+            throw "Bad data entered!\n";
+    }
+    catch (const char *err)
+    {
+        std::cerr << err;
         d = Date();
     }
     return is;
@@ -144,10 +150,10 @@ int Date::operator-(Date other) const
 
 std::istream &operator>>(std::istream &is, DatePeriod &dP)
 {
-    if (&is == &std::cin)
-        std::cout << "From: ";
-    is >> dP.from;
-    if (&is == &std::cin)
-        std::cout << "To: ";
-    return is >> dP.to;
+    // if (&is == &std::cin)
+    //     std::cout << "From: ";
+    // is >> dP.from;
+    // if (&is == &std::cin)
+    //     std::cout << "To: ";
+    return is >> dP.from >> dP.to;
 }
