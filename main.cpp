@@ -5,8 +5,9 @@
 #include <sstream>
 #include "Hotel.hpp"
 const size_t DISPLAY_WIDTH = 130;
+const size_t COMMANDS = 7;
 
-const char cmdArr[6][2][100] = {
+const char cmdArr[COMMANDS][2][100] = {
     {{"To make a reservation, enter "},
      {"<reserve: [Room number] [Accomodation date] [Departure date] {Guest name[;]} {Note}>"}},
     {{"To see list of free rooms for a particular date, enter "},
@@ -18,7 +19,18 @@ const char cmdArr[6][2][100] = {
     {{"To request a room for guests, enter"},
      {"<request: [minimal number of beds] [Accomodation date] [Departure date]>"}},
     {{"To close a room for maintenance, enter"},
-     {"<maintenance: [room number] [From date] [To date] [Note]>"}}};
+     {"<maintenance: [room number] [From date] [To date] [Note]>"}},
+    {{"To see activity of all rooms, enter "}, {"<rooms:>"}}};
+
+void beginDay()
+{
+    std::cout << "Today is " << Hotel::today() << ".\n";
+    std::cout.fill(' ');
+    for (unsigned i = 0; i < COMMANDS; ++i)
+        std::cout << '\t' << cmdArr[i][0]
+                  << std::right << std::setw(DISPLAY_WIDTH - strlen(cmdArr[i][0]))
+                  << cmdArr[i][1] << '\n';
+}
 
 bool workDay(Hotel &H)
 {
@@ -45,6 +57,11 @@ bool workDay(Hotel &H)
             std::cin >> beds >> per;
             std::cin.get();
             H.searchRoom(beds, per);
+        }
+        else if (!strcmp(cmd, "rooms"))
+        {
+            std::cin.get();
+            H.showToday();
         }
         else if (!strcmp(cmd, "free"))
         {
@@ -85,8 +102,29 @@ bool workDay(Hotel &H)
             else
                 H.reserveRoom(number, per);
         }
-        // todo else if other commands
+        else if (!strcmp(cmd, "maintenance"))
+        {
+            unsigned number;
+            DatePeriod per;
+            std::cin >> number >> per;
+            std::cin.get();
+            std::cin.getline(cmd, 100);
+            H.serviceRoom(number, per, cmd);
+        }
+        else if (!strcmp(cmd, "available"))
+        {
+            Date d;
+            std::cin >> d;
+            std::cin.get();
+            H.showAvailableRooms(std::cout, d);
+        }
         std::cin.getline(cmd, 100, ':');
+        while (strchr(cmd, '\n'))
+        {
+            std::cerr << "Uknown command!\n";
+            std::cin.getline(cmd, 100);
+            std::cin.getline(cmd, 100, ':');
+        }
     }
     return false;
 }
@@ -103,12 +141,7 @@ int main()
     // H.showAvailableRooms(std::cout, Date(12, 6, 2023));
     do
     {
-        std::cout << "Today is " << Hotel::today() << ".\n";
-        std::cout.fill(' ');
-        for (unsigned i = 0; i < 6; ++i)
-            std::cout << '\t' << cmdArr[i][0]
-                      << std::right << std::setw(DISPLAY_WIDTH - strlen(cmdArr[i][0]))
-                      << cmdArr[i][1] << '\n';
+        beginDay();
     } while (workDay(H));
 
     return 0;
