@@ -4,55 +4,89 @@
 #include <string>
 #include <sstream>
 #include "Hotel.hpp"
+const size_t DISPLAY_WIDTH = 130;
 
 const char cmdArr[6][2][100] = {
     {{"To make a reservation, enter "},
-     {"<reserve [Room number] [Accomodation date] [Departure date] {Guest name} {Note}>"}},
+     {"<reserve: [Room number] [Accomodation date] [Departure date] {Guest name[;]} {Note}>"}},
     {{"To see list of free rooms for a particular date, enter "},
-     {"<available [date]>"}},
+     {"<available: [date]>"}},
     {{"To free a room now, enter "},
-     {"<free [Room number]>"}},
+     {"<free: [Room number]>"}},
     {{"To get report about the reservations of a room over a period of time, enter "},
-     {"<report [From date] [To date]>"}},
+     {"<report: [From date] [To date]>"}},
     {{"To request a room for guests, enter"},
-     {"<request [minimal number of beds] [Accomodation date] [Departure date]>"}},
+     {"<request: [minimal number of beds] [Accomodation date] [Departure date]>"}},
     {{"To close a room for maintenance, enter"},
-     {"<close [room number] [From date] [To date] [Note]>"}}};
+     {"<maintenance: [room number] [From date] [To date] [Note]>"}}};
 
 bool workDay(Hotel &H)
 {
     char cmd[100];
-    std::cin.getline(cmd, 100);
-    std::istringstream iss;
-    iss.str(cmd);
-    iss.getline(cmd, iss.str().size() + 1, ' ');
+    std::cin.getline(cmd, 100, ':');
+    while (strchr(cmd, '\n'))
+    {
+        std::cerr << "Uknown command!\n";
+        std::cin.getline(cmd, 100);
+        std::cin.getline(cmd, 100, ':');
+    }
     while (*cmd && strcmp(cmd, "close"))
     {
         if (!strcmp(cmd, "day"))
         {
             H.nextDay();
+            std::cin.get();
             return true;
         }
         if (!strcmp(cmd, "request"))
         {
             unsigned beds;
-            Date from, to;
-            iss >> beds >> from >> to;
-            iss.get();
-            H.searchRoom(beds, {from, to});
+            DatePeriod per;
+            std::cin >> beds >> per;
+            std::cin.get();
+            H.searchRoom(beds, per);
         }
         else if (!strcmp(cmd, "free"))
         {
             unsigned number;
-            iss >> number;
-            iss.get();
+            std::cin >> number;
+            std::cin.get();
             H.freeRoom(number);
         }
+        else if (!strcmp(cmd, "report"))
+        {
+            DatePeriod per;
+            std::cin >> per;
+            std::cin.get();
+            H.getReport(per);
+        }
+        else if (!strcmp(cmd, "reserve"))
+        {
+            unsigned number;
+            DatePeriod per;
+            std::string name = "", note = "";
+            std::cin >> number >> per;
+            std::cin.get(*cmd);
+            if (*cmd != '\n')
+            {
+                std::cin.getline(cmd, 100, ';');
+                name = cmd;
+                std::cin.getline(cmd, 100);
+                if (*cmd)
+                {
+                    note = cmd;
+                    H.reserveRoom(number, per, name, note);
+                }
+                else
+                {
+                    H.reserveRoom(number, per, name);
+                }
+            }
+            else
+                H.reserveRoom(number, per);
+        }
         // todo else if other commands
-        std::cin.getline(cmd, 100);
-        // fix iss.str(cmd);
-        //  std::cout << iss.peek() << '\n';
-        iss.getline(cmd, iss.str().size() + 1, ' ');
+        std::cin.getline(cmd, 100, ':');
     }
     return false;
 }
@@ -73,7 +107,8 @@ int main()
         std::cout.fill(' ');
         for (unsigned i = 0; i < 6; ++i)
             std::cout << '\t' << cmdArr[i][0]
-                      << std::right << std::setw(130 - strlen(cmdArr[i][0])) << cmdArr[i][1] << '\n';
+                      << std::right << std::setw(DISPLAY_WIDTH - strlen(cmdArr[i][0]))
+                      << cmdArr[i][1] << '\n';
     } while (workDay(H));
 
     return 0;
