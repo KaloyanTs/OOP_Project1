@@ -61,6 +61,8 @@ class Room
 
     bool newReservation(std::string name, std::string note, DatePeriod period, bool service);
 
+    void moveToPast();
+
 public:
     /**
      * @brief Construct a new Room object
@@ -96,6 +98,7 @@ public:
      * @return false room is already free
      */
     bool freeRoom(Reservation *&currentRes);
+
     void changeLeaving(Reservation *, Date newDate); // todo must be private
 
     /**
@@ -114,7 +117,7 @@ public:
 
     bool isFreeInPeriod(DatePeriod period) const;
 
-    void showReservationsInPeriod(std::ostream &os, DatePeriod period) const;
+    bool showReservationsInPeriod(std::ostream &os, DatePeriod period) const;
 
     bool addReservation(std::string name, std::string note, DatePeriod period);
 
