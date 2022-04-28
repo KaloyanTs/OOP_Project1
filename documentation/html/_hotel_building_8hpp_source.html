@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: HotelBuilding.hpp Source File</title>
+<title>Hotel: HotelBuilding.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">Hotel
    </div>
   </td>
  </tr>
@@ -74,33 +74,44 @@ $(function() {
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_hotel_building.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_class" href="class_room.html">Room</a> **rooms;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">size_t</span> size;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a>(std::ifstream &amp;ifs); <span class="comment">// todo String</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a> &amp;other) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a> &amp;operator=(<a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a> &amp;other) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_class" href="class_hotel_building.html">~HotelBuilding</a>();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">size_t</span> getRoomCount()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> size; }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_class" href="class_room.html">Room</a> **rooms;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">size_t</span> size;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_class" href="class_room.html">Room</a> *operator[](<span class="keywordtype">unsigned</span> roomNumber) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> newDate(<a class="code hl_class" href="class_date.html">Date</a> d);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> showAvailableRooms(std::ostream &amp;os, <a class="code hl_class" href="class_date.html">Date</a> d) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> createReport(<a class="code hl_struct" href="struct_date_period.html">DatePeriod</a> period) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> suggestRoom(<span class="keywordtype">unsigned</span> beds, <a class="code hl_struct" href="struct_date_period.html">DatePeriod</a> period);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="class_room_analyzer.html">RoomAnalyzer</a>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="class_hotel_building.html#a0b44f6281acbeffb9bc4ff13b49c503c">HotelBuilding</a>(std::ifstream &amp;ifs); <span class="comment">// todo String</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="class_hotel_building.html#a0b44f6281acbeffb9bc4ff13b49c503c">HotelBuilding</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a> &amp;other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a> &amp;operator=(<a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a> &amp;other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="class_hotel_building.html#a8c09c46d278197749825c0135b03da18">~HotelBuilding</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_hotel_building.html#aac84c36001ea2dd2a085c861e39ec7b0">   45</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_hotel_building.html#aac84c36001ea2dd2a085c861e39ec7b0">getRoomCount</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> size; }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_class" href="class_room.html">Room</a> *<a class="code hl_function" href="class_hotel_building.html#a2d5769bf590157c81b17c29393515533">operator[]</a>(<span class="keywordtype">unsigned</span> roomNumber) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_hotel_building.html#a7e02a06c388ca30205b9ee7d832c8c5e">newDate</a>(<a class="code hl_class" href="class_date.html">Date</a> d);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_hotel_building.html#acb8b2fa415c1718a6a8bae7fddc7b06d">showAvailableRooms</a>(std::ostream &amp;os, <a class="code hl_class" href="class_date.html">Date</a> d) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_hotel_building.html#a590e77a77e5e1d2c93d12df5f60d128c">createReport</a>(<a class="code hl_struct" href="struct_date_period.html">DatePeriod</a> &amp;period) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_hotel_building.html#a8e5c528b9b54198c20333764275a7280">suggestRoom</a>(<span class="keywordtype">unsigned</span> beds, <span class="keyword">const</span> <a class="code hl_struct" href="struct_date_period.html">DatePeriod</a> &amp;period);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_hotel_building.html#a5d49615b93b269a461a5ddf921c545e5">showRoomsStatesToday</a>(<a class="code hl_class" href="class_date.html">Date</a> today) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="class_hotel_building.html#a0df6842918dbb3b3bdceaa909dccd25d">  105</a></span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="class_room_analyzer.html">RoomAnalyzer</a>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>};</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdef"><b>Definition:</b> Date.hpp:13</div></div>
 <div class="ttc" id="aclass_hotel_building_html"><div class="ttname"><a href="class_hotel_building.html">HotelBuilding</a></div><div class="ttdef"><b>Definition:</b> HotelBuilding.hpp:9</div></div>
+<div class="ttc" id="aclass_hotel_building_html_a0b44f6281acbeffb9bc4ff13b49c503c"><div class="ttname"><a href="class_hotel_building.html#a0b44f6281acbeffb9bc4ff13b49c503c">HotelBuilding::HotelBuilding</a></div><div class="ttdeci">HotelBuilding(std::ifstream &amp;ifs)</div><div class="ttdoc">Construct a new HotelBuilding object from a text file containing rooms info Format of the file:</div><div class="ttdef"><b>Definition:</b> HotelBuilding.cpp:3</div></div>
+<div class="ttc" id="aclass_hotel_building_html_a2d5769bf590157c81b17c29393515533"><div class="ttname"><a href="class_hotel_building.html#a2d5769bf590157c81b17c29393515533">HotelBuilding::operator[]</a></div><div class="ttdeci">Room * operator[](unsigned roomNumber) const</div><div class="ttdoc">seek for a room with particular number</div><div class="ttdef"><b>Definition:</b> HotelBuilding.cpp:22</div></div>
+<div class="ttc" id="aclass_hotel_building_html_a590e77a77e5e1d2c93d12df5f60d128c"><div class="ttname"><a href="class_hotel_building.html#a590e77a77e5e1d2c93d12df5f60d128c">HotelBuilding::createReport</a></div><div class="ttdeci">void createReport(DatePeriod &amp;period) const</div><div class="ttdoc">Create a report for the usage of rooms for a particular period of time (ending before the today Date)...</div><div class="ttdef"><b>Definition:</b> HotelBuilding.cpp:45</div></div>
+<div class="ttc" id="aclass_hotel_building_html_a5d49615b93b269a461a5ddf921c545e5"><div class="ttname"><a href="class_hotel_building.html#a5d49615b93b269a461a5ddf921c545e5">HotelBuilding::showRoomsStatesToday</a></div><div class="ttdeci">void showRoomsStatesToday(Date today) const</div><div class="ttdoc">prints to stdout all rooms together with up to today Date info about their Availability (now,...</div><div class="ttdef"><b>Definition:</b> HotelBuilding.cpp:71</div></div>
+<div class="ttc" id="aclass_hotel_building_html_a7e02a06c388ca30205b9ee7d832c8c5e"><div class="ttname"><a href="class_hotel_building.html#a7e02a06c388ca30205b9ee7d832c8c5e">HotelBuilding::newDate</a></div><div class="ttdeci">void newDate(Date d)</div><div class="ttdoc">update this HotelBuilding rooms data on a new Date</div><div class="ttdef"><b>Definition:</b> HotelBuilding.cpp:32</div></div>
+<div class="ttc" id="aclass_hotel_building_html_a8c09c46d278197749825c0135b03da18"><div class="ttname"><a href="class_hotel_building.html#a8c09c46d278197749825c0135b03da18">HotelBuilding::~HotelBuilding</a></div><div class="ttdeci">~HotelBuilding()</div><div class="ttdoc">Destroy the HotelBuilding object.</div><div class="ttdef"><b>Definition:</b> HotelBuilding.cpp:15</div></div>
+<div class="ttc" id="aclass_hotel_building_html_a8e5c528b9b54198c20333764275a7280"><div class="ttname"><a href="class_hotel_building.html#a8e5c528b9b54198c20333764275a7280">HotelBuilding::suggestRoom</a></div><div class="ttdeci">void suggestRoom(unsigned beds, const DatePeriod &amp;period)</div><div class="ttdoc">show top DISPLAY (or all rooms if less than DISPLAY + 1) sorted by suitabilty for the guest,...</div><div class="ttdef"><b>Definition:</b> HotelBuilding.cpp:66</div></div>
+<div class="ttc" id="aclass_hotel_building_html_aac84c36001ea2dd2a085c861e39ec7b0"><div class="ttname"><a href="class_hotel_building.html#aac84c36001ea2dd2a085c861e39ec7b0">HotelBuilding::getRoomCount</a></div><div class="ttdeci">size_t getRoomCount() const</div><div class="ttdoc">Get the room count.</div><div class="ttdef"><b>Definition:</b> HotelBuilding.hpp:45</div></div>
+<div class="ttc" id="aclass_hotel_building_html_acb8b2fa415c1718a6a8bae7fddc7b06d"><div class="ttname"><a href="class_hotel_building.html#acb8b2fa415c1718a6a8bae7fddc7b06d">HotelBuilding::showAvailableRooms</a></div><div class="ttdeci">void showAvailableRooms(std::ostream &amp;os, Date d) const</div><div class="ttdoc">show available rooms on a particular Date</div><div class="ttdef"><b>Definition:</b> HotelBuilding.cpp:38</div></div>
 <div class="ttc" id="aclass_room_analyzer_html"><div class="ttname"><a href="class_room_analyzer.html">RoomAnalyzer</a></div><div class="ttdef"><b>Definition:</b> RoomAnalyzer.hpp:9</div></div>
 <div class="ttc" id="aclass_room_html"><div class="ttname"><a href="class_room.html">Room</a></div><div class="ttdef"><b>Definition:</b> Room.hpp:16</div></div>
 <div class="ttc" id="astruct_date_period_html"><div class="ttname"><a href="struct_date_period.html">DatePeriod</a></div><div class="ttdef"><b>Definition:</b> Date.hpp:123</div></div>
