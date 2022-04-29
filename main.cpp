@@ -24,6 +24,23 @@ const char cmdArr[COMMANDS][2][100] = {
     {{"To see soonest date a room is free for some nights, enter "},
      {"<plan: [Room number] [Number of nights]>"}}};
 
+void createHeader(Hotel &H)
+{
+    unsigned countOfSpaces = (DISPLAY_WIDTH - strlen("<<< ") - strlen(" SYSTEM >>>") - H.getName().size()) / 2;
+    std::cout << '\t';
+    for (unsigned i = 0; i < DISPLAY_WIDTH; ++i)
+        std::cout << '-';
+    std::cout << '\n'
+              << '\t';
+    for (unsigned i = 0; i < countOfSpaces; ++i)
+        std::cout << ' ';
+    std::cout << "<<< " << H.getName() << " SYSTEM >>>\n";
+    std::cout << '\t';
+    for (unsigned i = 0; i < DISPLAY_WIDTH; ++i)
+        std::cout << '-';
+    std::cout << '\n';
+}
+
 void beginDay()
 {
     std::cout << "Today is " << Hotel::today() << ".\n";
@@ -142,25 +159,7 @@ int main()
 // fix last reservation end date problem
 {
     Hotel H("h.rooms");
-    unsigned countOfSpaces = (DISPLAY_WIDTH - strlen("<<< ") - strlen(" SYSTEM >>>") - H.getName().size()) / 2;
-    std::cout << '\t';
-    for (unsigned i = 0; i < DISPLAY_WIDTH; ++i)
-        std::cout << '-';
-    std::cout << '\n'
-              << '\t';
-    for (unsigned i = 0; i < countOfSpaces; ++i)
-        std::cout << ' ';
-    std::cout << "<<< " << H.getName() << " SYSTEM >>>\n";
-    std::cout << '\t';
-    for (unsigned i = 0; i < DISPLAY_WIDTH; ++i)
-        std::cout << '-';
-    std::cout << '\n';
-    // H.reserveRoom(102, {Date(10, 6, 2023), Date(5, 8, 2023)});
-    // H.reserveRoom(102, {Date(10, 4, 2023), Date(5, 6, 2023)});
-    // H.reserveRoom(102, {Date(10, 6, 2024), Date(5, 8, 2024)});
-    // H.reserveRoom(102, {Date(10, 4, 2022), Date(11, 4, 2022)});
-    // H.reserveRoom(102, {Date(10, 4, 2022), Date(11, 4, 2022)});
-    // H.showAvailableRooms(std::cout, Date(12, 6, 2023));
+    createHeader(H);
     do
     {
         beginDay();
