@@ -221,7 +221,7 @@ void Room::showActivity() const
         }
         std::clog << "Last reservation was from "
                   << pastReservations[pastCount - 1]->getFrom()
-                  << " to " << pastReservations[pastCount - 1] << ".\n";
+                  << " to " << pastReservations[pastCount - 1]->getTo() << ".\n";
         return;
     }
     if (reservations[0]->isActive())
