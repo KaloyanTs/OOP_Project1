@@ -47,3 +47,16 @@ void RoomAnalyzer::sortRooms(HotelBuilding &hB, unsigned *score, size_t size)
         score[iMax] = ftmp;
     }
 }
+
+void RoomAnalyzer::soonestFreePeriod(const HotelBuilding &hB, unsigned number, unsigned nights, Date today)
+{
+    assert(nights > 0);
+    DatePeriod per;
+    per.from = per.to = today;
+    for (unsigned i = 0; i < nights; ++i)
+        ++per.to;
+    assert(hB[number] != nullptr);
+    while (!hB[number]->isFreeInPeriod(per))
+        ++per;
+    std::clog << "Room #" << number << " is available for " << nights << " nights from " << per.from << ".\n";
+}
