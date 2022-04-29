@@ -130,9 +130,21 @@ bool workDay(Hotel &H)
 }
 
 int main()
+// fix last reservation end date problem
 {
     Hotel H("h.rooms");
+    unsigned countOfSpaces = (DISPLAY_WIDTH - strlen("<<< ") - strlen(" SYSTEM >>>") - H.getName().size()) / 2;
+    std::cout << '\t';
+    for (unsigned i = 0; i < DISPLAY_WIDTH; ++i)
+        std::cout << '-';
+    std::cout << '\n';
+    for (unsigned i = 0; i < countOfSpaces; ++i)
+        std::cout << ' ';
     std::cout << "<<< " << H.getName() << " SYSTEM >>>\n";
+    std::cout << '\t';
+    for (unsigned i = 0; i < DISPLAY_WIDTH; ++i)
+        std::cout << '-';
+    std::cout << '\n';
     // H.reserveRoom(102, {Date(10, 6, 2023), Date(5, 8, 2023)});
     // H.reserveRoom(102, {Date(10, 4, 2023), Date(5, 6, 2023)});
     // H.reserveRoom(102, {Date(10, 6, 2024), Date(5, 8, 2024)});
