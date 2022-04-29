@@ -20,7 +20,7 @@ void RoomAnalyzer::suggest(HotelBuilding &hB, unsigned beds, DatePeriod period)
     for (unsigned i = 0; i < roomCount && i < DISPLAY; ++i)
     {
         std::cout << '\t' << i + 1 << ".\t" << *hB.rooms[i] << " -> ";
-        if ((int)score[i] < 0)
+        if ((int)score[i] == -2)
             std::cout << "NOT ";
         std::cout << "available from " << period.from << " to " << period.to << '\n';
     }
