@@ -5,7 +5,7 @@
 #include <sstream>
 #include "Hotel.hpp"
 const size_t DISPLAY_WIDTH = 130;
-const size_t COMMANDS = 7;
+const size_t COMMANDS = 8;
 
 const char cmdArr[COMMANDS][2][100] = {
     {{"To make a reservation, enter "},
@@ -20,7 +20,9 @@ const char cmdArr[COMMANDS][2][100] = {
      {"<request: [minimal number of beds] [Accomodation date] [Departure date]>"}},
     {{"To close a room for maintenance, enter"},
      {"<maintenance: [room number] [From date] [To date] [Note]>"}},
-    {{"To see activity of all rooms, enter "}, {"<rooms:>"}}};
+    {{"To see activity of all rooms, enter "}, {"<rooms:>"}},
+    {{"To see soonest date a room is free for some nights, enter "},
+     {"<plan: [Room number] [Number of nights]>"}}};
 
 void beginDay()
 {
@@ -62,6 +64,13 @@ bool workDay(Hotel &H)
         {
             std::cin.get();
             H.showToday();
+        }
+        else if (!strcmp(cmd, "plan"))
+        {
+            unsigned number, nights;
+            std::cin >> number >> nights;
+            std::cin.get();
+            H.seeRoomForNights(number, nights);
         }
         else if (!strcmp(cmd, "free"))
         {
@@ -137,7 +146,8 @@ int main()
     std::cout << '\t';
     for (unsigned i = 0; i < DISPLAY_WIDTH; ++i)
         std::cout << '-';
-    std::cout << '\n';
+    std::cout << '\n'
+              << '\t';
     for (unsigned i = 0; i < countOfSpaces; ++i)
         std::cout << ' ';
     std::cout << "<<< " << H.getName() << " SYSTEM >>>\n";
