@@ -157,3 +157,10 @@ std::istream &operator>>(std::istream &is, DatePeriod &dP)
     //     std::cout << "To: ";
     return is >> dP.from >> dP.to;
 }
+
+DatePeriod &DatePeriod::operator++()
+{
+    ++from;
+    ++to;
+    return *this;
+}

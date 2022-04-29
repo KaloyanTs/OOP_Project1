@@ -123,6 +123,7 @@ struct DatePeriod
 {
     Date from, to;
     unsigned length() const { return to - from; }
+    DatePeriod &operator++();
 };
 
 std::istream &operator>>(std::istream &is, DatePeriod &dP);
