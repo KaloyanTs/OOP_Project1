@@ -106,3 +106,9 @@ Hotel &Hotel::showToday()
     building->showRoomsStatesToday(now);
     return *this;
 }
+
+Hotel &Hotel::seeRoomForNights(unsigned number, unsigned nights)
+{
+    building->showRoomForNights(number, nights, now);
+    return *this;
+}

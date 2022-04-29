@@ -73,3 +73,8 @@ void HotelBuilding::showRoomsStatesToday(Date today) const
     for (unsigned i = 0; i < size; ++i)
         rooms[i]->showActivity();
 }
+
+void HotelBuilding::showRoomForNights(unsigned number, unsigned nights, Date today) const
+{
+    RoomAnalyzer::soonestFreePeriod(*this, number, nights, today);
+}

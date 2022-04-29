@@ -125,6 +125,8 @@ public:
     bool serviceRoom(unsigned number, const DatePeriod &period, std::string note);
 
     Hotel &showToday();
+
+    Hotel &seeRoomForNights(unsigned number,unsigned nights);
 };
 
 #endif

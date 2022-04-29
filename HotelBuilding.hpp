@@ -98,6 +98,8 @@ public:
      */
     void showRoomsStatesToday(Date today) const;
 
+    void showRoomForNights(unsigned number, unsigned nights, Date today) const;
+
     /**
      * @brief using RoomAnalyzer to perform algorithms for the room list (database)
      *
