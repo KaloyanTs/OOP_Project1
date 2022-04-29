@@ -121,9 +121,7 @@ bool workDay(Hotel &H)
                     H.reserveRoom(number, per, name, note);
                 }
                 else
-                {
                     H.reserveRoom(number, per, name);
-                }
             }
             else
                 H.reserveRoom(number, per);
@@ -156,7 +154,6 @@ bool workDay(Hotel &H)
 }
 
 int main()
-// fix last reservation end date problem
 {
     Hotel H("h.rooms");
     createHeader(H);
