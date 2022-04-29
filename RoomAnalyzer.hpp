@@ -11,6 +11,8 @@ class RoomAnalyzer
 
 public:
     static void suggest(HotelBuilding &hB, unsigned beds, DatePeriod period);
+
+    // todo static void soonestFreePeriod(unsigned nights);
 };
 
 #endif
