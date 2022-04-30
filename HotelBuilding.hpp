@@ -28,7 +28,7 @@ public:
      *
      * @param ifs input file stream to text file, containing rooms data
      */
-    HotelBuilding(std::ifstream &ifs); // todo String
+    HotelBuilding(std::ifstream &ifs);
     HotelBuilding(const HotelBuilding &other) = delete;
     HotelBuilding &operator=(HotelBuilding &other) = delete;
     /**
@@ -73,11 +73,12 @@ public:
     void showAvailableRooms(std::ostream &os, Date d) const;
 
     /**
-     * @brief Create a report for the usage of rooms for a particular period of time (ending before the today Date)
+     * @brief Create a report for the usage of rooms for a particular period of time (ending before the today Date) in folder reports
      * Format of the report:
-     * Report for the usage of the rooms between <beginning of period> and <end of period>:
-     * //todo
      *
+     * Report for the usage of the rooms between <beginning of period> and <end of period>:
+     * ...
+     * Room #" <Room number> between <beginning of period> and <end of period>: <count of nights> nights.
      *
      * @param period period of time
      */
@@ -100,7 +101,7 @@ public:
 
     /**
      * @brief show soonest period of particular nights when particular room is free
-     * 
+     *
      * @param number ID of the room
      * @param nights length of the period
      * @param today today's Date
