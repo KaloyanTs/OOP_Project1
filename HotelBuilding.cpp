@@ -48,10 +48,9 @@ void HotelBuilding::createReport(DatePeriod &period) const
         return;
     if (period.to > Hotel::today())
         period.to = Hotel::today();
-    char buf[22];
-    // todo in folder reports
-    strcpy(buf, "report-");
-    period.from(buf + 7);
+    char buf[30];
+    strcpy(buf, "reports/report-");
+    period.from(buf + 15);
     strcat(buf, ".txt");
     std::ofstream ofs(buf, std::ios::out);
     if (!ofs.is_open())
@@ -61,6 +60,7 @@ void HotelBuilding::createReport(DatePeriod &period) const
         if (rooms[i]->showReservationsInPeriod(ofs, period))
             ofs << '\t';
     ofs.close();
+    std::clog << "Report \"" << period.from << "\" created successfully.\n";
 }
 
 void HotelBuilding::suggestRoom(unsigned beds, const DatePeriod &period)
