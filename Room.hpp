@@ -57,9 +57,9 @@ class Room
      */
     void shrink(Reservation **&arr, size_t &size, size_t &capacity);
 
-    unsigned daysTakenInPeriod(const DatePeriod & period) const;
+    unsigned daysTakenInPeriod(const DatePeriod &period) const;
 
-    bool newReservation(std::string name, std::string note, const DatePeriod & period, bool service);
+    bool newReservation(std::string name, std::string note, const DatePeriod &period, bool service);
 
     void moveToPast();
 
@@ -115,15 +115,51 @@ public:
      */
     bool isFreeOnDate(Date) const;
 
-    bool isFreeInPeriod(const DatePeriod & period) const;
+    /**
+     * @brief see if this Room is free in particular period of time (it is free in all days of the period)
+     *
+     * @param period period of time
+     * @return true the room is free (in all days of the period)
+     * @return false the room is not free (there is a day in period when the room is taken)
+     */
+    bool isFreeInPeriod(const DatePeriod &period) const;
 
-    bool showReservationsInPeriod(std::ostream &os, const DatePeriod & period) const;
+    /**
+     * @brief print to output stream info about the number of nights (if positive) in a period this Room has been taken
+     *
+     * @param os output stream
+     * @param period period of time
+     * @return true there has been taken for at least one night and info has been printed
+     * @return false the room has been free during this period and no info has been printed
+     */
+    bool showReservationsInPeriod(std::ostream &os, const DatePeriod &period) const;
 
-    bool addReservation(std::string name, std::string note, const DatePeriod & period);
+    /**
+     * @brief try to add Reservation to this Room
+     *
+     * @param name name of the guest
+     * @param note note to this Reservation
+     * @param period period of time
+     * @return true successfully added Reservation
+     * @return false adding a Reservation failed (the room is not free in this DatePeriod)
+     */
+    bool addReservation(std::string name, std::string note, const DatePeriod &period);
 
-    bool closeForService(std::string note, const DatePeriod & period);\
+    /**
+     * @brief try to add Reservation (about a maintenance) to this Room
+     *
+     * @param note note to this maintenance
+     * @param period period of time
+     * @return true successfully added maintenance
+     * @return false adding a maintenance failed (the room is not free in this DatePeriod)
+     */
+    bool closeForService(std::string note, const DatePeriod &period);
 
-    void showActivity()const;
+    /**
+     * @brief print to stdout information about this Room latest busyness
+     * 
+     */
+    void showActivity() const;
 };
 
 /**

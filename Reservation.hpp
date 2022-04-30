@@ -107,6 +107,11 @@ public:
      */
     unsigned getNights() const { return period.length(); }
 
+    /**
+     * @brief get the note to this Reservation
+     * 
+     * @return std::string 
+     */
     std::string getNote() const { return note; }
 
     /**
