@@ -121,11 +121,40 @@ public:
 
 struct DatePeriod
 {
-    Date from, to;
+    /**
+     * @brief beginning Date of the period
+     * 
+     */
+    Date from;
+    
+    /**
+     * @brief end Date of the period
+     * 
+     */
+    Date to;
+
+    /**
+     * @brief distance in days of the period
+     * 
+     * @return unsigned days between beginning and end
+     */
     unsigned length() const { return to - from; }
+
+    /**
+     * @brief moving period one day froward
+     * 
+     * @return DatePeriod& this DatePeriod
+     */
     DatePeriod &operator++();
 };
 
+/**
+ * @brief overloaded operator>> for DatePeriod input
+ * 
+ * @param is input stream
+ * @param dP DatePeriod to be input
+ * @return std::istream& this input stream
+ */
 std::istream &operator>>(std::istream &is, DatePeriod &dP);
 
 #endif

@@ -76,7 +76,7 @@ public:
      * @brief Create a report for the usage of rooms for a particular period of time (ending before the today Date)
      * Format of the report:
      * Report for the usage of the rooms between <beginning of period> and <end of period>:
-     * // todo
+     * //todo
      *
      *
      * @param period period of time
@@ -98,6 +98,13 @@ public:
      */
     void showRoomsStatesToday(Date today) const;
 
+    /**
+     * @brief show soonest period of particular nights when particular room is free
+     * 
+     * @param number ID of the room
+     * @param nights length of the period
+     * @param today today's Date
+     */
     void showRoomForNights(unsigned number, unsigned nights, Date today) const;
 
     /**
