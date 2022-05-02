@@ -32,7 +32,7 @@ bool Hotel::reserveRoom(unsigned number, const DatePeriod &period, std::string n
         std::clog << "Reservation successfully made!\n";
         return true;
     }
-    std::cerr << "Room is reserved for this period.\n";
+    std::cerr << "Making reservation failed.\n";
     return false;
 }
 
@@ -98,6 +98,11 @@ bool Hotel::freeRoom(unsigned number)
 
 void Hotel::searchRoom(unsigned minBeds, const DatePeriod &period) const
 {
+    if (period.from < now)
+    {
+        std::cerr << "Cannot suggest rooms for the past!\n";
+        return;
+    }
     building->suggestRoom(minBeds, period);
 }
 
