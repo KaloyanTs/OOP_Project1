@@ -73,7 +73,8 @@ bool workDay(Hotel &H)
         {
             unsigned beds;
             DatePeriod per;
-            std::cin >> beds >> per;
+            std::cin >> beds;
+            per.readProper();
             std::cin.get();
             H.searchRoom(beds, per);
         }
@@ -99,7 +100,7 @@ bool workDay(Hotel &H)
         else if (!strcmp(cmd, "report"))
         {
             DatePeriod per;
-            std::cin >> per;
+            per.readProper();
             std::cin.get();
             H.getReport(per);
         }
@@ -107,8 +108,9 @@ bool workDay(Hotel &H)
         {
             unsigned number;
             DatePeriod per;
+            std::cin >> number;
+            per.readProper();
             std::string name = "", note = "";
-            std::cin >> number >> per;
             std::cin.get(*cmd);
             if (*cmd != '\n')
             {
@@ -130,7 +132,8 @@ bool workDay(Hotel &H)
         {
             unsigned number;
             DatePeriod per;
-            std::cin >> number >> per;
+            std::cin >> number;
+            per.readProper();
             std::cin.get();
             std::cin.getline(cmd, 100);
             H.serviceRoom(number, per, cmd);
