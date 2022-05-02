@@ -69,11 +69,16 @@ $(function() {
   <div class="headertitle"><div class="title">Hotel Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class representing hotel with name, current <a class="el" href="class_date.html" title="Class representing date with day, month and year.">Date</a> and a building (list of rooms)  
+ <a href="class_hotel.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_hotel_8hpp_source.html">Hotel.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a03f1d017c8c8e25702e03ffbaf255b7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hotel.html#a03f1d017c8c8e25702e03ffbaf255b7c">Hotel</a> (std::string hotelDataFile)</td></tr>
-<tr class="memdesc:a03f1d017c8c8e25702e03ffbaf255b7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_hotel.html">Hotel</a> object.  <a href="class_hotel.html#a03f1d017c8c8e25702e03ffbaf255b7c">More...</a><br /></td></tr>
+<tr class="memdesc:a03f1d017c8c8e25702e03ffbaf255b7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a> object.  <a href="class_hotel.html#a03f1d017c8c8e25702e03ffbaf255b7c">More...</a><br /></td></tr>
 <tr class="separator:a03f1d017c8c8e25702e03ffbaf255b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31906245ccbb7ff7c09bbbbfa5c305fd"><td class="memItemLeft" align="right" valign="top"><a id="a31906245ccbb7ff7c09bbbbfa5c305fd" name="a31906245ccbb7ff7c09bbbbfa5c305fd"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Hotel</b> (const <a class="el" href="class_hotel.html">Hotel</a> &amp;)=delete</td></tr>
@@ -83,44 +88,49 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af1c778ba61bf453483a54501316ca61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4c9782535c021bc10c028339dc29310"><td class="memItemLeft" align="right" valign="top"><a id="ae4c9782535c021bc10c028339dc29310" name="ae4c9782535c021bc10c028339dc29310"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~Hotel</b> ()</td></tr>
-<tr class="memdesc:ae4c9782535c021bc10c028339dc29310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="class_hotel.html">Hotel</a> object. <br /></td></tr>
+<tr class="memdesc:ae4c9782535c021bc10c028339dc29310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a> object. <br /></td></tr>
 <tr class="separator:ae4c9782535c021bc10c028339dc29310"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b432ad97003afdac3957ddb0e5234b8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hotel.html#a9b432ad97003afdac3957ddb0e5234b8">getName</a> () const</td></tr>
-<tr class="memdesc:a9b432ad97003afdac3957ddb0e5234b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the name of this <a class="el" href="class_hotel.html">Hotel</a>  <a href="class_hotel.html#a9b432ad97003afdac3957ddb0e5234b8">More...</a><br /></td></tr>
+<tr class="memdesc:a9b432ad97003afdac3957ddb0e5234b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the name of this <a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a>  <a href="class_hotel.html#a9b432ad97003afdac3957ddb0e5234b8">More...</a><br /></td></tr>
 <tr class="separator:a9b432ad97003afdac3957ddb0e5234b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b23fa694af4aa49b4f958ce2ba84609"><td class="memItemLeft" align="right" valign="top"><a id="a7b23fa694af4aa49b4f958ce2ba84609" name="a7b23fa694af4aa49b4f958ce2ba84609"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>nextDay</b> ()</td></tr>
 <tr class="memdesc:a7b23fa694af4aa49b4f958ce2ba84609"><td class="mdescLeft">&#160;</td><td class="mdescRight">advance to the nextDay <br /></td></tr>
 <tr class="separator:a7b23fa694af4aa49b4f958ce2ba84609"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af44de81e7134f72935fb82822943b4a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hotel.html#af44de81e7134f72935fb82822943b4a3">reserveRoom</a> (unsigned number, const <a class="el" href="struct_date_period.html">DatePeriod</a> &amp;period, std::string name=&quot;-&quot;, std::string note=&quot;None\n&quot;)</td></tr>
-<tr class="memdesc:af44de81e7134f72935fb82822943b4a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">makes a new <a class="el" href="class_reservation.html">Reservation</a> for particular <a class="el" href="class_room.html">Room</a> and period with options for name of guest and notes to the <a class="el" href="class_reservation.html">Reservation</a>  <a href="class_hotel.html#af44de81e7134f72935fb82822943b4a3">More...</a><br /></td></tr>
+<tr class="memdesc:af44de81e7134f72935fb82822943b4a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">makes a new <a class="el" href="class_reservation.html" title="Class representing information about a reservation.">Reservation</a> for particular <a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> and period with options for name of guest and notes to the <a class="el" href="class_reservation.html" title="Class representing information about a reservation.">Reservation</a>  <a href="class_hotel.html#af44de81e7134f72935fb82822943b4a3">More...</a><br /></td></tr>
 <tr class="separator:af44de81e7134f72935fb82822943b4a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab97f370156fb0c717f5c5c3c261316d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hotel.html">Hotel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hotel.html#ab97f370156fb0c717f5c5c3c261316d0">showAvailableRooms</a> (std::ostream &amp;, <a class="el" href="class_date.html">Date</a>)</td></tr>
-<tr class="memdesc:ab97f370156fb0c717f5c5c3c261316d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">output to stream all available rooms for a particular <a class="el" href="class_date.html">Date</a>  <a href="class_hotel.html#ab97f370156fb0c717f5c5c3c261316d0">More...</a><br /></td></tr>
+<tr class="memdesc:ab97f370156fb0c717f5c5c3c261316d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">output to stream all available rooms for a particular <a class="el" href="class_date.html" title="Class representing date with day, month and year.">Date</a>  <a href="class_hotel.html#ab97f370156fb0c717f5c5c3c261316d0">More...</a><br /></td></tr>
 <tr class="separator:ab97f370156fb0c717f5c5c3c261316d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1d0f94d6094cf3c8b431fa6bdca8db0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hotel.html#ae1d0f94d6094cf3c8b431fa6bdca8db0">freeRoom</a> (unsigned number)</td></tr>
-<tr class="memdesc:ae1d0f94d6094cf3c8b431fa6bdca8db0"><td class="mdescLeft">&#160;</td><td class="mdescRight">tries to free <a class="el" href="class_room.html">Room</a> with particular ID  <a href="class_hotel.html#ae1d0f94d6094cf3c8b431fa6bdca8db0">More...</a><br /></td></tr>
+<tr class="memdesc:ae1d0f94d6094cf3c8b431fa6bdca8db0"><td class="mdescLeft">&#160;</td><td class="mdescRight">tries to free <a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> with particular ID  <a href="class_hotel.html#ae1d0f94d6094cf3c8b431fa6bdca8db0">More...</a><br /></td></tr>
 <tr class="separator:ae1d0f94d6094cf3c8b431fa6bdca8db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ab83cabd7d0caed85d08ae1ad92b570"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hotel.html">Hotel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hotel.html#a9ab83cabd7d0caed85d08ae1ad92b570">getReport</a> (<a class="el" href="struct_date_period.html">DatePeriod</a> &amp;period)</td></tr>
-<tr class="memdesc:a9ab83cabd7d0caed85d08ae1ad92b570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates report for the usage of this <a class="el" href="class_hotel.html">Hotel</a>'s rooms in the period from-to. Report written in file named "report-YYYY-MM-DD.txt" where YYYY-MM-DD is the beginning of the period.  <a href="class_hotel.html#a9ab83cabd7d0caed85d08ae1ad92b570">More...</a><br /></td></tr>
+<tr class="memdesc:a9ab83cabd7d0caed85d08ae1ad92b570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates report for the usage of this <a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a>'s rooms in the period from-to. Report written in file named "report-YYYY-MM-DD.txt" where YYYY-MM-DD is the beginning of the period.  <a href="class_hotel.html#a9ab83cabd7d0caed85d08ae1ad92b570">More...</a><br /></td></tr>
 <tr class="separator:a9ab83cabd7d0caed85d08ae1ad92b570"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3077074d8a8b2dcc081613916de156ed"><td class="memItemLeft" align="right" valign="top"><a id="a3077074d8a8b2dcc081613916de156ed" name="a3077074d8a8b2dcc081613916de156ed"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>searchRoom</b> (unsigned minBeds, const <a class="el" href="struct_date_period.html">DatePeriod</a> &amp;period) const</td></tr>
+<tr class="memitem:a3077074d8a8b2dcc081613916de156ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hotel.html#a3077074d8a8b2dcc081613916de156ed">searchRoom</a> (unsigned minBeds, const <a class="el" href="struct_date_period.html">DatePeriod</a> &amp;period) const</td></tr>
+<tr class="memdesc:a3077074d8a8b2dcc081613916de156ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">given minimum number of beds and a desired period to print most suitable rooms for accomodation  <a href="class_hotel.html#a3077074d8a8b2dcc081613916de156ed">More...</a><br /></td></tr>
 <tr class="separator:a3077074d8a8b2dcc081613916de156ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7e6a58beab76f131b04b49090fc1330"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hotel.html#ae7e6a58beab76f131b04b49090fc1330">serviceRoom</a> (unsigned number, const <a class="el" href="struct_date_period.html">DatePeriod</a> &amp;period, std::string note)</td></tr>
-<tr class="memdesc:ae7e6a58beab76f131b04b49090fc1330"><td class="mdescLeft">&#160;</td><td class="mdescRight">plans maintenance for particular <a class="el" href="class_room.html">Room</a> and period leaving note for the service  <a href="class_hotel.html#ae7e6a58beab76f131b04b49090fc1330">More...</a><br /></td></tr>
+<tr class="memdesc:ae7e6a58beab76f131b04b49090fc1330"><td class="mdescLeft">&#160;</td><td class="mdescRight">plans maintenance for particular <a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> and period leaving note for the service  <a href="class_hotel.html#ae7e6a58beab76f131b04b49090fc1330">More...</a><br /></td></tr>
 <tr class="separator:ae7e6a58beab76f131b04b49090fc1330"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02ca70d80af5cf9ee523a18525675dc8"><td class="memItemLeft" align="right" valign="top"><a id="a02ca70d80af5cf9ee523a18525675dc8" name="a02ca70d80af5cf9ee523a18525675dc8"></a>
-<a class="el" href="class_hotel.html">Hotel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>showToday</b> ()</td></tr>
+<tr class="memitem:a02ca70d80af5cf9ee523a18525675dc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hotel.html">Hotel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hotel.html#a02ca70d80af5cf9ee523a18525675dc8">showToday</a> ()</td></tr>
+<tr class="memdesc:a02ca70d80af5cf9ee523a18525675dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">print status of the building rooms  <a href="class_hotel.html#a02ca70d80af5cf9ee523a18525675dc8">More...</a><br /></td></tr>
 <tr class="separator:a02ca70d80af5cf9ee523a18525675dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab988068aa218eba516bc1476de33e8de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hotel.html">Hotel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hotel.html#ab988068aa218eba516bc1476de33e8de">seeRoomForNights</a> (unsigned number, unsigned nights)</td></tr>
+<tr class="memdesc:ab988068aa218eba516bc1476de33e8de"><td class="mdescLeft">&#160;</td><td class="mdescRight">print soonest period of particular number of days when particular room is free  <a href="class_hotel.html#ab988068aa218eba516bc1476de33e8de">More...</a><br /></td></tr>
+<tr class="separator:ab988068aa218eba516bc1476de33e8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a3c2ad72b87346ee6d07250f5e3b61b9c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_date.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hotel.html#a3c2ad72b87346ee6d07250f5e3b61b9c">today</a> ()</td></tr>
-<tr class="memdesc:a3c2ad72b87346ee6d07250f5e3b61b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">get today's <a class="el" href="class_date.html">Date</a> according to all Hotels  <a href="class_hotel.html#a3c2ad72b87346ee6d07250f5e3b61b9c">More...</a><br /></td></tr>
+<tr class="memdesc:a3c2ad72b87346ee6d07250f5e3b61b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">get today's <a class="el" href="class_date.html" title="Class representing date with day, month and year.">Date</a> according to all Hotels  <a href="class_hotel.html#a3c2ad72b87346ee6d07250f5e3b61b9c">More...</a><br /></td></tr>
 <tr class="separator:a3c2ad72b87346ee6d07250f5e3b61b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class representing hotel with name, current <a class="el" href="class_date.html" title="Class representing date with day, month and year.">Date</a> and a building (list of rooms) </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a03f1d017c8c8e25702e03ffbaf255b7c" name="a03f1d017c8c8e25702e03ffbaf255b7c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a03f1d017c8c8e25702e03ffbaf255b7c">&#9670;&nbsp;</a></span>Hotel()</h2>
 
@@ -137,7 +147,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="class_hotel.html">Hotel</a> object. </p>
+<p>Construct a new <a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">hotelDataFile</td><td>path to file where rooms are recorded </td></tr>
@@ -164,10 +174,10 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>tries to free <a class="el" href="class_room.html">Room</a> with particular ID </p>
+<p>tries to free <a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> with particular ID </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">number</td><td><a class="el" href="class_room.html">Room</a>'s ID </td></tr>
+    <tr><td class="paramname">number</td><td><a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a>'s ID </td></tr>
   </table>
   </dd>
 </dl>
@@ -200,7 +210,7 @@ false room not found </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>get the name of this <a class="el" href="class_hotel.html">Hotel</a> </p>
+<p>get the name of this <a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a> </p>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
 </div>
@@ -221,14 +231,14 @@ false room not found </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Creates report for the usage of this <a class="el" href="class_hotel.html">Hotel</a>'s rooms in the period from-to. Report written in file named "report-YYYY-MM-DD.txt" where YYYY-MM-DD is the beginning of the period. </p>
+<p>Creates report for the usage of this <a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a>'s rooms in the period from-to. Report written in file named "report-YYYY-MM-DD.txt" where YYYY-MM-DD is the beginning of the period. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">period</td><td>desired period of time </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_hotel.html">Hotel</a>&amp; this <a class="el" href="class_hotel.html">Hotel</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a>&amp; this <a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a> </dd></dl>
 
 </div>
 </div>
@@ -270,12 +280,12 @@ false room not found </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>makes a new <a class="el" href="class_reservation.html">Reservation</a> for particular <a class="el" href="class_room.html">Room</a> and period with options for name of guest and notes to the <a class="el" href="class_reservation.html">Reservation</a> </p>
+<p>makes a new <a class="el" href="class_reservation.html" title="Class representing information about a reservation.">Reservation</a> for particular <a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> and period with options for name of guest and notes to the <a class="el" href="class_reservation.html" title="Class representing information about a reservation.">Reservation</a> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">number</td><td>of the desired <a class="el" href="class_room.html">Room</a> </td></tr>
-    <tr><td class="paramname">from</td><td>accomodation <a class="el" href="class_date.html">Date</a> </td></tr>
-    <tr><td class="paramname">to</td><td>leaving <a class="el" href="class_date.html">Date</a> </td></tr>
+    <tr><td class="paramname">number</td><td>of the desired <a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> </td></tr>
+    <tr><td class="paramname">from</td><td>accomodation <a class="el" href="class_date.html" title="Class representing date with day, month and year.">Date</a> </td></tr>
+    <tr><td class="paramname">to</td><td>leaving <a class="el" href="class_date.html" title="Class representing date with day, month and year.">Date</a> </td></tr>
     <tr><td class="paramname">name</td><td>guest's name </td></tr>
     <tr><td class="paramname">note</td><td>note to the reservation </td></tr>
   </table>
@@ -284,6 +294,81 @@ false room not found </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true successfull reservation </dd>
 <dd>
 false failed reservation (not made) </dd></dl>
+
+</div>
+</div>
+<a id="a3077074d8a8b2dcc081613916de156ed" name="a3077074d8a8b2dcc081613916de156ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3077074d8a8b2dcc081613916de156ed">&#9670;&nbsp;</a></span>searchRoom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Hotel::searchRoom </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>minBeds</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_date_period.html">DatePeriod</a> &amp;&#160;</td>
+          <td class="paramname"><em>period</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>given minimum number of beds and a desired period to print most suitable rooms for accomodation </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">minBeds</td><td>minimum number of beds </td></tr>
+    <tr><td class="paramname">period</td><td>desired time period </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab988068aa218eba516bc1476de33e8de" name="ab988068aa218eba516bc1476de33e8de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab988068aa218eba516bc1476de33e8de">&#9670;&nbsp;</a></span>seeRoomForNights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_hotel.html">Hotel</a> &amp; Hotel::seeRoomForNights </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>number</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>nights</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>print soonest period of particular number of days when particular room is free </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td>ID of a room </td></tr>
+    <tr><td class="paramname">nights</td><td>number of nights to stay in the <a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a> for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a>&amp; this <a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a> </dd></dl>
 
 </div>
 </div>
@@ -319,10 +404,10 @@ false failed reservation (not made) </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>plans maintenance for particular <a class="el" href="class_room.html">Room</a> and period leaving note for the service </p>
+<p>plans maintenance for particular <a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> and period leaving note for the service </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">number</td><td><a class="el" href="class_room.html">Room</a>'s ID </td></tr>
+    <tr><td class="paramname">number</td><td><a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a>'s ID </td></tr>
     <tr><td class="paramname">period</td><td>desired period of time </td></tr>
     <tr><td class="paramname">note</td><td>any notes to the service </td></tr>
   </table>
@@ -360,8 +445,28 @@ false service planning failed (room not found or is reserved for the period) </d
       </table>
 </div><div class="memdoc">
 
-<p>output to stream all available rooms for a particular <a class="el" href="class_date.html">Date</a> </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_hotel.html">Hotel</a>&amp; this <a class="el" href="class_hotel.html">Hotel</a> </dd></dl>
+<p>output to stream all available rooms for a particular <a class="el" href="class_date.html" title="Class representing date with day, month and year.">Date</a> </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a>&amp; this <a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a> </dd></dl>
+
+</div>
+</div>
+<a id="a02ca70d80af5cf9ee523a18525675dc8" name="a02ca70d80af5cf9ee523a18525675dc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02ca70d80af5cf9ee523a18525675dc8">&#9670;&nbsp;</a></span>showToday()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_hotel.html">Hotel</a> &amp; Hotel::showToday </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>print status of the building rooms </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a>&amp; this <a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a> </dd></dl>
 
 </div>
 </div>
@@ -388,8 +493,8 @@ false service planning failed (room not found or is reserved for the period) </d
 </table>
 </div><div class="memdoc">
 
-<p>get today's <a class="el" href="class_date.html">Date</a> according to all Hotels </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_date.html">Date</a> </dd></dl>
+<p>get today's <a class="el" href="class_date.html" title="Class representing date with day, month and year.">Date</a> according to all Hotels </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_date.html" title="Class representing date with day, month and year.">Date</a> </dd></dl>
 
 </div>
 </div>

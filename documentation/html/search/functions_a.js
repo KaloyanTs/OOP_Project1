@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['serviceroom_0',['serviceRoom',['../class_hotel.html#ae7e6a58beab76f131b04b49090fc1330',1,'Hotel']]],
-  ['showavailablerooms_1',['showAvailableRooms',['../class_hotel.html#ab97f370156fb0c717f5c5c3c261316d0',1,'Hotel::showAvailableRooms()'],['../class_hotel_building.html#acb8b2fa415c1718a6a8bae7fddc7b06d',1,'HotelBuilding::showAvailableRooms(std::ostream &amp;os, Date d) const']]],
-  ['showroomsstatestoday_2',['showRoomsStatesToday',['../class_hotel_building.html#a5d49615b93b269a461a5ddf921c545e5',1,'HotelBuilding']]],
-  ['stateondate_3',['stateOnDate',['../class_reservation.html#a5bc365d7f06207428c27053df2bb6cbc',1,'Reservation']]],
-  ['suggestroom_4',['suggestRoom',['../class_hotel_building.html#a8e5c528b9b54198c20333764275a7280',1,'HotelBuilding']]]
+  ['readproper_0',['readProper',['../struct_date_period.html#ad1ed8aa41fecd42f1ea0d5c0250cddf4',1,'DatePeriod']]],
+  ['reservation_1',['Reservation',['../class_reservation.html#a0b11b3f0ee734bad26158e0db5b58fca',1,'Reservation']]],
+  ['reserveroom_2',['reserveRoom',['../class_hotel.html#af44de81e7134f72935fb82822943b4a3',1,'Hotel']]],
+  ['room_3',['Room',['../class_room.html#ab64b84ed33b32bf6a37a4280efde4d96',1,'Room::Room(unsigned n, unsigned bC)'],['../class_room.html#a2a5725ae459e0ab9d327437f2764108a',1,'Room::Room(const Room &amp;)=delete']]]
 ];

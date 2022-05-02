@@ -68,13 +68,135 @@ $(function() {
   <div class="headertitle"><div class="title">RoomAnalyzer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>supporting class to perform algorythms on the rooms in a building  
+ <a href="class_room_analyzer.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_room_analyzer_8hpp_source.html">RoomAnalyzer.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a212c689f6a7cd12f9792bee43b6742ae"><td class="memItemLeft" align="right" valign="top"><a id="a212c689f6a7cd12f9792bee43b6742ae" name="a212c689f6a7cd12f9792bee43b6742ae"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>suggest</b> (<a class="el" href="class_hotel_building.html">HotelBuilding</a> &amp;hB, unsigned beds, <a class="el" href="struct_date_period.html">DatePeriod</a> period)</td></tr>
+<tr class="memitem:a212c689f6a7cd12f9792bee43b6742ae"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_room_analyzer.html#a212c689f6a7cd12f9792bee43b6742ae">suggest</a> (<a class="el" href="class_hotel_building.html">HotelBuilding</a> &amp;hB, unsigned beds, <a class="el" href="struct_date_period.html">DatePeriod</a> period)</td></tr>
+<tr class="memdesc:a212c689f6a7cd12f9792bee43b6742ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">print top DISPLAY rooms info based on suitability of a <a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> (desired number of beds and period of time)  <a href="class_room_analyzer.html#a212c689f6a7cd12f9792bee43b6742ae">More...</a><br /></td></tr>
 <tr class="separator:a212c689f6a7cd12f9792bee43b6742ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afde57c7d421cca78025cbe1434a53b7d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_room_analyzer.html#afde57c7d421cca78025cbe1434a53b7d">soonestFreePeriod</a> (const <a class="el" href="class_hotel_building.html">HotelBuilding</a> &amp;hB, unsigned number, unsigned nights, <a class="el" href="class_date.html">Date</a> today)</td></tr>
+<tr class="memdesc:afde57c7d421cca78025cbe1434a53b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">print soonest period when a particular room is free for particular number of nights  <a href="class_room_analyzer.html#afde57c7d421cca78025cbe1434a53b7d">More...</a><br /></td></tr>
+<tr class="separator:afde57c7d421cca78025cbe1434a53b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >supporting class to perform algorythms on the rooms in a building </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="afde57c7d421cca78025cbe1434a53b7d" name="afde57c7d421cca78025cbe1434a53b7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afde57c7d421cca78025cbe1434a53b7d">&#9670;&nbsp;</a></span>soonestFreePeriod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RoomAnalyzer::soonestFreePeriod </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_hotel_building.html">HotelBuilding</a> &amp;&#160;</td>
+          <td class="paramname"><em>hB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>number</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>nights</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_date.html">Date</a>&#160;</td>
+          <td class="paramname"><em>today</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>print soonest period when a particular room is free for particular number of nights </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hB</td><td><a class="el" href="class_hotel_building.html" title="Class representing list of rooms.">HotelBuilding</a> </td></tr>
+    <tr><td class="paramname">number</td><td>ID of the <a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> </td></tr>
+    <tr><td class="paramname">nights</td><td>length of a period </td></tr>
+    <tr><td class="paramname">today</td><td>today's <a class="el" href="class_date.html" title="Class representing date with day, month and year.">Date</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a212c689f6a7cd12f9792bee43b6742ae" name="a212c689f6a7cd12f9792bee43b6742ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a212c689f6a7cd12f9792bee43b6742ae">&#9670;&nbsp;</a></span>suggest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RoomAnalyzer::suggest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_hotel_building.html">HotelBuilding</a> &amp;&#160;</td>
+          <td class="paramname"><em>hB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>beds</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_date_period.html">DatePeriod</a>&#160;</td>
+          <td class="paramname"><em>period</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>print top DISPLAY rooms info based on suitability of a <a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> (desired number of beds and period of time) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hB</td><td><a class="el" href="class_hotel_building.html" title="Class representing list of rooms.">HotelBuilding</a> </td></tr>
+    <tr><td class="paramname">beds</td><td>desired number of beds </td></tr>
+    <tr><td class="paramname">period</td><td>period of time </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_room_analyzer_8hpp_source.html">RoomAnalyzer.hpp</a></li>
 <li>RoomAnalyzer.cpp</li>
