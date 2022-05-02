@@ -5,6 +5,10 @@
 #include "RoomAnalyzer.hpp"
 #include <fstream>
 
+/**
+ * @brief Class representing list of rooms
+ *
+ */
 class HotelBuilding
 {
     /**

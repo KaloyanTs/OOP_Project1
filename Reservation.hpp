@@ -21,6 +21,10 @@ enum ReservationState
     FUTURE
 };
 
+/**
+ * @brief Class representing information about a reservation
+ * 
+ */
 class Reservation
 {
     /**

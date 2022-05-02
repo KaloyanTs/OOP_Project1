@@ -12,6 +12,11 @@
  */
 const size_t INIT_CAPACITY = 2;
 
+
+/**
+ * @brief Class representing a room in hotel
+ * 
+ */
 class Room
 {
     /**

@@ -16,6 +16,10 @@
  */
 std::string readFromIfstream(std::ifstream &ifs, size_t len);
 
+/**
+ * @brief Class representing hotel with name, current Date and a building (list of rooms)
+ *
+ */
 class Hotel
 {
     /**
@@ -113,7 +117,7 @@ public:
 
     /**
      * @brief given minimum number of beds and a desired period to print most suitable rooms for accomodation
-     * 
+     *
      * @param minBeds minimum number of beds
      * @param period desired time period
      */
@@ -132,19 +136,19 @@ public:
 
     /**
      * @brief print status of the building rooms
-     * 
+     *
      * @return Hotel& this Hotel
      */
     Hotel &showToday();
 
     /**
      * @brief print soonest period of particular number of days when particular room is free
-     * 
+     *
      * @param number ID of a room
      * @param nights number of nights to stay in the Hotel for
      * @return Hotel& this Hotel
      */
-    Hotel &seeRoomForNights(unsigned number,unsigned nights);
+    Hotel &seeRoomForNights(unsigned number, unsigned nights);
 };
 
 #endif

@@ -9,6 +9,11 @@
  */
 const unsigned daysFromBeginning[] = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
 
+
+/**
+ * @brief Class representing date with day, month and year
+ * 
+ */
 class Date
 {
     /**
@@ -119,6 +124,10 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const Date &d);
 };
 
+/**
+ * @brief Class containing two dates forming a period of time from Date to Date
+ * 
+ */
 struct DatePeriod
 {
     /**
@@ -147,6 +156,10 @@ struct DatePeriod
      */
     DatePeriod &operator++();
 
+    /**
+     * @brief method to read from stdin a proper period of time (from is before to)
+     *
+     */
     void readProper();
 };
 

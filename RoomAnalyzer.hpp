@@ -10,6 +10,11 @@
  */
 const size_t DISPLAY = 5;
 
+
+/**
+ * @brief supporting class to perform algorythms on the rooms in a building
+ * 
+ */
 class RoomAnalyzer
 {
     /**
