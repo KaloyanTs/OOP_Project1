@@ -48,11 +48,11 @@ public:
      * @return true this Date is chronologically before other
      * @return false this Date is not chronologically before other
      */
-    bool operator<(Date other) const;
+    bool operator<(const Date other) const;
     /**
      * @brief see operator<
      */
-    bool operator<=(Date other) const;
+    bool operator<=(const Date other) const;
     /**
      * @brief checks if this Date is chronologically after other Date
      *
@@ -60,11 +60,11 @@ public:
      * @return true this Date is chronologically after other
      * @return false this Date is not chronologically after other
      */
-    bool operator>(Date other) const;
+    bool operator>(const Date other) const;
     /**
      * @brief see operator>
      */
-    bool operator>=(Date other) const;
+    bool operator>=(const Date other) const;
     /**
      * @brief checks if two dates are identical
      *
@@ -72,7 +72,7 @@ public:
      * @return true the dates are identical
      * @return false the dates are not identical
      */
-    bool operator==(Date other) const;
+    bool operator==(const Date other) const;
     /**
      * @brief records this Date in buffer in format YYYY-MM-DD
      *
@@ -123,34 +123,36 @@ struct DatePeriod
 {
     /**
      * @brief beginning Date of the period
-     * 
+     *
      */
     Date from;
-    
+
     /**
      * @brief end Date of the period
-     * 
+     *
      */
     Date to;
 
     /**
      * @brief distance in days of the period
-     * 
+     *
      * @return unsigned days between beginning and end
      */
     unsigned length() const { return to - from; }
 
     /**
      * @brief moving period one day froward
-     * 
+     *
      * @return DatePeriod& this DatePeriod
      */
     DatePeriod &operator++();
+
+    void readProper();
 };
 
 /**
  * @brief overloaded operator>> for DatePeriod input
- * 
+ *
  * @param is input stream
  * @param dP DatePeriod to be input
  * @return std::istream& this input stream

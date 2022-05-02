@@ -1,11 +1,11 @@
 #include "Date.hpp"
 
-bool Date::operator==(Date other) const
+bool Date::operator==(const Date other) const
 {
     return year == other.year && month == other.month && day == other.day;
 }
 
-bool Date::operator<(Date other) const
+bool Date::operator<(const Date other) const
 {
     if (year > other.year)
         return false;
@@ -19,12 +19,12 @@ bool Date::operator<(Date other) const
         return day < other.day;
 }
 
-bool Date::operator<=(Date other) const
+bool Date::operator<=(const Date other) const
 {
     return !(*this > other);
 }
 
-bool Date::operator>(Date other) const
+bool Date::operator>(const Date other) const
 {
     if (year < other.year)
         return false;
@@ -38,7 +38,7 @@ bool Date::operator>(Date other) const
         return day > other.day;
 }
 
-bool Date::operator>=(Date other) const
+bool Date::operator>=(const Date other) const
 {
     return !(*this < other);
 }
@@ -163,4 +163,14 @@ DatePeriod &DatePeriod::operator++()
     ++from;
     ++to;
     return *this;
+}
+
+void DatePeriod::readProper()
+{
+    do
+    {
+        std::cin >> *this;
+        if (from >= to)
+            std::cerr << "Bad data! Input period again!\n";
+    } while (from >= to);
 }
