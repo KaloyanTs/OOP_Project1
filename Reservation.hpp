@@ -8,6 +8,7 @@
 #include <cassert>
 #include <fstream>
 #include <string>
+#include "Constants.hpp"
 
 /**
  * @brief different states in time for a reservation
@@ -23,7 +24,7 @@ enum ReservationState
 
 /**
  * @brief Class representing information about a reservation
- * 
+ *
  */
 class Reservation
 {
@@ -113,8 +114,8 @@ public:
 
     /**
      * @brief get the note to this Reservation
-     * 
-     * @return std::string 
+     *
+     * @return std::string
      */
     std::string getNote() const { return note; }
 

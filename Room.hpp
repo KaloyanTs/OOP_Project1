@@ -5,17 +5,11 @@
 #include "Types.hpp"
 #include "Reservation.hpp"
 #include "Hotel.hpp"
-
-/**
- * @brief const varieble keeping minimal size of the reservations list
- *
- */
-const size_t INIT_CAPACITY = 2;
-
+#include "Constants.hpp"
 
 /**
  * @brief Class representing a room in hotel
- * 
+ *
  */
 class Room
 {
@@ -162,7 +156,7 @@ public:
 
     /**
      * @brief print to stdout information about this Room latest busyness
-     * 
+     *
      */
     void showActivity() const;
 };

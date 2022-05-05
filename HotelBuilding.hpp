@@ -1,6 +1,7 @@
 #ifndef __HOTELBUILDING_HPP
 #define __HOTELBUILDING_HPP
 #include "Types.hpp"
+#include "Constants.hpp"
 #include "Room.hpp"
 #include "RoomAnalyzer.hpp"
 #include <fstream>

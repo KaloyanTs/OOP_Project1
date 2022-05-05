@@ -3,9 +3,8 @@
 #include <cstring>
 #include <string>
 #include <sstream>
+#include "Constants.hpp"
 #include "Hotel.hpp"
-const size_t DISPLAY_WIDTH = 130;
-const size_t COMMANDS = 8;
 
 const char cmdArr[COMMANDS][2][100] = {
     {{"To make a reservation, enter "},
@@ -148,7 +147,7 @@ bool workDay(Hotel &H)
         std::cin.getline(cmd, 100, ':');
         while (strchr(cmd, '\n'))
         {
-            std::cerr << "Uknown command!\n";
+            std::cerr << "Unknown command!\n";
             std::cin.getline(cmd, 100);
             std::cin.getline(cmd, 100, ':');
         }

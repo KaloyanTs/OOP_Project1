@@ -1,6 +1,7 @@
 #ifndef __HOTEL_HPP
 #define __HOTEL_HPP
 #include "Types.hpp"
+#include "Constants.hpp"
 #include "Date.hpp"
 #include "Room.hpp"
 #include "Reservation.hpp"

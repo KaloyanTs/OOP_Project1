@@ -1,19 +1,13 @@
 #ifndef __ROOMANALYZER_HPP
 #define __ROOMANALYZER_HPP
 #include "Types.hpp"
+#include "Constants.hpp"
 #include "HotelBuilding.hpp"
 #include "Date.hpp"
 
 /**
- * @brief max number of rooms to be printed
- *
- */
-const size_t DISPLAY = 5;
-
-
-/**
  * @brief supporting class to perform algorythms on the rooms in a building
- * 
+ *
  */
 class RoomAnalyzer
 {
@@ -24,7 +18,10 @@ class RoomAnalyzer
      * @param score array of points for each Room
      * @param size size of the array
      */
-    static void sortRooms(HotelBuilding &hB, unsigned *score, size_t size);
+    static void sortRooms(HotelBuilding &hB, unsigned *score, size_t from, size_t size);
+
+    template <typename T>
+    static void swap(T &a, T &b);
 
 public:
     /**
@@ -46,5 +43,13 @@ public:
      */
     static void soonestFreePeriod(const HotelBuilding &hB, unsigned number, unsigned nights, Date today);
 };
+
+template <typename T>
+void RoomAnalyzer::swap(T &a, T &b)
+{
+    T c = a;
+    a = b;
+    b = c;
+}
 
 #endif

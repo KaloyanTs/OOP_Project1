@@ -1,13 +1,8 @@
 #ifndef __DATE_HPP
 #define __DATE_HPP
+#include "Constants.hpp"
 #include <iostream>
 #include <ctime>
-
-/**
- * @brief array keeping days past from January 1st
- *
- */
-const unsigned daysFromBeginning[] = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
 
 
 /**
