@@ -48,23 +48,6 @@ void RoomAnalyzer::sortRooms(HotelBuilding &hB, unsigned *score, size_t from, si
 
     sortRooms(hB, score, from, pivotIndex - 1);
     sortRooms(hB, score, pivotIndex + 1, to);
-
-    // unsigned iMax = 0;
-    // for (unsigned i = 0; i < to - 1; ++i)
-    // {
-    //     iMax = i;
-    //     for (unsigned j = i + 1; j < to; ++j)
-    //         if (score[j] < score[iMax] ||
-    //             score[j] == score[iMax] &&
-    //                 hB.rooms[j]->getNumber() < hB.rooms[iMax]->getNumber())
-    //             iMax = j;
-    //     Room *tmp = hB.rooms[i];
-    //     hB.rooms[i] = hB.rooms[iMax];
-    //     hB.rooms[iMax] = tmp;
-    //     unsigned ftmp = score[i];
-    //     score[i] = score[iMax];
-    //     score[iMax] = ftmp;
-    // }
 }
 
 void RoomAnalyzer::soonestFreePeriod(const HotelBuilding &hB, unsigned number, unsigned nights, Date today)
