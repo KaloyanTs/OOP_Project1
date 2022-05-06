@@ -46,12 +46,12 @@ class Room
     size_t pastCount, pastCapacity;
 
     /**
-     * @brief expand a reservations list
+     * @brief expand a reservations list doubling its capacity
      *
      */
     void expand(Reservation **&arr, size_t &size, size_t &capacity);
     /**
-     * @brief shrink a reservations list
+     * @brief shrink a reservations list (capcity becomes as much as size)
      *
      */
     void shrink(Reservation **&arr, size_t &size, size_t &capacity);
