@@ -117,3 +117,108 @@ Hotel &Hotel::seeRoomForNights(unsigned number, unsigned nights)
     building->showRoomForNights(number, nights, now);
     return *this;
 }
+
+bool Hotel::workDay()
+{
+    char cmd[STRING_MAX_LENGTH];
+    std::cin.getline(cmd, STRING_MAX_LENGTH, ':');
+    while (strchr(cmd, '\n'))
+    {
+        std::cerr << "Uknown command!\n";
+        std::cin.getline(cmd, STRING_MAX_LENGTH);
+        std::cin.getline(cmd, STRING_MAX_LENGTH, ':');
+    }
+    while (*cmd && strcmp(cmd, "close"))
+    {
+        if (!strcmp(cmd, "day"))
+        {
+            nextDay();
+            std::cin.get();
+            return true;
+        }
+        if (!strcmp(cmd, "request"))
+        {
+            unsigned beds;
+            DatePeriod per;
+            std::cin >> beds;
+            per.readProper();
+            std::cin.get();
+            searchRoom(beds, per);
+        }
+        else if (!strcmp(cmd, "rooms"))
+        {
+            std::cin.get();
+            showToday();
+        }
+        else if (!strcmp(cmd, "plan"))
+        {
+            unsigned number, nights;
+            std::cin >> number >> nights;
+            std::cin.get();
+            seeRoomForNights(number, nights);
+        }
+        else if (!strcmp(cmd, "free"))
+        {
+            unsigned number;
+            std::cin >> number;
+            std::cin.get();
+            freeRoom(number);
+        }
+        else if (!strcmp(cmd, "report"))
+        {
+            DatePeriod per;
+            per.readProper();
+            std::cin.get();
+            getReport(per);
+        }
+        else if (!strcmp(cmd, "reserve"))
+        {
+            unsigned number;
+            DatePeriod per;
+            std::cin >> number;
+            per.readProper();
+            std::string name = "", note = "";
+            std::cin.get(*cmd);
+            if (*cmd != '\n')
+            {
+                std::cin.getline(cmd, 100, ';');
+                name = cmd;
+                std::cin.getline(cmd, 100);
+                if (*cmd)
+                {
+                    note = cmd;
+                    reserveRoom(number, per, name, note);
+                }
+                else
+                    reserveRoom(number, per, name);
+            }
+            else
+                reserveRoom(number, per);
+        }
+        else if (!strcmp(cmd, "maintenance"))
+        {
+            unsigned number;
+            DatePeriod per;
+            std::cin >> number;
+            per.readProper();
+            std::cin.get();
+            std::cin.getline(cmd, 100);
+            serviceRoom(number, per, cmd);
+        }
+        else if (!strcmp(cmd, "available"))
+        {
+            Date d;
+            std::cin >> d;
+            std::cin.get();
+            showAvailableRooms(std::cout, d);
+        }
+        std::cin.getline(cmd, 100, ':');
+        while (strchr(cmd, '\n'))
+        {
+            std::cerr << "Unknown command!\n";
+            std::cin.getline(cmd, 100);
+            std::cin.getline(cmd, 100, ':');
+        }
+    }
+    return false;
+}
