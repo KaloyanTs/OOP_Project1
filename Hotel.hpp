@@ -150,6 +150,14 @@ public:
      * @return Hotel& this Hotel
      */
     Hotel &seeRoomForNights(unsigned number, unsigned nights);
+
+    /**
+     * @brief work with this Hotel for a whole day
+     *
+     * @return true day ended with the Hotel still working
+     * @return false the Hotel was closed
+     */
+    bool workDay();
 };
 
 #endif
