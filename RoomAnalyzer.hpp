@@ -16,9 +16,19 @@ class RoomAnalyzer
      *
      * @param hB HotelBuilding
      * @param score array of points for each Room
-     * @param size size of the array
+     * @param from beginning of the array
+     * @param to end of the array
      */
-    static void sortRooms(HotelBuilding &hB, unsigned *score, size_t from, size_t size);
+    static void sortRoomsByScore(HotelBuilding &hB, unsigned *score, size_t from, size_t to);
+
+    /**
+     * @brief sort the Rooms in a HotelBuilding based on their number
+     *
+     * @param hB HotelBuilding
+     * @param from beginning of the array
+     * @param to end of the array
+     */
+    static void sortRoomsByNumber(HotelBuilding &hB, size_t from, size_t size);
 
     template <typename T>
     static void swap(T &a, T &b);

@@ -14,7 +14,7 @@ void RoomAnalyzer::suggest(HotelBuilding &hB, unsigned beds, DatePeriod period)
             score[i] = (hB.rooms[i]->getBedCount() - beds);
     }
 
-    sortRooms(hB, score, 0, roomCount - 1);
+    sortRoomsByScore(hB, score, 0, roomCount - 1);
 
     std::cout << "Most suitable rooms are:\n";
     for (unsigned i = 0; i < roomCount && i < DISPLAY; ++i)
@@ -26,14 +26,16 @@ void RoomAnalyzer::suggest(HotelBuilding &hB, unsigned beds, DatePeriod period)
     }
 
     delete[] score;
+
+    sortRoomsByNumber(hB, 0, roomCount - 1);
 }
 
-void RoomAnalyzer::sortRooms(HotelBuilding &hB, unsigned *score, size_t from, size_t to)
+void RoomAnalyzer::sortRoomsByScore(HotelBuilding &hB, unsigned *score, size_t from, size_t to)
 {
     if (to <= from + 1)
         return;
     size_t pivotIndex = from;
-    for (size_t i = from + 1; i < to; ++i)
+    for (size_t i = from; i < to; ++i)
     {
         if (score[i] < score[to] ||
             score[i] == score[to] &&
@@ -46,8 +48,25 @@ void RoomAnalyzer::sortRooms(HotelBuilding &hB, unsigned *score, size_t from, si
     swap<Room *>(hB.rooms[to], hB.rooms[pivotIndex]);
     swap<unsigned>(score[to], score[pivotIndex]);
 
-    sortRooms(hB, score, from, pivotIndex - 1);
-    sortRooms(hB, score, pivotIndex + 1, to);
+    if (pivotIndex > from)
+        sortRoomsByScore(hB, score, from, pivotIndex - 1);
+    sortRoomsByScore(hB, score, pivotIndex + 1, to);
+}
+
+void RoomAnalyzer::sortRoomsByNumber(HotelBuilding &hB, size_t from, size_t to)
+{
+    if (to <= from + 1)
+        return;
+    size_t pivotIndex = from;
+    for (size_t i = from; i < to; ++i)
+        if (hB.rooms[i]->getNumber() < hB.rooms[to]->getNumber())
+            swap<Room *>(hB.rooms[i], hB.rooms[pivotIndex++]);
+
+    swap<Room *>(hB.rooms[to], hB.rooms[pivotIndex]);
+
+    if (pivotIndex > from)
+        sortRoomsByNumber(hB, from, pivotIndex - 1);
+    sortRoomsByNumber(hB, pivotIndex + 1, to);
 }
 
 void RoomAnalyzer::soonestFreePeriod(const HotelBuilding &hB, unsigned number, unsigned nights, Date today)
