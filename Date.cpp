@@ -150,11 +150,6 @@ int Date::operator-(Date other) const
 
 std::istream &operator>>(std::istream &is, DatePeriod &dP)
 {
-    // if (&is == &std::cin)
-    //     std::cout << "From: ";
-    // is >> dP.from;
-    // if (&is == &std::cin)
-    //     std::cout << "To: ";
     return is >> dP.from >> dP.to;
 }
 
