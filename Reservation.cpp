@@ -50,6 +50,7 @@ void Reservation::writeToBinaryFile(std::ofstream &ofs)
     period.to.writeToBinaryFile(ofs);
 
     ofs.write((const char *)&state, sizeof(state));
+    ofs.write((const char *)&service, sizeof(service));
 }
 
 void Reservation::readDataFromBinary(std::ifstream &ifs)
@@ -59,7 +60,7 @@ void Reservation::readDataFromBinary(std::ifstream &ifs)
     char *buf = new char[length + 1];
     ifs.read(buf, length);
     buf[length] = '\0';
-    guestName=buf;
+    guestName = buf;
     delete[] buf;
 
     ifs.read((char *)&length, sizeof(length));
@@ -73,4 +74,5 @@ void Reservation::readDataFromBinary(std::ifstream &ifs)
     period.to.readDataFromBinary(ifs);
 
     ifs.read((char *)&state, sizeof(state));
+    ifs.read((char *)&service, sizeof(service));
 }
