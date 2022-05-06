@@ -2,12 +2,12 @@
 #define __DATE_HPP
 #include "Constants.hpp"
 #include <iostream>
+#include <fstream>
 #include <ctime>
-
 
 /**
  * @brief Class representing date with day, month and year
- * 
+ *
  */
 class Date
 {
@@ -117,11 +117,15 @@ public:
      * @return std::ostream& reference to the output stream
      */
     friend std::ostream &operator<<(std::ostream &os, const Date &d);
+
+    void writeToBinaryFile(std::ofstream &ofs);
+
+    void readDataFromBinary(std::ifstream &ifs);
 };
 
 /**
  * @brief Class containing two dates forming a period of time from Date to Date
- * 
+ *
  */
 struct DatePeriod
 {

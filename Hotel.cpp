@@ -46,6 +46,14 @@ Hotel::Hotel(std::string hotelDataFile)
     name = readFromIfstream(ifs, length);
     building = new HotelBuilding(ifs);
     ifs.close();
+
+    std::ifstream data(name + ".dat", std::ios::in | std::ios::binary);
+    if (data.is_open())
+    {
+        now.readDataFromBinary(data);
+        building->readDataFromBinary(data);
+    }
+    data.close();
 }
 
 std::string readFromIfstream(std::ifstream &ifs, size_t len)
@@ -220,5 +228,17 @@ bool Hotel::workDay()
             std::cin.getline(cmd, 100, ':');
         }
     }
+    writeToBinaryFile();
     return false;
+}
+
+void Hotel::writeToBinaryFile()
+{
+    std::string streamName = name;
+    streamName += ".dat";
+    std::ofstream ofs(streamName, std::ios::out | std::ios::binary);
+    assert(ofs.is_open());
+    now.writeToBinaryFile(ofs);
+    building->writeToBinaryFile(ofs);
+    ofs.close();
 }

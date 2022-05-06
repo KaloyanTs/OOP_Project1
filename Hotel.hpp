@@ -41,6 +41,8 @@ class Hotel
      */
     HotelBuilding *building;
 
+    void writeToBinaryFile();
+
 public:
     Hotel() = delete;
 
@@ -155,7 +157,7 @@ public:
      * @brief work with this Hotel for a whole day
      *
      * @return true day ended with the Hotel still working
-     * @return false the Hotel was closed
+     * @return false the Hotel was closed and its data written to "<name>.dat"
      */
     bool workDay();
 };

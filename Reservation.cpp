@@ -1,6 +1,6 @@
 #include "Reservation.hpp"
 
-Reservation::Reservation(std::string name, const DatePeriod & p, std::string n, bool s)
+Reservation::Reservation(std::string name, const DatePeriod &p, std::string n, bool s)
     : guestName(name),
       note(n),
       period(p),
@@ -34,4 +34,43 @@ bool Reservation::LeavingInAdvance(Date newTo)
         return false;
     period.to = newTo;
     return true;
+}
+
+void Reservation::writeToBinaryFile(std::ofstream &ofs)
+{
+    size_t size = guestName.size();
+    ofs.write((const char *)&size, sizeof(size));
+    ofs.write(guestName.c_str(), size);
+
+    size = note.size();
+    ofs.write((const char *)&size, sizeof(size));
+    ofs.write(note.c_str(), size);
+
+    period.from.writeToBinaryFile(ofs);
+    period.to.writeToBinaryFile(ofs);
+
+    ofs.write((const char *)&state, sizeof(state));
+}
+
+void Reservation::readDataFromBinary(std::ifstream &ifs)
+{
+    size_t length;
+    ifs.read((char *)&length, sizeof(length));
+    char *buf = new char[length + 1];
+    ifs.read(buf, length);
+    buf[length] = '\0';
+    guestName=buf;
+    delete[] buf;
+
+    ifs.read((char *)&length, sizeof(length));
+    buf = new char[length + 1];
+    ifs.read(buf, length);
+    buf[length] = '\0';
+    note = buf;
+    delete[] buf;
+
+    period.from.readDataFromBinary(ifs);
+    period.to.readDataFromBinary(ifs);
+
+    ifs.read((char *)&state, sizeof(state));
 }

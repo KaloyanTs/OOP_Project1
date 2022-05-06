@@ -78,3 +78,26 @@ void HotelBuilding::showRoomForNights(unsigned number, unsigned nights, Date tod
 {
     RoomAnalyzer::soonestFreePeriod(*this, number, nights, today);
 }
+
+void HotelBuilding::writeToBinaryFile(std::ofstream &ofs)
+{
+    ofs.write((const char *)&size, sizeof(size));
+    for (unsigned i = 0; i < size; ++i)
+        rooms[i]->writeToBinaryFile(ofs);
+}
+
+void HotelBuilding::readDataFromBinary(std::ifstream &ifs)
+{
+    unsigned int number;
+    size_t count;
+    ifs.read((char *)&count, sizeof(count));
+
+    for (unsigned i = 0; i < count; ++i)
+    {
+        ifs.read((char *)&number, sizeof(number));
+        if (this->operator[](number))
+            this->operator[](number)->readDataFromBinary(ifs);
+        else
+            Room(0, 0).readDataFromBinary(ifs);
+    }
+}

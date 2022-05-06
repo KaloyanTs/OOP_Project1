@@ -140,6 +140,10 @@ public:
      * @return false new leaving Date not appropriate for earlier leaving
      */
     bool LeavingInAdvance(Date);
+
+    void writeToBinaryFile(std::ofstream &ofs);
+
+    void readDataFromBinary(std::ifstream &ifs);
 };
 
 /**

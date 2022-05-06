@@ -98,7 +98,7 @@ public:
      */
     bool freeRoom(Reservation *&currentRes);
 
-    void changeLeaving(Reservation *, Date newDate); // todo must be private
+    void changeLeaving(Reservation *, Date newDate);
 
     /**
      * @brief apply new Date to state of all reservations and respectively of the room availability
@@ -159,6 +159,10 @@ public:
      *
      */
     void showActivity() const;
+
+    void writeToBinaryFile(std::ofstream &ofs);
+
+    void readDataFromBinary(std::ifstream &ifs);
 };
 
 /**

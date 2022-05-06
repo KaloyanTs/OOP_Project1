@@ -174,3 +174,17 @@ void DatePeriod::readProper()
             std::cerr << "Bad data! Input period again!\n";
     } while (from >= to);
 }
+
+void Date::writeToBinaryFile(std::ofstream &ofs)
+{
+    ofs.write((const char *)&day, sizeof(day));
+    ofs.write((const char *)&month, sizeof(month));
+    ofs.write((const char *)&year, sizeof(year));
+}
+
+void Date::readDataFromBinary(std::ifstream &ifs)
+{
+    ifs.read((char *)&day, sizeof(day));
+    ifs.read((char *)&month, sizeof(month));
+    ifs.read((char *)&year, sizeof(year));
+}

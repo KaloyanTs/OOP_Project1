@@ -237,3 +237,50 @@ void Room::showActivity() const
               << " to "
               << reservations[0]->getTo() << ".\n";
 }
+
+void Room::writeToBinaryFile(std::ofstream &ofs)
+{
+    ofs.write((const char *)&number, sizeof(number));
+
+    ofs.write((const char *)&resCount, sizeof(resCount));
+    for (unsigned i = 0; i < resCount; ++i)
+        reservations[i]->writeToBinaryFile(ofs);
+    ofs.write((const char *)&pastCount, sizeof(pastCount));
+    for (unsigned i = 0; i < pastCount; ++i)
+        pastReservations[i]->writeToBinaryFile(ofs);
+}
+
+void Room::readDataFromBinary(std::ifstream &ifs)
+{
+    ifs.read((char *)&resCount, sizeof(resCount));
+    if (resCount)
+    {
+        resCapacity = resCount;
+        Reservation **newArr = new Reservation *[resCapacity];
+        delete[] reservations;
+        reservations = newArr;
+    }
+
+    for (unsigned i = 0; i < resCount; ++i)
+    {
+        DatePeriod t;
+        reservations[i] = new Reservation("", t);
+        reservations[i]->readDataFromBinary(ifs);
+    }
+
+    ifs.read((char *)&pastCount, sizeof(pastCount));
+    if (pastCount)
+    {
+        pastCapacity = pastCount;
+        Reservation **newArr = new Reservation *[pastCapacity];
+        delete[] pastReservations;
+        pastReservations = newArr;
+    }
+
+    for (unsigned i = 0; i < pastCount; ++i)
+    {
+        DatePeriod t;
+        pastReservations[i] = new Reservation("", t);
+        pastReservations[i]->readDataFromBinary(ifs);
+    }
+}

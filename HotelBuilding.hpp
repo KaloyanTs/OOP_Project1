@@ -113,6 +113,10 @@ public:
      */
     void showRoomForNights(unsigned number, unsigned nights, Date today) const;
 
+    void writeToBinaryFile(std::ofstream &ofs);
+
+    void readDataFromBinary(std::ifstream &ifs);
+
     /**
      * @brief using RoomAnalyzer to perform algorithms for the room list (database)
      *
