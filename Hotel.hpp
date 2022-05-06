@@ -41,6 +41,10 @@ class Hotel
      */
     HotelBuilding *building;
 
+    /**
+     * @brief write this Hotel data into a binary file named "<name>.dat"
+     *
+     */
     void writeToBinaryFile();
 
 public:

@@ -1,6 +1,6 @@
 #ifndef __CONSTANTS_HPP
 #define __CONSTANTS_HPP
-#include <iostream>
+#include <cstddef>
 
 /**
  * @brief array keeping days past from January 1st

@@ -30,6 +30,13 @@ class RoomAnalyzer
      */
     static void sortRoomsByNumber(HotelBuilding &hB, size_t from, size_t size);
 
+    /**
+     * @brief template for swapping values of two elements
+     *
+     * @tparam T typename of swapped objects/variables
+     * @param a
+     * @param b
+     */
     template <typename T>
     static void swap(T &a, T &b);
 

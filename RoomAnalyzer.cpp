@@ -14,6 +14,8 @@ void RoomAnalyzer::suggest(HotelBuilding &hB, unsigned beds, DatePeriod period)
             score[i] = (hB.rooms[i]->getBedCount() - beds);
     }
 
+    // todo better scoring
+
     sortRoomsByScore(hB, score, 0, roomCount - 1);
 
     std::cout << "Most suitable rooms are:\n";

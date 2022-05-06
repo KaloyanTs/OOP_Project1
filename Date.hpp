@@ -117,9 +117,19 @@ public:
      * @return std::ostream& reference to the output stream
      */
     friend std::ostream &operator<<(std::ostream &os, const Date &d);
-
+    
+    /**
+     * @brief write the Room data into binary file opened by ofstream
+     *
+     * @param ofs output stream connected to binary file
+     */
     void writeToBinaryFile(std::ofstream &ofs);
 
+    /**
+     * @brief read the Room data from binary file opened by ifstream
+     *
+     * @param ofs input stream connected to binary file
+     */
     void readDataFromBinary(std::ifstream &ifs);
 };
 

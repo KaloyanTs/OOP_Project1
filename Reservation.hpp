@@ -141,8 +141,18 @@ public:
      */
     bool LeavingInAdvance(Date);
 
+    /**
+     * @brief write the Reservation data into binary file opened by ofstream
+     *
+     * @param ofs output stream connected to binary file
+     */
     void writeToBinaryFile(std::ofstream &ofs);
 
+    /**
+     * @brief read the Reservation data from binary file opened by ifstream
+     *
+     * @param ofs input stream connected to binary file
+     */
     void readDataFromBinary(std::ifstream &ifs);
 };
 

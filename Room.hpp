@@ -56,10 +56,30 @@ class Room
      */
     void shrink(Reservation **&arr, size_t &size, size_t &capacity);
 
+    /**
+     * @brief get number of days this Room has beed taken between two dates
+     *
+     * @param period DatePeriod in which days taken are counted
+     * @return unsigned count of days this Room has been taken between two dates
+     */
     unsigned daysTakenInPeriod(const DatePeriod &period) const;
 
+    /**
+     * @brief tries to create a new reservation
+     * 
+     * @param name of guest
+     * @param note to the reservation
+     * @param period of stay
+     * @param service whether it is a reservation or a maintenance
+     * @return true reservation successfully added
+     * @return false adding reservation failed (bad period)
+     */
     bool newReservation(std::string name, std::string note, const DatePeriod &period, bool service);
 
+    /**
+     * @brief moves soonest reservation from now (indexed at 0 in the reservations list) to the past reservations list
+     * 
+     */
     void moveToPast();
 
 public:
@@ -97,8 +117,6 @@ public:
      * @return false room is already free
      */
     bool freeRoom(Reservation *&currentRes);
-
-    void changeLeaving(Reservation *, Date newDate);
 
     /**
      * @brief apply new Date to state of all reservations and respectively of the room availability
@@ -160,8 +178,18 @@ public:
      */
     void showActivity() const;
 
+    /**
+     * @brief write the Room data into binary file opened by ofstream
+     *
+     * @param ofs output stream connected to binary file
+     */
     void writeToBinaryFile(std::ofstream &ofs);
 
+    /**
+     * @brief read the Room data from binary file opened by ifstream
+     *
+     * @param ofs input stream connected to binary file
+     */
     void readDataFromBinary(std::ifstream &ifs);
 };
 
