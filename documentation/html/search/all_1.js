@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['closeforservice_0',['closeForService',['../class_room.html#a4f81b493850ed71ecd8a0f76de318d62',1,'Room']]],
-  ['createreport_1',['createReport',['../class_hotel_building.html#a590e77a77e5e1d2c93d12df5f60d128c',1,'HotelBuilding']]]
+  ['beginday_0',['beginDay',['../class_hotel_interface.html#ad3d3cb49c838f5d21fd5d0e5373a1e28',1,'HotelInterface']]]
 ];
