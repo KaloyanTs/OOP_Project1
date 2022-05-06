@@ -8,10 +8,22 @@
  */
 const unsigned daysFromBeginning[] = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
 
+/**
+ * @brief width of the console used for centering the text
+ *
+ */
 const size_t DISPLAY_WIDTH = 130;
 
+/**
+ * @brief number of different commands to use for a Hotel
+ *
+ */
 const size_t COMMANDS = 8;
 
+/**
+ * @brief max length of strings (char arrays)
+ *
+ */
 const size_t STRING_MAX_LENGTH = 128;
 
 /**
@@ -27,7 +39,7 @@ const size_t INIT_CAPACITY = 2;
 const size_t DISPLAY = 5;
 
 /**
- * @brief
+ * @brief array of all available commands and instructions how to use them
  *
  */
 const char cmdArr[COMMANDS][2][STRING_MAX_LENGTH] = {
