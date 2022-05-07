@@ -50,7 +50,9 @@ Hotel::Hotel(std::string hotelDataFile)
     std::ifstream data(name + ".dat", std::ios::in | std::ios::binary);
     if (data.is_open())
     {
+        
         now.readDataFromBinary(data);
+        if(Date::getToday()>now)now=Date::getToday();
         building->readDataFromBinary(data);
     }
     data.close();

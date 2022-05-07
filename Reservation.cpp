@@ -49,7 +49,6 @@ void Reservation::writeToBinaryFile(std::ofstream &ofs)
     period.from.writeToBinaryFile(ofs);
     period.to.writeToBinaryFile(ofs);
 
-    ofs.write((const char *)&state, sizeof(state));
     ofs.write((const char *)&service, sizeof(service));
 }
 
@@ -73,6 +72,6 @@ void Reservation::readDataFromBinary(std::ifstream &ifs)
     period.from.readDataFromBinary(ifs);
     period.to.readDataFromBinary(ifs);
 
-    ifs.read((char *)&state, sizeof(state));
     ifs.read((char *)&service, sizeof(service));
+    onDate(Hotel::today());
 }

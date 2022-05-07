@@ -276,4 +276,7 @@ void Room::readDataFromBinary(std::ifstream &ifs)
         pastReservations[i] = new Reservation("", t);
         pastReservations[i]->readDataFromBinary(ifs);
     }
+
+    while (resCount && reservations[0]->isPast())
+        moveToPast();
 }
