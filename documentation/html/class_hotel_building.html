@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Hotel OOP project 1: HotelBuilding Class Reference</title>
+<title>Hotel: HotelBuilding Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Hotel OOP project 1
+   <div id="projectname">Hotel<span id="projectnumber">&#160;1.0</span>
    </div>
+   <div id="projectbrief">OOP Project 1</div>
   </td>
  </tr>
  </tbody>
@@ -114,6 +115,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a58478b5b1c8bf84ddd2cdba250425d5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hotel_building.html#a58478b5b1c8bf84ddd2cdba250425d5c">showRoomForNights</a> (unsigned number, unsigned nights, <a class="el" href="class_date.html">Date</a> today) const</td></tr>
 <tr class="memdesc:a58478b5b1c8bf84ddd2cdba250425d5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">show soonest period of particular nights when particular room is free  <a href="class_hotel_building.html#a58478b5b1c8bf84ddd2cdba250425d5c">More...</a><br /></td></tr>
 <tr class="separator:a58478b5b1c8bf84ddd2cdba250425d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a331590bfb72cbdfbcda776c7f49780e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hotel_building.html#a331590bfb72cbdfbcda776c7f49780e8">writeToBinaryFile</a> (std::ofstream &amp;ofs)</td></tr>
+<tr class="memdesc:a331590bfb72cbdfbcda776c7f49780e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">write the <a class="el" href="class_hotel_building.html" title="Class representing list of rooms.">HotelBuilding</a> data into binary file opened by ofstream  <a href="class_hotel_building.html#a331590bfb72cbdfbcda776c7f49780e8">More...</a><br /></td></tr>
+<tr class="separator:a331590bfb72cbdfbcda776c7f49780e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afebae062d697a16f7dc900bf3eb0d744"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hotel_building.html#afebae062d697a16f7dc900bf3eb0d744">readDataFromBinary</a> (std::ifstream &amp;ifs)</td></tr>
+<tr class="memdesc:afebae062d697a16f7dc900bf3eb0d744"><td class="mdescLeft">&#160;</td><td class="mdescRight">read the <a class="el" href="class_hotel_building.html" title="Class representing list of rooms.">HotelBuilding</a> data from binary file opened by ifstream  <a href="class_hotel_building.html#afebae062d697a16f7dc900bf3eb0d744">More...</a><br /></td></tr>
+<tr class="separator:afebae062d697a16f7dc900bf3eb0d744"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -263,6 +270,32 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 
 </div>
 </div>
+<a id="afebae062d697a16f7dc900bf3eb0d744" name="afebae062d697a16f7dc900bf3eb0d744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afebae062d697a16f7dc900bf3eb0d744">&#9670;&nbsp;</a></span>readDataFromBinary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HotelBuilding::readDataFromBinary </td>
+          <td>(</td>
+          <td class="paramtype">std::ifstream &amp;&#160;</td>
+          <td class="paramname"><em>ifs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>read the <a class="el" href="class_hotel_building.html" title="Class representing list of rooms.">HotelBuilding</a> data from binary file opened by ifstream </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ofs</td><td>input stream connected to binary file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="acb8b2fa415c1718a6a8bae7fddc7b06d" name="acb8b2fa415c1718a6a8bae7fddc7b06d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acb8b2fa415c1718a6a8bae7fddc7b06d">&#9670;&nbsp;</a></span>showAvailableRooms()</h2>
 
@@ -401,6 +434,32 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
   <table class="params">
     <tr><td class="paramname">beds</td><td>minimal number of beds insisted in the room </td></tr>
     <tr><td class="paramname">period</td><td>period of time </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a331590bfb72cbdfbcda776c7f49780e8" name="a331590bfb72cbdfbcda776c7f49780e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a331590bfb72cbdfbcda776c7f49780e8">&#9670;&nbsp;</a></span>writeToBinaryFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HotelBuilding::writeToBinaryFile </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>ofs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>write the <a class="el" href="class_hotel_building.html" title="Class representing list of rooms.">HotelBuilding</a> data into binary file opened by ofstream </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ofs</td><td>output stream connected to binary file </td></tr>
   </table>
   </dd>
 </dl>

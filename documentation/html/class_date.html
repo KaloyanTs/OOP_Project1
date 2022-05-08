@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Hotel OOP project 1: Date Class Reference</title>
+<title>Hotel: Date Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Hotel OOP project 1
+   <div id="projectname">Hotel<span id="projectnumber">&#160;1.0</span>
    </div>
+   <div id="projectbrief">OOP Project 1</div>
   </td>
  </tr>
  </tbody>
@@ -106,6 +107,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&gt;=</b> (co
 <tr class="memitem:a3993e645e3408e07d12b70e58f36630c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_date.html">Date</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_date.html#a3993e645e3408e07d12b70e58f36630c">operator++</a> ()</td></tr>
 <tr class="memdesc:a3993e645e3408e07d12b70e58f36630c"><td class="mdescLeft">&#160;</td><td class="mdescRight">overloaded prefix incremention operator for <a class="el" href="class_date.html" title="Class representing date with day, month and year.">Date</a>  <a href="class_date.html#a3993e645e3408e07d12b70e58f36630c">More...</a><br /></td></tr>
 <tr class="separator:a3993e645e3408e07d12b70e58f36630c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7648ad1669f0d737d169c7b4ab22386d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_date.html#a7648ad1669f0d737d169c7b4ab22386d">writeToBinaryFile</a> (std::ofstream &amp;ofs)</td></tr>
+<tr class="memdesc:a7648ad1669f0d737d169c7b4ab22386d"><td class="mdescLeft">&#160;</td><td class="mdescRight">write the <a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> data into binary file opened by ofstream  <a href="class_date.html#a7648ad1669f0d737d169c7b4ab22386d">More...</a><br /></td></tr>
+<tr class="separator:a7648ad1669f0d737d169c7b4ab22386d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b3490040a1fb40aab75ddd34941d59f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_date.html#a4b3490040a1fb40aab75ddd34941d59f">readDataFromBinary</a> (std::ifstream &amp;ifs)</td></tr>
+<tr class="memdesc:a4b3490040a1fb40aab75ddd34941d59f"><td class="mdescLeft">&#160;</td><td class="mdescRight">read the <a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> data from binary file opened by ifstream  <a href="class_date.html#a4b3490040a1fb40aab75ddd34941d59f">More...</a><br /></td></tr>
+<tr class="separator:a4b3490040a1fb40aab75ddd34941d59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -362,6 +369,58 @@ false the dates are not identical </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true this <a class="el" href="class_date.html" title="Class representing date with day, month and year.">Date</a> is chronologically after other </dd>
 <dd>
 false this <a class="el" href="class_date.html" title="Class representing date with day, month and year.">Date</a> is not chronologically after other </dd></dl>
+
+</div>
+</div>
+<a id="a4b3490040a1fb40aab75ddd34941d59f" name="a4b3490040a1fb40aab75ddd34941d59f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b3490040a1fb40aab75ddd34941d59f">&#9670;&nbsp;</a></span>readDataFromBinary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Date::readDataFromBinary </td>
+          <td>(</td>
+          <td class="paramtype">std::ifstream &amp;&#160;</td>
+          <td class="paramname"><em>ifs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>read the <a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> data from binary file opened by ifstream </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ofs</td><td>input stream connected to binary file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7648ad1669f0d737d169c7b4ab22386d" name="a7648ad1669f0d737d169c7b4ab22386d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7648ad1669f0d737d169c7b4ab22386d">&#9670;&nbsp;</a></span>writeToBinaryFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Date::writeToBinaryFile </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>ofs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>write the <a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> data into binary file opened by ofstream </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ofs</td><td>output stream connected to binary file </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

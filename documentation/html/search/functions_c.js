@@ -2,7 +2,7 @@ var searchData=
 [
   ['searchroom_0',['searchRoom',['../class_hotel.html#a3077074d8a8b2dcc081613916de156ed',1,'Hotel']]],
   ['seeroomfornights_1',['seeRoomForNights',['../class_hotel.html#ab988068aa218eba516bc1476de33e8de',1,'Hotel']]],
-  ['serviceroom_2',['serviceRoom',['../class_hotel.html#ae7e6a58beab76f131b04b49090fc1330',1,'Hotel']]],
+  ['serviceroom_2',['serviceRoom',['../class_hotel.html#a3c2277e226ef44245a0cc255e8de4d17',1,'Hotel']]],
   ['showactivity_3',['showActivity',['../class_room.html#a682629801e5debff24d82100bce83b95',1,'Room']]],
   ['showavailablerooms_4',['showAvailableRooms',['../class_hotel.html#ab97f370156fb0c717f5c5c3c261316d0',1,'Hotel::showAvailableRooms()'],['../class_hotel_building.html#acb8b2fa415c1718a6a8bae7fddc7b06d',1,'HotelBuilding::showAvailableRooms()']]],
   ['showreservationsinperiod_5',['showReservationsInPeriod',['../class_room.html#a768c0c0119d139f2b5510ee101bbad7f',1,'Room']]],

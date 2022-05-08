@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Hotel OOP project 1: RoomAnalyzer.hpp Source File</title>
+<title>Hotel: RoomAnalyzer.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Hotel OOP project 1
+   <div id="projectname">Hotel<span id="projectnumber">&#160;1.0</span>
    </div>
+   <div id="projectbrief">OOP Project 1</div>
   </td>
  </tr>
  </tbody>
@@ -74,32 +75,34 @@ $(function() {
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_room_analyzer.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="class_room_analyzer.html">RoomAnalyzer</a></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> sortRooms(<a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a> &amp;hB, <span class="keywordtype">unsigned</span> *score, <span class="keywordtype">size_t</span> from, <span class="keywordtype">size_t</span> size);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> swap(T &amp;a, T &amp;b);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_room_analyzer.html#a212c689f6a7cd12f9792bee43b6742ae">suggest</a>(<a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a> &amp;hB, <span class="keywordtype">unsigned</span> beds, <a class="code hl_struct" href="struct_date_period.html">DatePeriod</a> period);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_room_analyzer.html#afde57c7d421cca78025cbe1434a53b7d">soonestFreePeriod</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a> &amp;hB, <span class="keywordtype">unsigned</span> number, <span class="keywordtype">unsigned</span> nights, <a class="code hl_class" href="class_date.html">Date</a> today);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> RoomAnalyzer::swap(T &amp;a, T &amp;b)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    T c = a;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    a = b;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    b = c;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> sortRoomsByScore(<a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a> &amp;hB, <span class="keywordtype">unsigned</span> *score, <span class="keywordtype">size_t</span> from, <span class="keywordtype">size_t</span> to);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> sortRoomsByNumber(<a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a> &amp;hB, <span class="keywordtype">size_t</span> from, <span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> swap(T &amp;a, T &amp;b);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_room_analyzer.html#a212c689f6a7cd12f9792bee43b6742ae">suggest</a>(<a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a> &amp;hB, <span class="keywordtype">unsigned</span> beds, <a class="code hl_struct" href="struct_date_period.html">DatePeriod</a> period);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_room_analyzer.html#afde57c7d421cca78025cbe1434a53b7d">soonestFreePeriod</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_hotel_building.html">HotelBuilding</a> &amp;hB, <span class="keywordtype">unsigned</span> number, <span class="keywordtype">unsigned</span> nights, <a class="code hl_class" href="class_date.html">Date</a> today);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keywordtype">void</span> RoomAnalyzer::swap(T &amp;a, T &amp;b)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    T c = a;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    a = b;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    b = c;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdoc">Class representing date with day, month and year.</div><div class="ttdef"><b>Definition:</b> Date.hpp:13</div></div>
 <div class="ttc" id="aclass_hotel_building_html"><div class="ttname"><a href="class_hotel_building.html">HotelBuilding</a></div><div class="ttdoc">Class representing list of rooms.</div><div class="ttdef"><b>Definition:</b> HotelBuilding.hpp:14</div></div>
 <div class="ttc" id="aclass_room_analyzer_html"><div class="ttname"><a href="class_room_analyzer.html">RoomAnalyzer</a></div><div class="ttdoc">supporting class to perform algorythms on the rooms in a building</div><div class="ttdef"><b>Definition:</b> RoomAnalyzer.hpp:13</div></div>
 <div class="ttc" id="aclass_room_analyzer_html_a212c689f6a7cd12f9792bee43b6742ae"><div class="ttname"><a href="class_room_analyzer.html#a212c689f6a7cd12f9792bee43b6742ae">RoomAnalyzer::suggest</a></div><div class="ttdeci">static void suggest(HotelBuilding &amp;hB, unsigned beds, DatePeriod period)</div><div class="ttdoc">print top DISPLAY rooms info based on suitability of a Room (desired number of beds and period of tim...</div><div class="ttdef"><b>Definition:</b> RoomAnalyzer.cpp:3</div></div>
-<div class="ttc" id="aclass_room_analyzer_html_afde57c7d421cca78025cbe1434a53b7d"><div class="ttname"><a href="class_room_analyzer.html#afde57c7d421cca78025cbe1434a53b7d">RoomAnalyzer::soonestFreePeriod</a></div><div class="ttdeci">static void soonestFreePeriod(const HotelBuilding &amp;hB, unsigned number, unsigned nights, Date today)</div><div class="ttdoc">print soonest period when a particular room is free for particular number of nights</div><div class="ttdef"><b>Definition:</b> RoomAnalyzer.cpp:53</div></div>
-<div class="ttc" id="astruct_date_period_html"><div class="ttname"><a href="struct_date_period.html">DatePeriod</a></div><div class="ttdoc">Class containing two dates forming a period of time from Date to Date.</div><div class="ttdef"><b>Definition:</b> Date.hpp:127</div></div>
+<div class="ttc" id="aclass_room_analyzer_html_afde57c7d421cca78025cbe1434a53b7d"><div class="ttname"><a href="class_room_analyzer.html#afde57c7d421cca78025cbe1434a53b7d">RoomAnalyzer::soonestFreePeriod</a></div><div class="ttdeci">static void soonestFreePeriod(const HotelBuilding &amp;hB, unsigned number, unsigned nights, Date today)</div><div class="ttdoc">print soonest period when a particular room is free for particular number of nights</div><div class="ttdef"><b>Definition:</b> RoomAnalyzer.cpp:72</div></div>
+<div class="ttc" id="astruct_date_period_html"><div class="ttname"><a href="struct_date_period.html">DatePeriod</a></div><div class="ttdoc">Class containing two dates forming a period of time from Date to Date.</div><div class="ttdef"><b>Definition:</b> Date.hpp:141</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
