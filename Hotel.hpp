@@ -2,6 +2,7 @@
 #define __HOTEL_HPP
 #include "Types.hpp"
 #include "Constants.hpp"
+#include "String.hpp"
 #include "Date.hpp"
 #include "Room.hpp"
 #include "Reservation.hpp"
@@ -13,9 +14,9 @@
  *
  * @param ifs input stream
  * @param len maximum length of the read string
- * @return std::string
+ * @return String
  */
-std::string readFromIfstream(std::ifstream &ifs, size_t len);
+String readFromIfstream(std::ifstream &ifs, size_t len);
 
 /**
  * @brief Class representing hotel with name, current Date and a building (list of rooms)
@@ -27,7 +28,7 @@ class Hotel
      * @brief name of Hotel
      *
      */
-    std::string name;
+    String name;
 
     /**
      * @brief current Date according to all hotels
@@ -55,7 +56,7 @@ public:
      *
      * @param hotelDataFile path to file where rooms are recorded
      */
-    Hotel(std::string hotelDataFile);
+    Hotel(String hotelDataFile);
     Hotel(const Hotel &) = delete;
     Hotel &operator=(const Hotel &) = delete;
 
@@ -75,9 +76,9 @@ public:
     /**
      * @brief get the name of this Hotel
      *
-     * @return std::string
+     * @return String
      */
-    std::string getName() const { return name; }
+    String getName() const { return name; }
 
     /**
      * @brief advance to the nextDay
@@ -96,7 +97,7 @@ public:
      * @return true successfull reservation
      * @return false failed reservation (not made)
      */
-    bool reserveRoom(unsigned number, const DatePeriod &period, std::string name = "-", std::string note = "None\n");
+    bool reserveRoom(unsigned number, const DatePeriod &period, String name = "-", String note = "None\n");
 
     /**
      * @brief output to stream all available rooms for a particular Date
@@ -139,7 +140,7 @@ public:
      * @return true service planned successfully
      * @return false service planning failed (room not found or is reserved for the period)
      */
-    bool serviceRoom(unsigned number, const DatePeriod &period, std::string note);
+    bool serviceRoom(unsigned number, const DatePeriod &period, String note);
 
     /**
      * @brief print status of the building rooms

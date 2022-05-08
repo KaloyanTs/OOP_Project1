@@ -3,6 +3,7 @@
 #include <cstring>
 #include <string>
 #include "Constants.hpp"
+#include "String"
 #include "HotelInterface.hpp"
 #include "Hotel.hpp"
 

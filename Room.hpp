@@ -74,7 +74,7 @@ class Room
      * @return true reservation successfully added
      * @return false adding reservation failed (bad period)
      */
-    bool newReservation(std::string name, std::string note, const DatePeriod &period, bool service);
+    bool newReservation(String name, String note, const DatePeriod &period, bool service);
 
     /**
      * @brief moves soonest reservation from now (indexed at 0 in the reservations list) to the past reservations list
@@ -160,7 +160,7 @@ public:
      * @return true successfully added Reservation
      * @return false adding a Reservation failed (the room is not free in this DatePeriod)
      */
-    bool addReservation(std::string name, std::string note, const DatePeriod &period);
+    bool addReservation(String name, String note, const DatePeriod &period);
 
     /**
      * @brief try to add Reservation (about a maintenance) to this Room
@@ -170,7 +170,7 @@ public:
      * @return true successfully added maintenance
      * @return false adding a maintenance failed (the room is not free in this DatePeriod)
      */
-    bool closeForService(std::string note, const DatePeriod &period);
+    bool closeForService(String note, const DatePeriod &period);
 
     /**
      * @brief print to stdout information about this Room latest busyness

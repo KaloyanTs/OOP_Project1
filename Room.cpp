@@ -18,7 +18,7 @@ bool Room::freeRoom(Reservation *&curRes)
     if (curRes->isActive())
         curRes->LeavingInAdvance(Hotel::today());
 
-    if (!curRes->isServiced())
+    if (!curRes->isServiced() && curRes->getFrom() < curRes->getTo())
     {
         if (pastCount == pastCapacity)
             expand(pastReservations, pastCount, pastCapacity);
@@ -156,7 +156,7 @@ bool Room::showReservationsInPeriod(std::ostream &os, const DatePeriod &period) 
     return true;
 }
 
-bool Room::newReservation(std::string name, std::string note, const DatePeriod &period, bool service)
+bool Room::newReservation(String name, String note, const DatePeriod &period, bool service)
 {
     if (!isFreeInPeriod(period) || period.from < Hotel::today())
         return false;
@@ -180,14 +180,14 @@ bool Room::newReservation(std::string name, std::string note, const DatePeriod &
     return true;
 }
 
-bool Room::addReservation(std::string name, std::string note, const DatePeriod &period)
+bool Room::addReservation(String name, String note, const DatePeriod &period)
 {
     return newReservation(name, note, period, false);
 }
 
-bool Room::closeForService(std::string note, const DatePeriod &period)
+bool Room::closeForService(String note, const DatePeriod &period)
 {
-    return newReservation(std::string("-"), note, period, true);
+    return newReservation(String("-"), note, period, true);
 }
 
 bool Room::isFreeInPeriod(const DatePeriod &period) const

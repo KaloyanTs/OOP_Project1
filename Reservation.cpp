@@ -1,6 +1,6 @@
 #include "Reservation.hpp"
 
-Reservation::Reservation(std::string name, const DatePeriod &p, std::string n, bool s)
+Reservation::Reservation(String name, const DatePeriod &p, String n, bool s)
     : guestName(name),
       note(n),
       period(p),

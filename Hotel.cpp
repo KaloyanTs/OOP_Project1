@@ -20,7 +20,7 @@ Hotel &Hotel::getReport(DatePeriod &period)
     return *this;
 }
 
-bool Hotel::reserveRoom(unsigned number, const DatePeriod &period, std::string name, std::string s)
+bool Hotel::reserveRoom(unsigned number, const DatePeriod &period, String name, String s)
 {
     if (!((*building)[number]))
     {
@@ -36,7 +36,7 @@ bool Hotel::reserveRoom(unsigned number, const DatePeriod &period, std::string n
     return false;
 }
 
-Hotel::Hotel(std::string hotelDataFile)
+Hotel::Hotel(String hotelDataFile)
 {
     std::ifstream ifs(hotelDataFile, std::ios::in);
     assert(ifs.is_open());
@@ -58,12 +58,12 @@ Hotel::Hotel(std::string hotelDataFile)
     data.close();
 }
 
-std::string readFromIfstream(std::ifstream &ifs, size_t len)
+String readFromIfstream(std::ifstream &ifs, size_t len)
 {
     char *buf = new char[len + 1];
     ifs.getline(buf, len + 1);
     buf[len] = '\0';
-    std::string res(buf);
+    String res(buf);
     delete[] buf;
     return res;
 }
@@ -73,7 +73,7 @@ Hotel::~Hotel()
     delete building;
 }
 
-bool Hotel::serviceRoom(unsigned number, const DatePeriod &period, std::string note)
+bool Hotel::serviceRoom(unsigned number, const DatePeriod &period, String note)
 {
     if (!((*building)[number]))
     {
@@ -187,7 +187,7 @@ bool Hotel::workDay()
             DatePeriod per;
             std::cin >> number;
             per.readProper();
-            std::string name = "", note = "";
+            String name = "", note = "";
             std::cin.get(*cmd);
             if (*cmd != '\n')
             {
@@ -236,7 +236,7 @@ bool Hotel::workDay()
 
 void Hotel::writeToBinaryFile()
 {
-    std::string streamName = name;
+    String streamName = name;
     streamName += ".dat";
     std::ofstream ofs(streamName, std::ios::out | std::ios::binary);
     assert(ofs.is_open());

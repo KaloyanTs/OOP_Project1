@@ -32,12 +32,12 @@ class Reservation
      * @brief name of the reserver
      *
      */
-    std::string guestName;
+    String guestName;
     /**
      * @brief note about the reservation
      *
      */
-    std::string note;
+    String note;
     /**
      * @brief time period for the reservation
      *
@@ -63,7 +63,7 @@ public:
      * @param n note left for the reservation
      * @param s whether it is reservation or maintenance
      */
-    Reservation(std::string name, const DatePeriod &p, std::string n = "None.\n", bool s = false);
+    Reservation(String name, const DatePeriod &p, String n = "None.\n", bool s = false);
     Reservation(const Reservation &) = delete;
     Reservation &operator=(const Reservation &) = delete;
 
@@ -115,9 +115,9 @@ public:
     /**
      * @brief get the note to this Reservation
      *
-     * @return std::string
+     * @return String
      */
-    std::string getNote() const { return note; }
+    String getNote() const { return note; }
 
     /**
      * @brief update the state of the reservation based on new today's Date (d)
