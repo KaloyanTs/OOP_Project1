@@ -158,7 +158,7 @@ bool Room::showReservationsInPeriod(std::ostream &os, const DatePeriod &period) 
 
 bool Room::newReservation(std::string name, std::string note, const DatePeriod &period, bool service)
 {
-    if (!isFreeInPeriod(period) || period.to <= Hotel::today() || period.from < Hotel::today())
+    if (!isFreeInPeriod(period) || period.from < Hotel::today())
         return false;
 
     if (resCapacity == resCount)
