@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Hotel: Main Page</title>
+<title>Hotel: Hotel Project Documentation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Hotel<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">OOP Project 1 documentation</div>
+   <div id="projectbrief">OOP Project1 documentation</div>
   </td>
  </tr>
  </tbody>
@@ -83,10 +83,78 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Hotel Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title"><a class="el" href="class_hotel.html" title="Class representing hotel with name, current Date and a building (list of rooms)">Hotel</a> Project Documentation </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#Overview">Overview</a><ul><li class="level2"><a href="#Example">Example</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="textblock"><p ><a class="el" href="md_markdowns_commands.html#commands">commands</a></p>
+<h1><a class="anchor" id="Overview"></a>
+Overview</h1>
+<p >This is information system, serving a hotel. The system allows the user to make reservations, receive up-to-date information about the rooms in the hotel, make suggestion which room is most suitable for the guest. The program runs in console mode with several instructions, being printed on startup. The data for the rooms of the hotel is written in file named "h.rooms" in same directory as the executable. Then if data has already been recorded about the hotel (recognized by its name) the data is being read from a binary file called "&lt;hotel name&gt;.dat". On closing, the data about the hotel is being written again.</p>
+<h2><a class="anchor" id="Example"></a>
+Example</h2>
+<blockquote class="doxtable">
+<p >&zwj; <b>reserve: 102 15/7/2022 22/7/2022 Ivan; has dog</b> </p><blockquote class="doxtable">
+<p >&zwj;<a class="el" href="class_reservation.html" title="Class representing information about a reservation.">Reservation</a> successfully made! </p>
+</blockquote>
+</blockquote>
+<blockquote class="doxtable">
+<p >&zwj; <b>rooms:</b> </p><blockquote class="doxtable">
+<p >&zwj;101: No reservations.<br  />
+ 102: Next reservation is from 15/7/2022 to 22/7/2022. (<em>answer depends on current date</em>)<br  />
+ 103: No reservations.<br  />
+ ... </p>
+</blockquote>
+</blockquote>
+<blockquote class="doxtable">
+<p >&zwj; <b>report: 1/3/2022 1/4/2022</b> </p><blockquote class="doxtable">
+<p >&zwj;report "report-2022-03-01.txt" created successfully. </p>
+</blockquote>
+</blockquote>
+<blockquote class="doxtable">
+<p >&zwj; <b>free: 101</b> </p><blockquote class="doxtable">
+<p >&zwj;<a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> is already free! </p>
+</blockquote>
+</blockquote>
+<blockquote class="doxtable">
+<p >&zwj; <b>free: 102</b> </p><blockquote class="doxtable">
+<p >&zwj;<a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> freed successfully! (<em>answer depends on current date</em>) </p>
+</blockquote>
+</blockquote>
+<blockquote class="doxtable">
+<p >&zwj; <b>request: 4 1/8/2022 7/8/2022</b> </p><blockquote class="doxtable">
+<p >&zwj;1. Number: &lt;<em>best room</em>&gt; Beds: &lt;<em>best room's beds</em>&gt; : &lt;available | NOT available&gt; between 1/8/2022 and 7/8/2022 <br  />
+</p><ol type="1">
+<li>Number: &lt;<em>second best room</em>&gt; Beds: &lt;<em>second best room's beds</em>&gt; : &lt;available | NOT available&gt; between 1/8/2022 and 7/8/2022 <br  />
+</li>
+<li>Number: &lt;<em>third best room</em>&gt; Beds: &lt;<em>third best room's beds</em>&gt; : &lt;available | NOT available&gt; between 1/8/2022 and 7/8/2022 <br  />
+</li>
+<li>Number: &lt;<em>fourth best room</em>&gt; Beds: &lt;<em>fourth best room's beds</em>&gt; : &lt;available | NOT available&gt; between 1/8/2022 and 7/8/2022 <br  />
+</li>
+<li>Number: &lt;<em>fifth best room</em>&gt; Beds: &lt;<em>fifth best room's beds</em>&gt; : &lt;available | NOT available&gt; between 1/8/2022 and 7/8/2022 <br  />
+ </li>
+</ol>
+</blockquote>
+</blockquote>
+<blockquote class="doxtable">
+<p >&zwj;<b>maintenance: 103 &lt;today&gt; 20/8/2022 cleaning</b> </p><blockquote class="doxtable">
+<p >&zwj;Maintenance planned successfully.<br  />
+ </p><blockquote class="doxtable">
+<p >&zwj;<b>rooms:</b> </p><blockquote class="doxtable">
+<p >&zwj;... <br  />
+ 103: Next maintenance is from &lt;today&gt; to 20/8/2022.<br  />
+ ... </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Hotel: String.hpp Source File</title>
+<title>Hotel: C:/Users/KaloyanTs/Documents/GitHub/OOP_Project1/String.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Hotel<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">OOP Project 1 documentation</div>
+   <div id="projectbrief">OOP Project1 documentation</div>
   </td>
  </tr>
  </tbody>
@@ -84,45 +84,66 @@ $(document).ready(function(){initNavTree('_string_8hpp_source.html',''); initRes
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">String.hpp</div></div>
+  <div class="headertitle"><div class="title">C:/Users/KaloyanTs/Documents/GitHub/OOP_Project1/String.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __STRING_HPP</span></div>
+<a href="_string_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __STRING_HPP</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __STRING_HPP</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="class_string.html">    5</a></span><span class="keyword">class </span><a class="code hl_class" href="class_string.html">String</a></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordtype">char</span> *str;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">size_t</span> m_size, m_capacity;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">void</span> copy(<span class="keyword">const</span> <a class="code hl_class" href="class_string.html">String</a> &amp;other);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">void</span> expand(<span class="keywordtype">size_t</span> newCap);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_class" href="class_string.html">String</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *_str = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_class" href="class_string.html">String</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_string.html">String</a> &amp;other);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_class" href="class_string.html">String</a> &amp;operator=(<span class="keyword">const</span> <a class="code hl_class" href="class_string.html">String</a> &amp;other);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_string.html">~String</a>();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">size_t</span> size()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_size; }</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">size_t</span> capacity()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_capacity; }</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">char</span> *c_str()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> str; }</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_class" href="class_string.html">String</a> operator+(<span class="keyword">const</span> <a class="code hl_class" href="class_string.html">String</a> &amp;other) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_class" href="class_string.html">String</a> &amp;operator+=(<span class="keyword">const</span> <a class="code hl_class" href="class_string.html">String</a> &amp;other);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">operator</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *() <span class="keyword">const</span> { <span class="keywordflow">return</span> c_str(); }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_class" href="class_string.html">String</a> &amp;shrink_to_fit();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>std::ostream &amp;operator&lt;&lt;(std::ostream &amp;os, <span class="keyword">const</span> <a class="code hl_class" href="class_string.html">String</a> &amp;S);</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_string.html">    6</a></span><span class="keyword">class </span><a class="code hl_class" href="class_string.html">String</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">char</span> *str;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">size_t</span> m_size, m_capacity;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> copy(<span class="keyword">const</span> <a class="code hl_class" href="class_string.html">String</a> &amp;other);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> expand(<span class="keywordtype">size_t</span> newCap);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_string_html"><div class="ttname"><a href="class_string.html">String</a></div><div class="ttdef"><b>Definition:</b> String.hpp:6</div></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="class_string.html#a6e005d5422ee34c9e8e006cd96742f12">String</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *_str = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_function" href="class_string.html#a6e005d5422ee34c9e8e006cd96742f12">String</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_string.html">String</a> &amp;other);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_class" href="class_string.html">String</a> &amp;<a class="code hl_function" href="class_string.html#a734f34a0b7a42bcad30c368d6e8c5469">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_string.html">String</a> &amp;other);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_function" href="class_string.html#ac40b2a3fb58c2d8556f5e6ff73510036">~String</a>();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_string.html#a588c5cc9faededbb9d938662d354feed">   60</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_string.html#a588c5cc9faededbb9d938662d354feed">size</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_size; }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_string.html#a1122194c4c53b8bcc9b7c4df21c60e8e">   65</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_string.html#a1122194c4c53b8bcc9b7c4df21c60e8e">capacity</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_capacity; }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_string.html#ab92e6017bdb72ff5ee8f4281df7c8f8e">   70</a></span>    <span class="keywordtype">char</span> *<a class="code hl_function" href="class_string.html#ab92e6017bdb72ff5ee8f4281df7c8f8e">c_str</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> str; }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_class" href="class_string.html">String</a> <a class="code hl_function" href="class_string.html#ac094f267da5e0cdc7559bb1fa163f650">operator+</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_string.html">String</a> &amp;other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_class" href="class_string.html">String</a> &amp;<a class="code hl_function" href="class_string.html#ab84728b14cac3bc213351c8ae8fb3364">operator+=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_string.html">String</a> &amp;other);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_string.html#a9a12caedc885ac44c86d104a8cb60f82">   79</a></span>    <span class="keyword">operator</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *() <span class="keyword">const</span> { <span class="keywordflow">return</span> <a class="code hl_function" href="class_string.html#ab92e6017bdb72ff5ee8f4281df7c8f8e">c_str</a>(); }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_class" href="class_string.html">String</a> &amp;<a class="code hl_function" href="class_string.html#a12893a9387a85a6d20b2c4e49729ccec">shrink_to_fit</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>};</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>std::ostream &amp;<a class="code hl_function" href="_string_8hpp.html#a30adfcced3310355f78fd68bd37392cc">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> <a class="code hl_class" href="class_string.html">String</a> &amp;S);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_string_8hpp_html_a30adfcced3310355f78fd68bd37392cc"><div class="ttname"><a href="_string_8hpp.html#a30adfcced3310355f78fd68bd37392cc">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const String &amp;S)</div><div class="ttdoc">print this String to the given output stream</div><div class="ttdef"><b>Definition:</b> String.cpp:83</div></div>
+<div class="ttc" id="aclass_string_html"><div class="ttname"><a href="class_string.html">String</a></div><div class="ttdoc">Class representing dynamic string (array of characters)</div><div class="ttdef"><b>Definition:</b> String.hpp:7</div></div>
+<div class="ttc" id="aclass_string_html_a1122194c4c53b8bcc9b7c4df21c60e8e"><div class="ttname"><a href="class_string.html#a1122194c4c53b8bcc9b7c4df21c60e8e">String::capacity</a></div><div class="ttdeci">size_t capacity() const</div><div class="ttdoc">get the maximum characters the array can store</div><div class="ttdef"><b>Definition:</b> String.hpp:65</div></div>
+<div class="ttc" id="aclass_string_html_a12893a9387a85a6d20b2c4e49729ccec"><div class="ttname"><a href="class_string.html#a12893a9387a85a6d20b2c4e49729ccec">String::shrink_to_fit</a></div><div class="ttdeci">String &amp; shrink_to_fit()</div><div class="ttdoc">make the capacity equal to the size</div><div class="ttdef"><b>Definition:</b> String.cpp:78</div></div>
+<div class="ttc" id="aclass_string_html_a588c5cc9faededbb9d938662d354feed"><div class="ttname"><a href="class_string.html#a588c5cc9faededbb9d938662d354feed">String::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">get the size of the array (number of symbols before the '\0')</div><div class="ttdef"><b>Definition:</b> String.hpp:60</div></div>
+<div class="ttc" id="aclass_string_html_a6e005d5422ee34c9e8e006cd96742f12"><div class="ttname"><a href="class_string.html#a6e005d5422ee34c9e8e006cd96742f12">String::String</a></div><div class="ttdeci">String(const char *_str=&quot;&quot;)</div><div class="ttdoc">Construct a new String object by array of chars.</div><div class="ttdef"><b>Definition:</b> String.cpp:3</div></div>
+<div class="ttc" id="aclass_string_html_a734f34a0b7a42bcad30c368d6e8c5469"><div class="ttname"><a href="class_string.html#a734f34a0b7a42bcad30c368d6e8c5469">String::operator=</a></div><div class="ttdeci">String &amp; operator=(const String &amp;other)</div><div class="ttdoc">makes deep copy of other into this</div><div class="ttdef"><b>Definition:</b> String.cpp:71</div></div>
+<div class="ttc" id="aclass_string_html_ab84728b14cac3bc213351c8ae8fb3364"><div class="ttname"><a href="class_string.html#ab84728b14cac3bc213351c8ae8fb3364">String::operator+=</a></div><div class="ttdeci">String &amp; operator+=(const String &amp;other)</div><div class="ttdoc">concatenate another String to this String</div><div class="ttdef"><b>Definition:</b> String.cpp:46</div></div>
+<div class="ttc" id="aclass_string_html_ab92e6017bdb72ff5ee8f4281df7c8f8e"><div class="ttname"><a href="class_string.html#ab92e6017bdb72ff5ee8f4281df7c8f8e">String::c_str</a></div><div class="ttdeci">char * c_str() const</div><div class="ttdoc">get pointer to the beginning of the array</div><div class="ttdef"><b>Definition:</b> String.hpp:70</div></div>
+<div class="ttc" id="aclass_string_html_ac094f267da5e0cdc7559bb1fa163f650"><div class="ttname"><a href="class_string.html#ac094f267da5e0cdc7559bb1fa163f650">String::operator+</a></div><div class="ttdeci">String operator+(const String &amp;other) const</div><div class="ttdoc">concatenation of two strings</div><div class="ttdef"><b>Definition:</b> String.cpp:56</div></div>
+<div class="ttc" id="aclass_string_html_ac40b2a3fb58c2d8556f5e6ff73510036"><div class="ttname"><a href="class_string.html#ac40b2a3fb58c2d8556f5e6ff73510036">String::~String</a></div><div class="ttdeci">~String()</div><div class="ttdoc">Destroy the String object.</div><div class="ttdef"><b>Definition:</b> String.cpp:51</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>String.hpp</b></li>
+    <li class="navelem"><a class="el" href="_string_8hpp.html">String.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

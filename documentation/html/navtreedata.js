@@ -25,6 +25,22 @@
 var NAVTREE =
 [
   [ "Hotel", "index.html", [
+    [ "Hotel Project Documentation", "index.html", [
+      [ "Overview", "index.html#Overview", [
+        [ "Example", "index.html#Example", null ]
+      ] ]
+    ] ],
+    [ "User commands", "md_markdowns_commands.html", [
+      [ "The UI works with the following commands:", "md_markdowns_commands.html#autotoc_md0", null ],
+      [ "Adding new reservation", "md_markdowns_commands.html#autotoc_md1", null ],
+      [ "Free rooms on particular date", "md_markdowns_commands.html#autotoc_md2", null ],
+      [ "Free particular room", "md_markdowns_commands.html#autotoc_md3", null ],
+      [ "Create report about the usage of the rooms in particular period", "md_markdowns_commands.html#autotoc_md4", null ],
+      [ "Suggest room for a group of guests and partcular period", "md_markdowns_commands.html#autotoc_md5", null ],
+      [ "Close a room for maintenance", "md_markdowns_commands.html#autotoc_md6", null ],
+      [ "See current state of all the rooms", "md_markdowns_commands.html#autotoc_md7", null ],
+      [ "See when a room is free for certain number of days", "md_markdowns_commands.html#autotoc_md8", null ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -36,14 +52,22 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
+        [ "Enumerations", "globals_enum.html", null ],
+        [ "Enumerator", "globals_eval.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_constants_8hpp_source.html"
+"_c_make_c_compiler_id_8c.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -8,5 +8,5 @@ var annotated_dup =
     [ "Reservation", "class_reservation.html", "class_reservation" ],
     [ "Room", "class_room.html", "class_room" ],
     [ "RoomAnalyzer", "class_room_analyzer.html", null ],
-    [ "String", "class_string.html", null ]
+    [ "String", "class_string.html", "class_string" ]
 ];

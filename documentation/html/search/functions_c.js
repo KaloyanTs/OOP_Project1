@@ -1,16 +1,9 @@
 var searchData=
 [
-  ['searchroom_0',['searchRoom',['../class_hotel.html#a3077074d8a8b2dcc081613916de156ed',1,'Hotel']]],
-  ['seeroomfornights_1',['seeRoomForNights',['../class_hotel.html#ab988068aa218eba516bc1476de33e8de',1,'Hotel']]],
-  ['serviceroom_2',['serviceRoom',['../class_hotel.html#a3c2277e226ef44245a0cc255e8de4d17',1,'Hotel']]],
-  ['showactivity_3',['showActivity',['../class_room.html#a682629801e5debff24d82100bce83b95',1,'Room']]],
-  ['showavailablerooms_4',['showAvailableRooms',['../class_hotel.html#ab97f370156fb0c717f5c5c3c261316d0',1,'Hotel::showAvailableRooms()'],['../class_hotel_building.html#acb8b2fa415c1718a6a8bae7fddc7b06d',1,'HotelBuilding::showAvailableRooms()']]],
-  ['showreservationsinperiod_5',['showReservationsInPeriod',['../class_room.html#a768c0c0119d139f2b5510ee101bbad7f',1,'Room']]],
-  ['showroomfornights_6',['showRoomForNights',['../class_hotel_building.html#a58478b5b1c8bf84ddd2cdba250425d5c',1,'HotelBuilding']]],
-  ['showroomsstatestoday_7',['showRoomsStatesToday',['../class_hotel_building.html#a5d49615b93b269a461a5ddf921c545e5',1,'HotelBuilding']]],
-  ['showtoday_8',['showToday',['../class_hotel.html#a02ca70d80af5cf9ee523a18525675dc8',1,'Hotel']]],
-  ['soonestfreeperiod_9',['soonestFreePeriod',['../class_room_analyzer.html#afde57c7d421cca78025cbe1434a53b7d',1,'RoomAnalyzer']]],
-  ['stateondate_10',['stateOnDate',['../class_reservation.html#a5bc365d7f06207428c27053df2bb6cbc',1,'Reservation']]],
-  ['suggest_11',['suggest',['../class_room_analyzer.html#a212c689f6a7cd12f9792bee43b6742ae',1,'RoomAnalyzer']]],
-  ['suggestroom_12',['suggestRoom',['../class_hotel_building.html#a8e5c528b9b54198c20333764275a7280',1,'HotelBuilding']]]
+  ['readdatafrombinary_0',['readDataFromBinary',['../class_date.html#a4b3490040a1fb40aab75ddd34941d59f',1,'Date::readDataFromBinary()'],['../class_hotel_building.html#afebae062d697a16f7dc900bf3eb0d744',1,'HotelBuilding::readDataFromBinary()'],['../class_reservation.html#ac3f78877e46beaf123ef8a3b65d8a122',1,'Reservation::readDataFromBinary()'],['../class_room.html#a9c038a36c827904b435359c2deda3e1d',1,'Room::readDataFromBinary()']]],
+  ['readfromifstream_1',['readFromIfstream',['../_hotel_8cpp.html#a9c91dd5510c27bad0a47f88853c54029',1,'readFromIfstream(std::ifstream &amp;ifs, size_t len):&#160;Hotel.cpp'],['../_hotel_8hpp.html#a9c91dd5510c27bad0a47f88853c54029',1,'readFromIfstream(std::ifstream &amp;ifs, size_t len):&#160;Hotel.cpp']]],
+  ['readproper_2',['readProper',['../struct_date_period.html#ad1ed8aa41fecd42f1ea0d5c0250cddf4',1,'DatePeriod']]],
+  ['reservation_3',['Reservation',['../class_reservation.html#a1e0310dd853d63180cc12a51eb903978',1,'Reservation::Reservation(String name, const DatePeriod &amp;p, String n=&quot;None.\n&quot;, bool s=false)'],['../class_reservation.html#ad5cb1df61535df3e87397e22e70450de',1,'Reservation::Reservation(const Reservation &amp;)=delete']]],
+  ['reserveroom_4',['reserveRoom',['../class_hotel.html#a0fddb6befacc597d467dfe779e363bce',1,'Hotel']]],
+  ['room_5',['Room',['../class_room.html#ab64b84ed33b32bf6a37a4280efde4d96',1,'Room::Room(unsigned n, unsigned bC)'],['../class_room.html#a2a5725ae459e0ab9d327437f2764108a',1,'Room::Room(const Room &amp;)=delete']]]
 ];
