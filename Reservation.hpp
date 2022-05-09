@@ -1,14 +1,13 @@
 #ifndef __RESERVATION_HPP
 #define __RESERVATION_HPP
 #include "Types.hpp"
+#include "Constants.hpp"
+#include "String.hpp"
 #include "Room.hpp"
 #include "Date.hpp"
 #include "Hotel.hpp"
-#include <cstring>
 #include <cassert>
 #include <fstream>
-#include <string>
-#include "Constants.hpp"
 
 /**
  * @brief different states in time for a reservation
@@ -115,7 +114,7 @@ public:
     /**
      * @brief get the note to this Reservation
      *
-     * @return String
+     * @return  String
      */
     String getNote() const { return note; }
 

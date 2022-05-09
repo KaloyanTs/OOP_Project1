@@ -1,7 +1,6 @@
 #ifndef __ROOM_HPP
 #define __ROOM_HPP
 #include <iostream>
-#include <string>
 #include "Types.hpp"
 #include "Reservation.hpp"
 #include "Hotel.hpp"
