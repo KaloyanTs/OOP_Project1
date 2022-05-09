@@ -5,6 +5,7 @@
 #include "Room.hpp"
 #include "RoomAnalyzer.hpp"
 #include <fstream>
+#include <cstring>
 
 /**
  * @brief Class representing list of rooms
