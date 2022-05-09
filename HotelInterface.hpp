@@ -5,6 +5,7 @@
 #include "Constants.hpp"
 #include "Hotel.hpp"
 
+/// Utility Class taking care of the UI of the program
 class HotelInterface
 {
 public:

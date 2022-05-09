@@ -5,10 +5,7 @@
 #include "HotelBuilding.hpp"
 #include "Date.hpp"
 
-/**
- * @brief supporting class to perform algorythms on the rooms in a building
- *
- */
+/// Utility class to perform algorythms on the rooms in a building
 class RoomAnalyzer
 {
     /**
