@@ -5,7 +5,7 @@
 
 @section Overview
 
-This is information system, serving a hotel. The system allows the user to make reservations, receive up-to-date information about the rooms in the hotel, make suggestion which room is most suitable for the guest. The program runs in console mode with several instructions, being printed on startup. The data for the rooms of the hotel is written in file named "h.rooms" in same directory as the executable. Then if data has already been recorded about the hotel (recognized by its name) the data is being read from a binary file called \"\<hotel name\>.dat\". On closing, the data about the hotel is being written again.
+This is information system serving a hotel. The system allows the user to make reservations, receive up-to-date information about the rooms in the hotel, make suggestion which room is most suitable for the guest. The program runs in console mode with several instructions, being printed on startup. The data for the rooms of the hotel is written in file named "h.rooms" in same directory as the executable. Then if data has already been recorded about the hotel (recognized by its name) the data is being read from a binary file called \"\<hotel name\>.dat\". On closing, the data about the hotel is being written again.
 
 @section Achitecture
 
