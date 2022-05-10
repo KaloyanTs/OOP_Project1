@@ -54,7 +54,10 @@ void HotelBuilding::createReport(DatePeriod &period) const
     strcat(buf, ".txt");
     std::ofstream ofs(buf, std::ios::out);
     if (!ofs.is_open())
+    {
+        std::cerr << "Folder reports does not exist!\n";
         return;
+    }
     ofs << "Report for the usage of the rooms between " << period.from << " and " << period.to << ":\n\t";
     for (unsigned i = 0; i < size; ++i)
         if (rooms[i]->showReservationsInPeriod(ofs, period))
