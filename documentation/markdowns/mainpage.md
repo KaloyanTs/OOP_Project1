@@ -1,5 +1,6 @@
 @mainpage Hotel Project Documentation
-@subpage commands
+@subpage Commands <br>
+@subpage Bibliography
 @tableofcontents
 
 @section Overview
