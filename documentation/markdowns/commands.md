@@ -1,4 +1,4 @@
-@page commands User commands
+@page Commands User commands
 @tableofcontents
 
 # The UI works with the following commands:
