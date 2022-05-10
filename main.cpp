@@ -1,9 +1,7 @@
 #include <iostream>
 #include <iomanip>
-#include <cstring>
-#include <string>
 #include "Constants.hpp"
-#include "String"
+#include "String.hpp"
 #include "HotelInterface.hpp"
 #include "Hotel.hpp"
 
