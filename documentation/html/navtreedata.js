@@ -26,9 +26,15 @@ var NAVTREE =
 [
   [ "Hotel", "index.html", [
     [ "Hotel Project Documentation", "index.html", [
-      [ "Overview", "index.html#Overview", [
+      [ "Overview", "index.html#Overview", null ],
+      [ "Achitecture", "index.html#Achitecture", [
+        [ "Supporting classes", "index.html#cl", null ],
         [ "Example", "index.html#Example", null ]
       ] ]
+    ] ],
+    [ "Bibliography", "md_markdowns_bibliography.html", [
+      [ "GitHub", "md_markdowns_bibliography.html#GitHub", null ],
+      [ "Used materials", "md_markdowns_bibliography.html#m", null ]
     ] ],
     [ "User commands", "md_markdowns_commands.html", [
       [ "The UI works with the following commands:", "md_markdowns_commands.html#autotoc_md0", null ],

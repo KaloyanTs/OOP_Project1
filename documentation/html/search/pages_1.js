@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['user_20commands_0',['User commands',['../md_markdowns_commands.html',1,'']]]
+  ['hotel_20project_20documentation_0',['Hotel Project Documentation',['../index.html',1,'']]]
 ];
