@@ -124,7 +124,7 @@ public:
     /**
      * @brief read the HotelBuilding data from binary file opened by ifstream
      *
-     * @param ofs input stream connected to binary file
+     * @param ifs input stream connected to binary file
      */
     void readDataFromBinary(std::ifstream &ifs);
 
