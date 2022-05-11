@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../_c_make_c_compiler_id_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCXXCompilerId.cpp'],['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['main_2ecpp_2eobj_2ed_2',['main.cpp.obj.d',['../main_8cpp_8obj_8d.html',1,'']]],
-  ['mainpage_2emd_3',['mainpage.md',['../mainpage_8md.html',1,'']]]
+  ['newdate_0',['newDate',['../class_hotel_building.html#a7e02a06c388ca30205b9ee7d832c8c5e',1,'HotelBuilding::newDate()'],['../class_room.html#a61087b9ff006697919562e12b1af49c1',1,'Room::newDate()']]],
+  ['nextday_1',['nextDay',['../class_hotel.html#a7b23fa694af4aa49b4f958ce2ba84609',1,'Hotel']]]
 ];
