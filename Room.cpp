@@ -101,12 +101,24 @@ void Room::newDate(Date newD)
 
 bool Room::isFreeOnDate(Date d) const
 {
-    if (!resCount)
-        return true;
-    unsigned i = 0;
-    while (i < resCount && reservations[i]->stateOnDate(d) == PAST)
-        ++i;
-    return i == resCount || reservations[i]->stateOnDate(d) == FUTURE;
+    if (d < Hotel::today())
+    {
+        if (resCount && reservations[0]->stateOnDate(d) != ACTIVE || !pastCount)
+            return true;
+        unsigned i = 0;
+        while (i < pastCount && pastReservations[i]->stateOnDate(d) == FUTURE)
+            ++i;
+        return i == pastCount || pastReservations[i]->stateOnDate(d) == PAST;
+    }
+    else
+    {
+        if (!resCount)
+            return true;
+        unsigned i = 0;
+        while (i < resCount && reservations[i]->stateOnDate(d) == PAST)
+            ++i;
+        return i == resCount || reservations[i]->stateOnDate(d) == FUTURE;
+    }
 }
 
 Room::~Room()

@@ -9,7 +9,7 @@ void Hotel::nextDay()
 
 Hotel &Hotel::showAvailableRooms(std::ostream &os, Date d)
 {
-    os << "Available rooms for " << d << " are:\n";
+    os << "Available rooms for " << d << (d < Hotel::today() ? " we" : " a") << "re:\n";
     building->showAvailableRooms(os, d);
     return *this;
 }
