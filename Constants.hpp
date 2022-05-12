@@ -44,19 +44,19 @@ const size_t DISPLAY = 5;
  */
 const char cmdArr[COMMANDS][2][STRING_MAX_LENGTH] = {
     {{"To make a reservation, enter "},
-     {"<reserve: [Room number] [Accomodation date] [Departure date] {Guest name[;]} {Note}>"}},
+     {"reserve: <Room number> <Accomodation date> <Departure date> {Guest name<;>} {Note}"}},
     {{"To see list of free rooms for a particular date, enter "},
-     {"<available: [date]>"}},
+     {"available: <date>"}},
     {{"To free a room now, enter "},
-     {"<free: [Room number]>"}},
+     {"free: <Room number>"}},
     {{"To get report about the reservations of a room over a period of time, enter "},
-     {"<report: [From date] [To date]>"}},
+     {"report: <From date> <To date>"}},
     {{"To request a room for guests, enter"},
-     {"<request: [minimal number of beds] [Accomodation date] [Departure date]>"}},
+     {"request: <minimal number of beds> <Accomodation date> <Departure date>"}},
     {{"To close a room for maintenance, enter"},
-     {"<maintenance: [room number] [From date] [To date] [Note]>"}},
-    {{"To see activity of all rooms, enter "}, {"<rooms:>"}},
+     {"maintenance: <room number> <From date> <To date> <Note>"}},
+    {{"To see activity of all rooms, enter "}, {" <rooms:"}},
     {{"To see soonest date a room is free for some nights, enter "},
-     {"<plan: [Room number] [Number of nights]>"}}};
+     {"plan: <Room number> <Number of nights>"}}};
 
 #endif
