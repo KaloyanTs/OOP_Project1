@@ -68,6 +68,11 @@ void HotelBuilding::createReport(DatePeriod &period) const
 
 void HotelBuilding::suggestRoom(unsigned beds, const DatePeriod &period)
 {
+    if (period.from < Hotel::today())
+    {
+        std::cerr << "Past period!\n";
+        return;
+    }
     RoomAnalyzer::suggest(*this, beds, period);
 }
 

@@ -50,9 +50,10 @@ Hotel::Hotel(String hotelDataFile)
     std::ifstream data(name + ".dat", std::ios::in | std::ios::binary);
     if (data.is_open())
     {
-        
+
         now.readDataFromBinary(data);
-        if(Date::getToday()>now)now=Date::getToday();
+        if (Date::getToday() > now)
+            now = Date::getToday();
         building->readDataFromBinary(data);
     }
     data.close();
@@ -218,7 +219,12 @@ bool Hotel::workDay()
         else if (!strcmp(cmd, "available"))
         {
             Date d;
-            std::cin >> d;
+            do
+            {
+                std::cin >> d;
+                if (d == Date())
+                    std::cerr << "Input the date again!\n";
+            } while (d == Date());
             std::cin.get();
             showAvailableRooms(std::cout, d);
         }
