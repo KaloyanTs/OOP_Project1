@@ -63,10 +63,10 @@ std::istream &operator>>(std::istream &is, Date &d)
     char c1, c2;
     try
     {
-        is >> d.day >> c1 >> d.month >> c2;
+        is >> d.day >> c1 >> d.month >> c2 >> d.year;
         if (c1 != '/' || c2 != '/')
             throw "Bad delimiter!\n";
-        std::cin >> d.year;
+
         if (is.fail() || !d.isVaid())
             throw "Bad data entered!\n";
     }
