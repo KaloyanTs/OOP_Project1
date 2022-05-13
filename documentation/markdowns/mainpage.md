@@ -9,7 +9,7 @@ This is information system serving a hotel. The system allows the user to make r
 
 @section Achitecture
 
-The main class is Hotel, having name, static date keeping track of today's date and a hotel building. The hotel building is a list of rooms, each of which has unique ID and number of beds as long as lists of reservations in future and past. The reservation is object having strings for the reserver's name, a note and period of reservation. The state of a reservation is determined through the hotel's today date.
+The main class is Hotel, having name, static date keeping track of today's date and a hotel building. The hotel building is a list of rooms, each of which has unique ID and number of beds as long as lists of reservations in future and past. The reservation is object having strings for the reserver's name, a note and period of reservation. The state of a reservation is determined through the hotel's today date. On a new day the data is updated and reservations from the future list that are expired are moved to the past reservations list.
 
 @subsection cl Supporting classes
 

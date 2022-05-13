@@ -5,7 +5,7 @@
 (*They are displayed on startup in the console*)
 
 @note all dates must be input in format D/M/Y
-@note parameters with [] are mandatory and these with {} are optional
+@note parameters with <> are mandatory and these with [] are optional
 
 # Adding new reservation
 
