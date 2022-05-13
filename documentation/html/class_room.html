@@ -111,10 +111,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a67d5da09983cc53097807fd43ba5481a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="class_room.html" title="Class representing a room in hotel.">Room</a> object.  <a href="class_room.html#a67d5da09983cc53097807fd43ba5481a">More...</a><br /></td></tr>
 <tr class="separator:a67d5da09983cc53097807fd43ba5481a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5ed5ee7959c90200d1e6d780167fe89"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_room.html#ae5ed5ee7959c90200d1e6d780167fe89">getNumber</a> () const</td></tr>
+<tr class="memdesc:ae5ed5ee7959c90200d1e6d780167fe89"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the ID of the room  <a href="class_room.html#ae5ed5ee7959c90200d1e6d780167fe89">More...</a><br /></td></tr>
 <tr class="separator:ae5ed5ee7959c90200d1e6d780167fe89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa037073eacd079af9e7593f408a9e356"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_room.html#aa037073eacd079af9e7593f408a9e356">getBedCount</a> () const</td></tr>
+<tr class="memdesc:aa037073eacd079af9e7593f408a9e356"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of beds in the room  <a href="class_room.html#aa037073eacd079af9e7593f408a9e356">More...</a><br /></td></tr>
 <tr class="separator:aa037073eacd079af9e7593f408a9e356"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95cc43635356f64c587eb83a6c124cc8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_room.html#a95cc43635356f64c587eb83a6c124cc8">isFreeNow</a> () const</td></tr>
+<tr class="memdesc:a95cc43635356f64c587eb83a6c124cc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">see if this room has active reservation now  <a href="class_room.html#a95cc43635356f64c587eb83a6c124cc8">More...</a><br /></td></tr>
 <tr class="separator:a95cc43635356f64c587eb83a6c124cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac577ef1f89ef87ea45b5429b0a2728c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_room.html#ac577ef1f89ef87ea45b5429b0a2728c2">freeRoom</a> (<a class="el" href="class_reservation.html">Reservation</a> *&amp;currentRes)</td></tr>
 <tr class="memdesc:ac577ef1f89ef87ea45b5429b0a2728c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">try to free this room  <a href="class_room.html#ac577ef1f89ef87ea45b5429b0a2728c2">More...</a><br /></td></tr>
@@ -339,6 +342,12 @@ false adding a maintenance failed (the room is not free in this <a class="el" hr
 </div><div class="memdoc">
 
 <p>try to free this room </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentRes</td><td>reference to the suspended reservation if such </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>true sucesfully freed room </dd>
 <dd>
 false room is already free </dd></dl>
@@ -368,6 +377,8 @@ false room is already free </dd></dl>
 </table>
 </div><div class="memdoc">
 
+<p>get the number of beds in the room </p>
+
 </div>
 </div>
 <a id="ae5ed5ee7959c90200d1e6d780167fe89" name="ae5ed5ee7959c90200d1e6d780167fe89"></a>
@@ -392,6 +403,8 @@ false room is already free </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>get the ID of the room </p>
 
 </div>
 </div>
@@ -438,6 +451,11 @@ false the room is not free (there is a day in period when the room is taken) </d
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>see if this room has active reservation now </p>
+<dl class="section return"><dt>Returns</dt><dd>true the room has no active reservation and is free </dd>
+<dd>
+false the room has active reservation and is taken </dd></dl>
 
 </div>
 </div>
