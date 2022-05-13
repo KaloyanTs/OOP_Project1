@@ -53,3 +53,8 @@ I developed several classes to ease the work with the main classes.
 > > > > ...
 > > > > <br> 103: Next maintenance is from \<today\> to 20/8/2022.<br>
 > > > > ...
+
+@section idea Ideas for future developments
+1. The hotel can have administration object holding the workers in it;
+2. Profit can be calculated based on price list;
+3. the hotel can include more services such as SPA, restaurant or shop where guests can spend money ;). The SPA for example can have some schedule. 
