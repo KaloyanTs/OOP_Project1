@@ -65,7 +65,7 @@ class Room
 
     /**
      * @brief tries to create a new reservation
-     * 
+     *
      * @param name of guest
      * @param note to the reservation
      * @param period of stay
@@ -77,7 +77,7 @@ class Room
 
     /**
      * @brief moves soonest reservation from now (indexed at 0 in the reservations list) to the past reservations list
-     * 
+     *
      */
     void moveToPast();
 
@@ -105,13 +105,24 @@ public:
      */
     ~Room();
 
+    /// get the ID of the room
     unsigned getNumber() const { return number; }
+
+    /// get the number of beds in the room
     unsigned getBedCount() const { return bedCount; }
+
+    /**
+     * @brief see if this room has active reservation now
+     *
+     * @return true the room has no active reservation and is free
+     * @return false the room has active reservation and is taken
+     */
     bool isFreeNow() const;
 
     /**
      * @brief try to free this room
      *
+     * @param currentRes reference to the suspended reservation if such
      * @return true sucesfully freed room
      * @return false room is already free
      */

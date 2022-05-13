@@ -7,7 +7,7 @@
 
 /**
  * @brief Class representing date with day, month and year
- *
+ * @note dates are in format DD/MM/YYYY
  */
 class Date
 {
@@ -75,6 +75,7 @@ public:
     bool operator==(const Date other) const;
     /**
      * @brief records this Date in buffer in format YYYY-MM-DD
+     * @note the buffer must have enought memory (at least 11 bytes)
      *
      * @param buf buffer where Date is recorded
      * @return const char* pointer to beginning of buf
@@ -89,7 +90,8 @@ public:
     int operator-(Date other) const;
     /**
      * @brief overloaded prefix incremention operator for Date
-     *
+     * @note operator works without restrictions about the order of the dates
+     * 
      * @return Date& reference to this Date
      */
     Date &operator++();
@@ -117,7 +119,7 @@ public:
      * @return std::ostream& reference to the output stream
      */
     friend std::ostream &operator<<(std::ostream &os, const Date &d);
-    
+
     /**
      * @brief write the Room data into binary file opened by ofstream
      *
