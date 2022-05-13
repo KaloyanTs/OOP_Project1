@@ -30,7 +30,8 @@ var NAVTREE =
       [ "Achitecture", "index.html#Achitecture", [
         [ "Supporting classes", "index.html#cl", null ],
         [ "Example", "index.html#Example", null ]
-      ] ]
+      ] ],
+      [ "Ideas for future developments", "index.html#idea", null ]
     ] ],
     [ "Bibliography", "md_markdowns_bibliography.html", [
       [ "GitHub", "md_markdowns_bibliography.html#GitHub", null ],

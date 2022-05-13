@@ -165,6 +165,7 @@ var NAVTREEINDEX0 =
 "index.html#Example":[0,1,1],
 "index.html#Overview":[0,0],
 "index.html#cl":[0,1,0],
+"index.html#idea":[0,2],
 "main_8cpp.html":[4,0,10],
 "main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[4,0,10,0],
 "md_markdowns_bibliography.html":[1],
