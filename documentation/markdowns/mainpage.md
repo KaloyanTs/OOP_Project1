@@ -20,6 +20,9 @@ I developed several classes to ease the work with the main classes.
 * **RoomAnalyzer** - utility class, knowing algorithms to be performed on rooms for some results (sorting them or finding best one by criteria);
 * **HotelInterface** - utility class, taking care of the UI of the console program. Can show the user available commands.
 
+@section files File organization
+![Organization](..\assets\organization.png)
+
 @subsection Example
 
 >  **reserve: 102 15/7/2022 22/7/2022 Ivan; has dog** 
