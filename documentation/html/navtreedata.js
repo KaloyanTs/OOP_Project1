@@ -28,7 +28,9 @@ var NAVTREE =
     [ "Hotel Project Documentation", "index.html", [
       [ "Overview", "index.html#Overview", null ],
       [ "Achitecture", "index.html#Achitecture", [
-        [ "Supporting classes", "index.html#cl", null ],
+        [ "Supporting classes", "index.html#cl", null ]
+      ] ],
+      [ "File organization", "index.html#files", [
         [ "Example", "index.html#Example", null ]
       ] ],
       [ "Ideas for future developments", "index.html#idea", null ]
